@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>HMS</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+
+    <!-- C3 charts css -->
+    <link href="../plugins/c3/c3.min.css" rel="stylesheet" type="text/css"  />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- Plugin Css-->
+    <link rel="stylesheet" href="../plugins/magnific-popup/css/magnific-popup.css" />
+    <link rel="stylesheet" href="../plugins/jquery-datatables-editable/dataTables.bootstrap4.min.css" />
+    <link href="../plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css" rel="stylesheet" />
+    <link href="../plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="../plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="../plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../plugins/switchery/switchery.min.css">
+
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+
+    <script src="/assets/js/modernizr.min.js"></script>
+
+    <script src="assets/js/modernizr.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+
+    <!-- DataTables -->
+    <link href="../plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="../plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- Responsive datatable examples -->
+    <link href="../plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Top Bar Start -->
+        <div class="topbar">
+
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <a href="/dashboard" class="logo">
+                    <span>
+                        <img src="assets/images/logo.png" alt="" height="25">
+                    </span>
+                    <i>
+                        <img src="assets/images/logo_sm.png" alt="" height="28">
+                    </i>
+                </a>
+            </div>
+
+            <nav class="navbar-custom">
+
+                <ul class="list-inline float-right mb-0">
+                    <li class="list-inline-item dropdown notification-list">
+                        <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown"
+                            href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            {{!-- <i class="dripicons-bell noti-icon"></i> --}}
+                            <!--span class="badge badge-pink noti-icon-badge">4</span-->
+                        </a>
+                        <!--div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg" aria-labelledby="Preview">
+                                <div class="dropdown-item noti-title">
+                                    <h5><span class="badge badge-danger float-right">5</span>Notification</h5>
+                                </div>
+
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-success"><i class="icon-bubble"></i></div>
+                                    <p class="notify-details">Robert S. Taylor commented on Admin<small class="text-muted">1 min ago</small></p>
+                                </a>
+
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-info"><i class="icon-user"></i></div>
+                                    <p class="notify-details">New user registered.<small class="text-muted">1 min ago</small></p>
+                                </a>
+
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-danger"><i class="icon-like"></i></div>
+                                    <p class="notify-details">Carlos Crouch liked <b>Admin</b><small class="text-muted">1 min ago</small></p>
+                                </a>
+
+                                <a href="javascript:void(0);" class="dropdown-item notify-item notify-all">
+                                    View All
+                                </a>
+                            </div-->
+                    </li>
+
+                    <li class="list-inline-item dropdown notification-list">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
+                            href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <h3 class="text-overflow"><small>Welcome ! </small> <small id="lblActiveUser">
+                                    {{user_name}}</small> </h3>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
+
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="mdi mdi-account-circle"></i> <span>Profile</span>
+                            </a>
+
+                            <!--a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-settings"></i> <span>Settings</span>
+                                </a>
+
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-lock-open"></i> <span>Lock Screen</span>
+                                </a-->
+
+                            <!-- item-->
+                            <a href="/Logout" class="dropdown-item notify-item">
+                                <i class="mdi mdi-power"></i> <span>Logout</span>
+                            </a>
+
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="list-inline menu-left mb-0">
+                    <li class="float-left">
+                        <button class="button-menu-mobile open-left waves-light waves-effect">
+                            <i class="dripicons-menu"></i>
+                        </button>
+                    </li>
+                    <li class="hide-phone app-search">
+                        <form role="search" class="">
+                            <!--input type="text" placeholder="Search..." class="form-control">
+                            <a href=""><i class="fa fa-search"></i></a-->                            
+                        </form>
+                        <h3 class="page-title float-left"><large id="lblFormName"></large> </h3>
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div>
+        <!-- Top Bar End -->
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <div class="slimscroll-menu" id="remove-scroll">
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu" id="side-menu">
+                        <li class="menu-title">HMS Support Desk Menu</li>
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="fi-air-play"></i>
+                                <span>Home </span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false" id="menu-1">
+                                <li><a href="/dashboard">Dashboard</a></li>
+                                <!--<li><a href="dashboard-2.html">Dashboard 2</a></li>-->
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="fi-target"></i> 
+                                <span> Admin UI </span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="/refDepartment">Department</a></li>  
+                                {{!-- <li><a href="/Inventory">Inventory</a></li>     --}}
+                                                         
+                                
+                                <!--li><a href="admin-rangeslider.html">Support Category</a></li-->
+                            </ul>
+                        </li>
+
+                        
+
+                        <!--li>
+                            <a href="javascript: void(0);">
+                                <i class="fi-bar-graph-2"></i>
+                                <span>Computation</span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false"  id="menu-2">
+                                <li><a href="/flhcalc">Compute Data</a></li>
+                                <li><a href="/flhcalcheader">Pre-Compute</a></li>
+                                <li><a href="/flhcalcvalidated">Validated Compute</a></li>
+                                <li><a href="/flhcalcsummary">Computed Summary</a></li>
+                                <li><a href="/flhcalcdtl">Computed Details</a></li>                                
+                                <li><a href="/flhcalcMessage">Message Validate</a></li>
+                                <li><a href="/flhcalcSubmit">Submit Report</a></li>
+                                <li><a href="/flhcalcallactivemembers">Active Members</a></li>
+                                <li><a href="/flhcalcactivecalcmembers">Calc Members</a></li>
+                                <li><a href="/flhcalcmemberpolicy">Validate Members Policy</a></li>
+                                <li><a href="/flhcalcmemberpolicyDtl">Validate Members Policy Details</a></li>
+                                <li><a href="/flhcalchistory">Computed History</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="fi-briefcase"></i>
+                                <span>Membership</span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false"  id="menu-3">
+                                <li><a href="/memberregistration">Regiatration</a></li>
+                                <li><a href="/member">Membership</a></li>
+                                <li><a href="/membershipedit">Membership Update</a></li>
+                                <li><a href="/membertree">Membership Status</a></li>
+                                <li><a href="/memberpolicymap">Member Policy Default</a></li>
+                                <li><a href="/memberpolicysetup">Member Policy Setup</a></li>
+                                <li><a href="/memberpolicysetupall">Member Policy Setup All</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="fi-target"></i>
+                                <span>Policy Setup</span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false"  id="menu-4">
+                                <li><a href="/policy">Policy</a></li>
+                                <li><a href="/policyedit">Policy Update</a></li>
+                                <li><a href="/policymembermap">Policy Member Mapping</a></li>
+                            </ul>
+                        </li-->
+
+                        <!--li>
+                            <a href="javascript: void(0);">
+                                <i class="fi-box"></i>
+                                <span> Admin UI </span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="/memberpolicysetupall">Members Policy</a></li>
+                            </ul>
+                        </li-->
+
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+                <div class="clearfix"></div>
+            </div>
+            <!-- Sidebar -left -->
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+
+            {{{body}}}
+            <footer class="footer text-right">
+
+            </footer>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+
+    <!-- Counter js  -->
+    <script src="../plugins/waypoints/jquery.waypoints.min.js"></script>
+    <script src="../plugins/counterup/jquery.counterup.min.js"></script>
+
+    <!--C3 Chart-->
+    <script type="text/javascript" src="../plugins/d3/d3.min.js"></script>
+    <script type="text/javascript" src="../plugins/c3/c3.min.js"></script>
+
+    <!--Echart Chart-->
+    <script src="../plugins/echart/echarts-all.js"></script>
+
+    <!-- Dashboard init -->
+    <script src="assets/pages/jquery.dashboard.js"></script>
+
+    <!-- Examples -->
+    <script src="../plugins/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+    <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../plugins/tiny-editable/mindmup-editabletable.js"></script>
+    <script src="../plugins/tiny-editable/numeric-input-example.js"></script>
+
+    <!-- Init Js file -->
+    <script src="../plugins/switchery/switchery.min.js"></script>
+    <script src="../plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+    <script src="../plugins/select2/js/select2.min.js" type="text/javascript"></script>
+    <script src="../plugins/bootstrap-select/js/bootstrap-select.js" type="text/javascript"></script>
+    <script src="../plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+    <script src="../plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+    <script src="../plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+
+    <script src="../plugins/bootstrap-inputmask/bootstrap-inputmask.min.js" type="text/javascript"></script>
+    <script src="../plugins/autoNumeric/autoNumeric.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="../plugins/autocomplete/jquery.mockjax.js"></script>
+    <script type="text/javascript" src="../plugins/autocomplete/jquery.autocomplete.min.js"></script>
+    <script type="text/javascript" src="../plugins/autocomplete/countries.js"></script>
+    <script type="text/javascript" src="assets/pages/jquery.form-advanced.init.js"></script>
+
+    <!-- Buttons examples For Grd Added-->
+    <script src="../plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="../plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="../plugins/datatables/jszip.min.js"></script>
+    <script src="../plugins/datatables/pdfmake.min.js"></script>
+    <script src="../plugins/datatables/vfs_fonts.js"></script>
+    <script src="../plugins/datatables/buttons.html5.min.js"></script>
+    <script src="../plugins/datatables/buttons.print.min.js"></script>
+    <script src="../plugins/datatables/buttons.colVis.min.js"></script>
+    <script src="../plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="../plugins/datatables/responsive.bootstrap4.min.js"></script>
+    <!-- Responsive examples For Grd Added -->
+
+    <!-- App js -->
+    <script src="assets/js/jquery.core.js"></script>
+    <script src="assets/js/jquery.app.js"></script>
+
+    <script src="assets/pages/jquery.datatables.editable.init.js"></script>
+    <script>
+        $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
+    </script>
+
+    <!-- Parsley js -->
+    <script type="text/javascript" src="../plugins/parsleyjs/parsley.min.js"></script>
+
+    <script type="text/javascript">
+        //This is for display Mandatory message below the textbx
+        $(document).ready(function () {
+            $('form').parsley();
+        });
+    </script>
+
+    <!--script type="text/javascript">
+        jQuery(function($) {
+            $('.autonumber').autoNumeric('init');
+        });
+
+        $( document ).ready(function() {
+            var data = {
+                IN_USER_ID: "0"
+            };
+            $.ajax({
+                url: 'getMenu',
+                type: "POST",
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.message == 0)
+                        alert("Invalid User.");
+                    else {
+                        $('#menu-1').html(data[0].MENU);
+                        $('#menu-2').html(data[1].MENU);
+                        $('#menu-3').html(data[2].MENU);
+                        $('#menu-4').html(data[3].MENU);
+                        // console.log("***",data[0]); 
+                    }
+                }
+            });
+        });
+    </script-->
+
+</body>
+
+</html>

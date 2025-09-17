@@ -1,0 +1,114 @@
+<!-- Start content -->
+<div class="content">
+    <div class="container-fluid">
+        <label for="inputCity" class="col-form-label"></label>
+        <!-- Form row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-box">
+                    {{!-- <form>      --}}
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="Name" class="col-form-label">Bill No.</label>
+                                        <input type="text" id="txtBillNo" name="txtBillNo_n" class="form-control" autocomplete="off" placeholder="">
+                                    </div>
+
+                                </div>
+
+                                <div class="form-row">
+                                        {{!-- <label for="Save" class="col-form-label">&nbsp;</label> --}}
+                                    <button id="btnsave" type="button" style="width: 100%; font-size: 14px;"
+                                            class="btn btn-primary btn-rounded w-md waves-effect waves-light">Print Bill</button>
+                                </div> 
+
+                            </div>
+
+                            
+                        </div>    
+                    {{!-- </form> --}}
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+        <
+    </div> <!-- container -->
+</div> <!-- content -->
+<footer class="footer text-right">
+</footer>
+
+<script>
+    var defaultdata = {{{ data1 }}};
+    $('#lblFormName').html("OPD Bill");
+   
+   
+    //Save event
+    $("#btnsave").on("click", function () {    
+        
+        $('#lblError').html('');
+        var data = {
+            "IN_USER_ID": "0",
+            "IN_BRANCH_ID": "0",
+            "IN_ID": $("#txtBillNo").val(),                
+            "IN_STATUS": "1", //$("#cmbStatus").val(),
+        }
+        console.log("data",  data)
+        $.ajax({
+            url: 'printopdBillReport',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                {
+                    alert("Save Error!!");   
+                    return false;                     
+                }
+                else
+                {
+                    //alert("Save Successfully.");
+                    //window.location.reload(true);
+                    
+                    //window.location.href = 'rptopdBill'; // Open in same page
+                    window.open('rptopdBill', '_blank'); // Open in new tab page
+
+                    // Open in popup page Start
+                    /*
+                    var url = 'rptopdBill';
+                    var windowName = 'rptopdBillPopup'; // name of the popup window
+                    var features = 'width=800,height=600,scrollbars=yes,resizable=yes';
+
+                    window.open(url, windowName, features);
+                    */
+                    // Open in popup page End
+                    
+                } 
+            },
+            error: function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+                return false;
+            }
+        });       
+    
+    
+    });
+
+</script>

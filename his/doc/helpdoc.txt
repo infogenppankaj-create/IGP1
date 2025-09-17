@@ -1,0 +1,11 @@
+Node Command
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FLH
+npm install
+npm install --save node-fetch 
+npm install --save form-data
+npm start
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FLH API
+npm install
+npm install –save nodemailer
+npm start

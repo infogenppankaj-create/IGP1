@@ -1,0 +1,627 @@
+<!-- Start content -->
+<div class="content">
+    <div class="container-fluid">
+        <label for="inputCity" class="col-form-label"></label>
+        <!-- Form row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-box">
+                    {{!-- <form> --}}
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <div class="form-row">  
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">Add/Updatep Service</label>
+                                        <select class="form-control select2" id="cmbAU" name="cmbAU_n">
+                                            <option>Add Service</option>
+                                            <option>Update Service</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-8">
+                                        <label for="Name" class="col-form-label">Select Service For Update</label>
+                                        <select id="cmbSelect" name="cmbSelect_n" class="form-control select2"></select>
+                                    </div>                                    
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <div class="form-row">  
+                                        <div class="form-group col-md-12">
+                                    <label for="Status" class="col-form-label">Status</label>
+                                    <select id="cmbStatus" name="cmbStatus_n" class="form-control select2"></select>
+                                </div>
+                                </div>
+                            </div>
+                        </div>                       
+
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <div class="form-row">  
+                                    <div class="form-group col-md-4">
+                                        <label for="Code" class="col-form-label">Code<span class="text-danger">*</span></label>
+                                        <input type="text" id="txtCode" name="txtCode_n" class="form-control" autocomplete="off" placeholder="Code" required>
+                                    </div>
+
+                                    <div class="form-group col-md-8">
+                                        <label for="Name" class="col-form-label">Service Name<span class="text-danger">*</span></label>
+                                        <input type="text" id="txtName" name="txtName_n" class="form-control" autocomplete="off" placeholder="Name" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">  
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">Service Group</label>
+                                        <select id="cmbServiceGroup" name="cmbServiceGroup_n" class="form-control select2"></select>
+                                    </div>
+ 
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">Primary Doctor</label>
+                                        <select id="cmbDr" name="cmbDr_n" class="form-control select2"></select>
+                                    </div>   
+
+                                    <div class="form-group col-md-2">
+                                        <label for="Name" class="col-form-label">&nbsp;</label>
+                                        <div class="checkbox">
+                                            &nbsp;<input id="chkDr" type="checkbox">
+                                            <label for="chkDr" class="col-form-label">&nbsp; Dr Required </label>                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-2">
+                                        <label for="Name" class="col-form-label">&nbsp;</label>
+                                        <div class="checkbox">
+                                            &nbsp;<input id="chkMsg" type="checkbox">
+                                            <label for="chkMsg" class="col-form-label">&nbsp; Show Msg. </label>                                            
+                                        </div>
+                                    </div>                             
+                                </div>                               
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <div class="form-group">
+                                    <label for="Description" class="col-form-label">Description</label>
+                                    <textarea class="form-control" style="height: 100px;" id="txtDescription" name="txtDescription_n" rows="5"
+                                        placeholder=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <div class="form-row">  
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">Department</label>
+                                        <select id="cmbDepartment" name="cmbDepartment_n" class="form-control select2"></select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">Sub Department</label>
+                                        <select id="cmbSubDepartment" name="cmbSubDepartment_n" class="form-control select2"></select>
+                                    </div>
+
+                                    <div class="form-group col-md-2">
+                                        <label for="Status" class="col-form-label">Service Charge</label>
+                                        <input type="text" id="txtSCharge" name="txtSCharge_n" class="form-control" autocomplete="off" placeholder="">
+                                    </div>  
+                                    
+                                    <div class="form-group col-md-2">
+                                        <label for="Status" class="col-form-label">S Amount (Bill)</label>
+                                        <input type="text" id="txtAmount" name="txtAmount_n" class="form-control" autocomplete="off" placeholder="">
+                                    </div>  
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-2">
+                                        <label for="Name" class="col-form-label">H.Charge </label>
+                                        <input type="text" id="txtHCharge" name="txtHCharge_n" class="form-control" autocomplete="off" placeholder="">
+                                    </div>
+
+                                    <div class="form-group col-md-2">
+                                        <label for="Name" class="col-form-label">Dr.Charge </label>
+                                        <input type="text" id="txtDrCharge" name="txtDrCharge_n" class="form-control" autocomplete="off" placeholder="">
+                                    </div>
+
+                                    <div class="form-group col-md-2">
+                                        <label for="Status" class="col-form-label">O.Charge</label>
+                                        <input type="text" id="txtOCharge" name="txtOCharge_n" class="form-control" autocomplete="off" placeholder="">
+                                    </div>
+
+                                    <div class="form-group col-md-2">
+                                        <label for="Name" class="col-form-label">Tax %</label>
+                                        <input type="text" id="txtTax" name="txtTax_n" class="form-control" autocomplete="off" placeholder="">
+                                    </div>
+
+                                    <div class="form-group col-md-2">
+                                        <label for="Name" class="col-form-label">Disc %</label>
+                                        <input type="text" id="txtDisc" name="txtDisc_n" class="form-control" autocomplete="off" placeholder="">
+                                    </div>
+    
+                                    <div class="form-group col-md-2">
+                                        <label for="Code" class="col-form-label">&nbsp;</label>
+                                        <button id="btnsave" type="button" style="width: 100%;font-size: 18px;"
+                                            class="btn btn-primary btn-rounded w-md waves-effect waves-light">Save</button>                            
+                                    </div>                                                                
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <div class="form-group">
+                                    <label for="Description" class="col-form-label">Billing Message</label>
+                                    <textarea class="form-control" style="height: 100px;" id="txtMessage" name="txtMessage_n" rows="5"
+                                        placeholder=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    {{!-- </form> --}}
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card-box table-responsive">
+                    <h4 class="m-t-0 header-title"><b>Department Details</b></h4>
+                    <p class="text-muted font-13 m-b-30">
+
+                    </p>
+                    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th style="width:5%">ID</th>
+                                <th>CODE</th>
+                                <th>NAME </th>
+                                <th>DEPARTMENT</th>
+                                <th>SUB DEPARTMENT</th>
+                                <th>SERVICE GROUP</th>
+                                <th>BILLING MESSAGE</th>
+                                <th>SHOW MESSAGE</th>
+                                <th>DR_REQUIRED</th>
+                                <th>DESCRIPTION</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div> <!-- container -->
+</div> <!-- content -->
+<footer class="footer text-right">
+</footer>
+
+<script>
+    var defaultdata = {{{ data1 }}};
+    $('#lblFormName').html("Service");
+    $('#txtTCharge').attr('disabled', true);
+   
+    //populate dropdown start
+    var option = '';
+    for (var i = 0; i < defaultdata.result.length; i++) {
+        option += '<option value="' + defaultdata.result[i].ID + '">' + defaultdata.result[i].NAME + '</option>';
+    }
+    $('#cmbStatus').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.ServiceGroup.length; i++) {
+        option += '<option value="' + defaultdata.ServiceGroup[i].ID + '">' + defaultdata.ServiceGroup[i].NAME + '</option>';
+    }
+    $('#cmbServiceGroup').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Department.length; i++) {
+        option += '<option value="' + defaultdata.Department[i].ID + '">' + defaultdata.Department[i].NAME + '</option>';
+    }
+    $('#cmbDepartment').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.SubDepartment.length; i++) {
+        option += '<option value="' + defaultdata.SubDepartment[i].ID + '">' + defaultdata.SubDepartment[i].NAME + '</option>';
+    }
+    $('#cmbSubDepartment').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Service.length; i++) {
+        option += '<option value="' + defaultdata.Service[i].ID + '">' + defaultdata.Service[i].NAME + '</option>';
+    }
+    $('#cmbSelect').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.EmployeeByEmpCategory.length; i++) {
+        option += '<option value="' + defaultdata.EmployeeByEmpCategory[i].ID + '">' + defaultdata.EmployeeByEmpCategory[i].NAME + '</option>';
+    }
+    $('#cmbDr').append(option);
+    //populate dropdown end 
+      
+
+    //
+    $('#cmbSelect').attr('disabled', true);
+    $('#cmbStatus').attr('disabled', true);
+    $('#txtSCharge').attr('disabled', true);
+    $('#txtAmount').attr('disabled', true); 
+   
+    //
+    $(function () {
+        $("#cmbAU").change(function () {
+            if ($("#cmbAU").val() === 'Add Service') { //Update Employee
+                $('#cmbSelect').attr('disabled', true);
+                $('#cmbStatus').attr('disabled', true);
+                $("#cmbSelect").val(0).change();
+                $("#cmbStatus").val(1).change();
+                $('#txtHCharge').attr('disabled', false);
+                $('#txtDrCharge').attr('disabled', false);
+                $('#txtOCharge').attr('disabled', false);
+                $('#txtSCharge').attr('disabled', true);
+                $('#txtAmount').attr('disabled', true);                
+                $('#txtTax').attr('disabled', false);
+                $('#txtDisc').attr('disabled', false);                
+            } else {
+                $('#cmbSelect').attr('disabled', false);
+                $('#cmbStatus').attr('disabled', false);
+                $("#cmbSelect").val(0).change();
+                $("#cmbStatus").val(1).change();
+                $('#txtHCharge').attr('disabled', true);
+                $('#txtDrCharge').attr('disabled', true);
+                $('#txtOCharge').attr('disabled', true);
+                $('#txtSCharge').attr('disabled', true);
+                $('#txtAmount').attr('disabled', true);
+                $('#txtTax').attr('disabled', true);
+                $('#txtDisc').attr('disabled', true);
+            }
+        });
+    });
+    
+    // Data bound after Combo selection option
+    $(function () {        
+        $("#cmbSelect").change(function () {
+            $('#lblError').html('');
+            bindData()
+        });
+    });
+
+    // Data bound after Combo selection option
+    $(function () {        
+        $("#cmbDepartment").change(function () {
+            $('#lblError').html('');
+            bindDataCmb()
+        });
+    });
+
+    //Populate Grid data after form load
+    $(document).ready(function () {
+        bindGrid();
+        $("#example").dataTable().fnDestroy();
+    });
+
+    //Save event
+    $("#btnsave").on("click", function () {    
+        var inpObj1 = document.getElementById("txtCode");
+        var inpObj2 = document.getElementById("txtName");
+        if (!inpObj1.checkValidity() || !inpObj2.checkValidity()) {
+            alert("Please fill in the required fields:");
+        }
+        else {  
+            $('#lblError').html('');
+
+            if ($("#txtHCharge").val() === '') {
+                $('#txtHCharge').val("0");
+            }
+            if ($("#txtDrCharge").val() === '') {
+                $('#txtDrCharge').val("0");
+            }
+            if ($("#txtOCharge").val() === '') {
+                $('#txtOCharge').val("0");
+            }
+            if ($("#txtSCharge").val() === '') {
+                $('#txtSCharge').val("0");
+            }
+            if ($("#txtAmount").val() === '') {
+                $('#txtAmount').val("0");
+            }
+            if ($("#txtTax").val() === '') {
+                $('#txtTax').val("0");
+            }
+            if ($("#txtDisc").val() === '') {
+                $('#txtDisc').val("0");
+            }
+           
+            var data = {
+                "IN_USER_ID": "0",
+                "IN_BRANCH_ID": "0",
+                "IN_ID": $("#cmbSelect").val(),
+                "IN_DEPARTMENT_ID": $("#cmbDepartment").val(),
+	            "IN_SUB_DEPARTMENT_ID": $("#cmbSubDepartment").val(),
+                "IN_CODE": $("#txtCode").val(),
+                "IN_NAME": $("#txtName").val(),
+                "IN_SERVICE_GROUP_ID": $("#cmbServiceGroup").val(),
+                "IN_BILLING_MESSAGE": $("#txtMessage").val(),
+                "IN_DR_CHARGE": $("#txtDrCharge").val(),
+                "IN_H_CHARGE": $("#txtHCharge").val(),
+                "IN_OTH_CHARGE": $("#txtOCharge").val(),
+                "IN_SERVICE_TAX": $("#txtTax").val(), 
+                "IN_SERVICE_DISC": $("#txtDisc").val(),                                  
+                "IN_SHOW_MESSAGE": $("#chkMsg").is(":checked"), //"1", // $("#chkMsg").val(),
+                "IN_DR_REQUIRED": $("#chkDr").is(":checked"), 
+                "IN_DR_ID": $("#cmbDr").val(),
+                "IN_DESCRIPTION": $("#txtDescription").val(),
+                "IN_STATUS": $("#cmbStatus").val(),
+            }
+            //console.log("data",  data)
+            $.ajax({
+                url: 'saveService',
+                type: "POST",
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.message == 0)
+                    {
+                        alert("Save Error!!");   
+                        return false;                     
+                    }
+                    else
+                    {
+                        alert("Save Successfully.");
+                        window.location.reload(true);
+                    } 
+                },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    alert(msg);
+                    return false;
+                }
+            });       
+        }
+    
+    });
+   
+    // Populate Grid Data 
+    function bindGrid() {
+        var data = {
+            IN_USER_ID: "0",
+            IN_BRANCH_ID: "0",
+            IN_ID: "0",
+            IN_STATUS: "0"
+        };
+        $.ajax({
+            url: 'getServiceGrd',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    dataSet = data;
+                    $('#example').DataTable({
+                        //*****Start
+                        //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        "order": [0, "desc"], // Order data
+                        //"scrollX": true,
+                        //"scrollY": "500px", //Paging enable disable
+                        //"scrollCollapse": true,//Scroll enable disable
+                        //"paging": false, //Paging enable disable
+                        //"pagingType": "full_numbers", showing all page numbers
+                        //stateSave: true,
+                        //*****End                        
+                        data: dataSet,
+                        columns: [                        
+                            { data: "ID" },
+                            { data: "CODE"},
+                            { data: "NAME"},
+                            { data: "DEPARTMENT"},
+                            { data: "SUB_DEPARTMENT"},
+                            { data: "SERVICE_GROUP"},
+                            { data: "BILLING_MESSAGE"},
+                            { data: "SHOW_MESSAGE"},
+                            { data: "DR_REQUIRED"},
+                            { data: "DESCRIPTION"},
+                            { data: "STATUS"},
+                        ],
+                        "columnDefs": [
+                            {
+                                "targets": [0],
+                                "visible": false,
+                                //"searchable": false
+                            },
+                            {
+                                "targets": [6],
+                                "visible": false
+                            },
+                            {
+                                "targets": [7],
+                                "visible": false
+                            },
+                            {
+                                "targets": [8],
+                                "visible": false
+                            },
+                            {
+                                "targets": [9],
+                                "visible": false
+                            },
+                        ]
+                        // implemented export option
+                        , dom: 'Bfrtip',
+                        buttons: [
+                            'copy', 'csv', 'excel', 'pdf', 'print'
+                        ]
+                        // implemented export option End                            
+                    });
+                    var table = $('#example').DataTable();
+
+                    $('#example tbody').on('click', 'tr', function () {
+                        if ($(this).hasClass('selected')) {
+                            $(this).removeClass('selected');
+                        }
+                        else {
+                            table.$('tr.selected').removeClass('selected');
+                            $(this).addClass('selected');
+                        }
+                        //Populating textbox after row grid select
+                        //var gridData = table.row( this ).data();
+                        //$('#TxtV1').val(gridData.CREATE_D);
+                        //$('#TxtV2').val(gridData.CODE);
+                        //console.log(table.row( this ).data());
+                    });
+                }
+            }
+        });
+    }
+
+    //
+    function bindData() {
+        $('#lblError').html('');
+        var data = {
+            IN_USER_ID: "1",
+            IN_BRANCH_ID: "1",
+            IN_ID: $("#cmbSelect").val(),
+            IN_STATUS: "0"
+        };
+        $.ajax({
+            url: 'getServiceByID',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    if ($("#cmbSelect").val() === '0') {  
+                            $('#txtCode').val("");
+                            $('#txtName').val("");
+                            $('#cmbDepartment').val(0).change();  
+                            $('#cmbSubDepartment').val(0).change();  
+                            $('#cmbServiceGroup').val(0).change();  
+                            $("#chkMsg").prop("checked", false);
+                            $("#chkDr").prop("checked", false);
+                            $('#txtMessage').val("");
+                            $('#txtDescription').val("");
+                            $('#cmbStatus').val(1).change();   
+                            $('#cmbDr').val(0).change();  
+                    }
+                    else {
+                            //console.log(data[0]);    
+                            $('#txtCode').val(data[0].CODE);
+                            $('#txtName').val(data[0].NAME);
+                            $('#cmbDepartment').val(data[0].DEPARTMENT_ID).change();                           
+                            $('#cmbServiceGroup').val(data[0].SERVICE_GROUP_ID).change();
+                            $('#txtMessage').val(data[0].BILLING_MESSAGE);
+                            $("#chkMsg").prop( "checked", data[0].SHOW_MESSAGE);
+                            $("#chkDr").prop( "checked", data[0].DR_REQUIRED);
+                            $('#txtDescription').val(data[0].DESCRIPTION);
+                            $('#cmbStatus').val(data[0].STATUS_ID).change();
+                            $('#cmbDr').val(data[0].DR_ID).change();
+                            $('#cmbSubDepartment').val(data[0].SUB_DEPARTMENT_ID).change();
+                    }
+                }
+            },
+            error: function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+                return false;
+            }
+        });
+    }
+
+    
+    //***************************
+    //Bind Data in Sub Department combo after Department selection
+    function bindDataCmb() {
+        $('#lblError').html('');
+        var data = {
+            IN_USER_ID: "0",
+            IN_BRANCH_ID: "0",
+            IN_ID: "0",
+            IN_STATUS: "0",
+            IN_DEPARTMENT_ID: $("#cmbDepartment").val(),
+        };
+        $.ajax({
+            url: 'getSubDepartmentByDeptID',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    //console.log(data[0]);                    
+
+                    var option = '';
+                    $("#cmbSubDepartment").empty();
+                    option += '<option value="0">SELECT</option>';
+                    for (var i = 0; i < data.length; i++) {
+                        option += '<option value="' + data[i].ID + '">' + data[i].NAME + '</option>';
+                    }
+                    $('#cmbSubDepartment').append(option);                    
+                }
+            },
+            error: function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+                return false;
+            }
+        });
+       
+    }
+
+</script>

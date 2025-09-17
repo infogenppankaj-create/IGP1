@@ -1,0 +1,360 @@
+<!-- Start content -->
+<div class="content">
+    <div class="container-fluid">
+        <label for="inputCity" class="col-form-label"></label>
+        <!-- Form row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-box">
+                    {{!-- <form>      --}}
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                                <div class="form-row">
+                                    <div class="form-group col-md-10">
+                                        <label for="Name" class="col-form-label">Patient</label>
+                                        <select id="cmbPatient" name="cmbPatient_n" class="form-control select2"></select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="Name" class="col-form-label">Age (Yr.)</label>
+                                        <input type="text" id="txtAge" name="txtAge_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Gender</label>
+                                        <input type="text" id="txtGender" name="txtGender_n" class="form-control" autocomplete="off" placeholder="" disabled>                                       
+                                    </div>     
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Mobile</label>
+                                        <input type="text" id="txtMobile" name="txtMobile_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Ward</label>
+                                        <input type="text" id="txtWard" name="txtWard_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div> 
+                                    
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Bed</label>
+                                        <select id="cmbBed" name="cmbBed_n" class="form-control select2" disabled></select>
+                                    </div> 
+                                </div> 
+
+                                <div class="form-row">   
+                                    <div class="form-group col-md-8">
+                                        <label for="UID" class="col-form-label">Kin Name</label>
+                                    <input type="text" id="txtKinName" name="txtKinName_n" class="form-control" autocomplete="off" placeholder="Name" disabled>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">Mobile</label>
+                                        <input type="text" id="txtKMobile" name="txtKMobile_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+                                </div>  
+
+                                
+                            </div>
+
+                            <div class="form-group col-md-7">  
+                                 
+                                <div class="form-row" >
+                                    <div class="form-group col-md-12">
+                                        <label for="Status" class="col-form-label">Discharge Description</label>
+                                        <textarea class="form-control" style="height: 100px;" id="txtDescription" name="txtDescription_n" rows="5"
+                                            placeholder=""></textarea>     
+                                    </div>                                       
+                                </div>
+
+                                <div class="form-row">                                                           
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">Payer</label>
+                                        <select id="cmbPayer" name="cmbPayer_n" class="form-control select2" disabled></select>                                
+                                    </div>   
+
+                                    <div class="form-group col-md-4">
+                                        <label for="Status" class="col-form-label">Doctor</label>
+                                        <select id="cmbDr" name="cmbDr_n" class="form-control select2"></select>
+                                    </div>   
+                                    
+                                    <div class="form-group col-md-4">
+                                        <label for="Description" class="col-form-label">&nbsp;</label>
+                                        <button id="btnsave" type="button" style="width: 100%; font-size: 14px;"
+                                            class="btn btn-primary btn-rounded w-md waves-effect waves-light">Save</button>
+                                        {{!-- </form> --}}
+                                    </div>  
+                                </div> 
+
+
+                            </div>
+
+                        </div>    
+                    {{!-- </form> --}}
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card-box">
+                    <h4 class="m-b-30 m-t-0 header-title"><b>Default Editor</b></h4>
+                    <div class="summernote" id -"rptTxt">
+                        <h3>Hello Summernote</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div> <!-- container -->
+</div> <!-- content -->
+<footer class="footer text-right">
+</footer>
+
+<script>
+    var defaultdata = {{{ data1 }}};
+    $('#lblFormName').html("Patient Discharge");
+    $('#txtAge').attr('disabled', true);   
+    $('#txtMobile').attr('disabled', true);
+    $('#txtAddress').attr('disabled', true);
+    $('#txtTAmount').attr('disabled', true);
+    $('#txtAmount').attr('disabled', true);
+   
+    //populate dropdown start
+    var option = '';
+    for (var i = 0; i < defaultdata.result.length; i++) {
+        option += '<option value="' + defaultdata.result[i].ID + '">' + defaultdata.result[i].NAME + '</option>';
+    }
+    //$('#cmbStatus').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.response_Patient.length; i++) {
+        option += '<option value="' + defaultdata.response_Patient[i].ID + '">' + defaultdata.response_Patient[i].NAME + '</option>';
+    }
+    $('#cmbPatient').append(option);
+
+    //
+    var option = '';
+    for (var i = 0; i < defaultdata.response_Company.length; i++) {
+        option += '<option value="' + defaultdata.response_Company[i].ID + '">' + defaultdata.response_Company[i].NAME + '</option>';
+    }
+    //$('#cmbPayer').append(option);
+
+    //
+    var option = '';
+    for (var i = 0; i < defaultdata.ServiceCategory.length; i++) {
+        option += '<option value="' + defaultdata.ServiceCategory[i].ID + '">' + defaultdata.ServiceCategory[i].NAME + '</option>';
+    }
+    //$('#cmbServiceCategory').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.ServiceCharge.length; i++) {
+        option += '<option value="' + defaultdata.ServiceCharge[i].ID + '">' + defaultdata.ServiceCharge[i].NAME + '</option>';
+    }
+    //$('#cmbService').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.EmployeeByEmpCategory.length; i++) {
+        option += '<option value="' + defaultdata.EmployeeByEmpCategory[i].ID + '">' + defaultdata.EmployeeByEmpCategory[i].NAME + '</option>';
+    }
+    $('#cmbDr').append(option);
+
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Bed.length; i++) {
+        option += '<option value="' + defaultdata.Bed[i].ID + '">' + defaultdata.Bed[i].NAME + '</option>';
+    }
+    $('#cmbBed').append(option);
+
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.IdentityType.length; i++) {
+        option += '<option value="' + defaultdata.IdentityType[i].ID + '">' + defaultdata.IdentityType[i].NAME + '</option>';
+    }
+    //$('#cmbIdentity').append(option);
+
+    //populate dropdown end   
+
+
+
+    $(function () {  
+        $('.summernote').summernote({
+            height: "100%",                 // set editor height
+            minHeight: null,             // set minimum height of editor
+            maxHeight: null,             // set maximum height of editor
+            focus: false,                 // set focus to editable area after initializing summernote,
+            toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript','fontname','forecolor']],
+                    ['fontsize', ['fontsize']],
+                    ['height', ['height']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph','height']],
+                    ['table', ['table']],
+                    ['view', ['fullscreen', 'codeview', 'undo', 'redo', 'help']]
+                    
+                ]
+        });
+        $('.inline-editor').summernote({
+            airMode: true
+        });
+    });
+
+
+    // Data bound after Patient selection
+    $(function () {        
+        $("#cmbPatient").change(function () {
+            $('#lblError').html('');
+            bindPatientData()
+        });
+    });
+
+    //
+    function bindPatientData() {
+        $('#lblError').html('');
+        var data = {
+            IN_USER_ID: "1",
+            IN_BRANCH_ID: "1",
+            IN_ID: $("#cmbPatient").val(),
+            IN_CODE: "0",
+            IN_ADMISSION_STATUS_ID: "1",
+            IN_STATUS: "0"
+        };
+        $.ajax({
+            url: 'getAdmittedPatientDetails',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    if ($("#cmbPatient").val() === '0') {   
+                            //$('#txtPCode').val("");       
+                            $('#cmbServiceCategory').val(0).change();
+                            $('#cmbGender').val(0).change();  
+                            $('#txtAge').val("");                           
+                            $('#txtMobile').val("");                            
+                            $('#txtKinName').val("");   
+                            $('#txtKMobile').val("");   
+                            $('#txtQty').val("1");  
+                            $('#txtWard').val(""); 
+                            $('#cmbBed').val(0).change();            
+                    }
+                    else {
+                            console.log(data[0]);                                
+                            $('#txtGender').val(data[0].GENDER);
+                            $('#txtAge').val(data[0].AGE);                            
+                            $('#txtMobile').val(data[0].MOBILE);                           
+                            $('#txtKinName').val(data[0].KIN_NAME);   
+                            $('#txtKMobile').val(data[0].KIN_MOBILE);  
+                            $('#txtQty').val("1");   
+                            $('#txtWard').val(data[0].WARD);     
+                            $('#cmbBed').val(data[0].BED_ID).change();   
+                            //
+                            $(".summernote").summernote("code",data[0].DISCHARGE_NOTE);
+
+                    }
+                }
+            },
+            error: function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+                return false;
+            }
+        });
+    }
+   
+
+    //Save event
+    $("#btnsave").on("click", function () {    
+        //var inpObj1 = document.getElementById("txtQty");
+        //var inpObj2 = document.getElementById("txtAmount");
+        //if (!inpObj1.checkValidity() || !inpObj2.checkValidity()) {
+         //   alert("Please fill in the required fields:");
+        //}
+        //else {  
+            $('#lblError').html('');
+            content = ($('.summernote').summernote('code'));
+            var data = {
+                "IN_USER_ID": "0",
+                "IN_BRANCH_ID": "0",
+                "IN_AID": $("#cmbPatient").val(),
+                "IN_PID":  "0",                
+                "IN_APPROVAL_ID": $("#cmbDr").val(),
+                "IN_DISCHARGE_STATUS_ID": "1",
+                "IN_DISCHARGE_DT": new Date(),
+                "IN_DESCRIPTION":  $("#txtDescription").val(),
+                "IN_DISCHARGE_NOTE": content,
+                "IN_STATUS": "1", //$("#cmbStatus").val(),
+            }
+            console.log("data",  data)
+            $.ajax({
+                url: 'saveipdPatientDischarge',
+                type: "POST",
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.message == 0)
+                    {
+                        alert("Save Error!!");   
+                        return false;                     
+                    }
+                    else
+                    {
+                        alert("Save Successfully.");
+                        window.location.reload(true);
+                    }                        
+                },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    alert(msg);
+                    return false;
+                }
+            });       
+        //}
+    
+    });
+
+
+</script>

@@ -1,0 +1,439 @@
+<!-- Start content -->
+<div class="content">
+    <div class="container-fluid">
+        <label for="inputCity" class="col-form-label"></label>
+        <!-- Form row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-box">
+                    {{!-- <form>      --}}
+                        <div class="form-row">
+                            <div class="form-group col-md-7">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card-box table-responsive">
+                                            <h4 class="m-t-0 header-title"><b>Admission Patient Details</b></h4>
+                                            <p class="text-muted font-13 m-b-30">
+
+                                            </p>
+                                            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:5%">ID_P</th>
+                                                        <th style="width:5%">ID</th>
+                                                        <th style="width:10%">PID</th>
+                                                        <th style="width:10%">AID</th>
+                                                        <th style="width:40%">NAME</th>
+                                                        <th style="width:10%">WARD</th>                                                        
+                                                        <th style="width:10%">BED</th>
+                                                        <th>PAYER_ID</th>
+                                                        <th>PAYER</th>
+                                                        <th>GENDER_ID</th>
+                                                        <th>GENDER</th>
+                                                        <th>ADMISSION_DR_ID</th>
+                                                        <th>DOCTOR</th>
+                                                        <th>AGE</th>
+                                                        <th>DOB</th>
+                                                        <th>MOBILE</th>
+                                                        <th>BLOOD_GROUP_ID</th>
+                                                        <th>BLOOD_GROUP</th>
+                                                        <th>KIN_NAME</th>
+                                                        <th>KIN_MOBILE</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-5">
+                                <div class="form-row">
+                                    <div class="form-group col-md-1" hidden>
+                                        <label for="Name" class="col-form-label">PID</label>
+                                        <input type="text" id="txtPID" name="txtPID_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+
+                                    <div class="form-group col-md-1" hidden>
+                                        <label for="Name" class="col-form-label">AID</label>
+                                        <input type="text" id="txtAID" name="txtAID_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+
+                                    <div class="form-group col-md-8">
+                                        <label for="Name" class="col-form-label">Patient</label>
+                                        <input type="text" id="txtPatient" name="txtPatient_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="Name" class="col-form-label">Age (Yr.)</label>
+                                        <input type="text" id="txtAge" name="txtAge_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="Name" class="col-form-label">Gender</label>
+                                        <input type="text" id="txtGender" name="txtGender_n" class="form-control" autocomplete="off" placeholder="" disabled>                                       
+                                    </div> 
+
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">Mobile</label>
+                                        <input type="text" id="txtMobile" name="txtMobile_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">Ward</label>
+                                        <input type="text" id="txtWard" name="txtWard_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div> 
+                                    
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">Bed</label>
+                                        <input type="text" id="txtBed" name="txtBed_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div> 
+                                </div> 
+
+                                <div class="form-row">   
+                                    <div class="form-group col-md-8">
+                                        <label for="UID" class="col-form-label">Kin Name</label>
+                                    <input type="text" id="txtKinName" name="txtKinName_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">Kin Mobile</label>
+                                        <input type="text" id="txtKMobile" name="txtKMobile_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+                                </div>  
+
+                                <div class="form-row">   
+                                    <div class="form-group col-md-8">
+                                        <label for="Name" class="col-form-label">Doctor</label>
+                                        <input type="text" id="txtDoctor" name="txtDoctor_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="UID" class="col-form-label">Payer</label>
+                                    <input type="text" id="txtPayer" name="txtPayer_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>                                    
+                                </div> 
+
+
+                                <div class="form-row"> 
+                                    <div class="form-group col-md-12">
+                                        <label for="Name" class="col-form-label">Select Dr</label>
+                                        <select id="cmbDr" name="cmbDr_n" class="form-control select2"></select>
+                                    </div> 
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="Status" class="col-form-label">Description</label>
+                                        <textarea class="form-control" style="height: 100px;" id="txtDescription" name="txtDescription_n" rows="5"
+                                        placeholder=""></textarea>
+                                    </div>                                       
+                                </div>                                
+
+                                <div class="form-row">                                                                         
+                                    <div class="form-group col-md-6">
+                                        <div class="form-row">
+                                            <label for="Description" class="col-form-label">&nbsp;</label>
+                                            <button id="btnsave" type="button" style="width: 100%; font-size: 14px;"
+                                                class="btn btn-primary btn-rounded w-md waves-effect waves-light">Save Transfer</button>
+                                        </div>
+                                    </div>          
+                                </div>
+                            </div>
+                        </div>    
+                    {{!-- </form> --}}
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+    </div> <!-- container -->
+</div> <!-- content -->
+<footer class="footer text-right">
+</footer>
+
+<script>
+    var defaultdata = {{{ data1 }}};
+    $('#lblFormName').html("IPD Dr. Transfer");
+   
+    //populate dropdown start
+    var option = '';
+    for (var i = 0; i < defaultdata.result.length; i++) {
+        option += '<option value="' + defaultdata.result[i].ID + '">' + defaultdata.result[i].NAME + '</option>';
+    }
+    //$('#cmbStatus').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.EmployeeByEmpCategory_DR.length; i++) {
+        option += '<option value="' + defaultdata.EmployeeByEmpCategory_DR[i].ID + '">' + defaultdata.EmployeeByEmpCategory_DR[i].NAME + '</option>';
+    }
+    $('#cmbDr').append(option); 
+    //populate dropdown end   
+
+    //Populate Grid data after form load
+    $(document).ready(function () {
+        bindGrid();
+        $("#example").dataTable().fnDestroy();
+    });
+
+    // Populate Grid Data 
+    function bindGrid() {
+        var data = {
+            IN_USER_ID: "1",
+            IN_BRANCH_ID: "1",
+            IN_ID: "0",
+            IN_CODE: "0",
+            IN_ADMISSION_STATUS_ID: "1",
+            IN_STATUS: "0"
+        };
+        $.ajax({
+            url: 'getAdmittedPatientDetails',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    dataSet = data;
+                    $('#example').DataTable({
+                        //*****Start
+                        //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        //"order": [0, "desc"], // Order data
+                        //"scrollX": true,
+                        //"scrollY": "500px", //Paging enable disable
+                        //"scrollCollapse": true,//Scroll enable disable
+                        //"paging": false, //Paging enable disable
+                        //"pagingType": "full_numbers", showing all page numbers
+                        //stateSave: true,
+                        //*****End    
+                        /*
+                            ID,CODE,PID,PCODE,NAME,AID,ACODE,
+                            ADMISSION_DR_ID, ADMISSION_DR
+                            PATIENT_NAME,YEAR_ID,                            
+                            ADMISSION_DT,BED_ID,BED,BED_CODE,BED_CATEGORY_ID,
+                            BED_CATEGORY,BED_CATEGORY_CODE,WARD_ID,WARD,WARD_CODE,ADMISSION_STATUS_ID,ADMISSION_STATUS,
+                            ADMISSION_CATEGORY_ID,ADMISSION_CATEGORY,SERVICE_CATEGORY_ID,SERVICE_CATEGORY,REGISTRATION_DT,
+                            PAYER_ID,PAYER,GENDER_ID,GENDER,AGE,DOB,IDENTITY_TYPE_ID,IDENTITY_TYPE,UID,MOBILE,EMAIL,
+                            BLOOD_GROUP_ID,BLOOD_GROUP,HEIGHT,WEIGHT,OBESITY,ADDRESS,CITY,STATE_ID,STATE,COUNTRY_ID,
+                            COUNTRY,PIN,KIN_NAME,KIN_RELATION_ID,KIN_RELATION,KIN_MOBILE,MARITAL_STATUS_ID,
+                            MARITAL_STATUS,RELIGION_ID,RELIGION,PATIENT_CATEGORY_ID,PATIENT_CATEGORY,P_ADDRESS,
+                            P_CITY,P_STATE_ID,P_STATE,P_COUNTRY_ID,P_COUNTRY,P_PIN,NATIONALITY_ID,NATIONALITY,F_NAME,
+                            F_MOBILE,F_EMAIL,M_NAME,M_MOBILE,M_EMAIL,S_NAME,S_MOBILE,S_EMAIL,G_NAME,G_MOBILE,
+                            G_EMAIL,REF_ID,REF_BY,REF_HOSPITAL,ORG_ID,ORG_NAME,ORG_EMP_ID,ORG_MOBILE,ORG_EMAIL,
+                            INS_TYPE,INS_ID,MATURITY_DT,MATURITY_PERIOD,MATURED_AMOUNT,RECOV_AMOUNT,
+                            EMPLOYMENT_CATEGORY_ID,SPECIALIZATION,EMPLOYMENT_STATUS_ID,EMPLOYMENT_STATUS,
+                            EMPLOYMENT_DT,DESCRIPTION,ADMISSION_DESCRIPTION,STATUS_ID,STATUS,BRANCH_ID,
+                            CREATED_BY,CREATED_DT,UPDATED_BY,UPDATED_DT
+                        */
+
+                        data: dataSet,
+                        columns: [ 
+                            { data: "PID" },                        
+                            { data: "AID" },
+                            { data: "PCODE"},
+                            { data: "ACODE"},
+                            { data: "PATIENT_NAME"},
+                            { data: "WARD"},
+                            { data: "BED"},
+                            { data: "PAYER_ID"},
+                            { data: "PAYER"},
+                            { data: "GENDER_ID"},
+                            { data: "GENDER"},
+                            { data: "ADMISSION_DR_ID"},
+                            { data: "ADMISSION_DR"},
+                            { data: "AGE"},
+                            { data: "DOB"},
+                            { data: "MOBILE"},
+                            { data: "BLOOD_GROUP_ID"},
+                            { data: "BLOOD_GROUP"},
+                            { data: "KIN_NAME"},
+                            { data: "KIN_MOBILE"},
+                        ],
+                        "columnDefs": [
+                            {
+                                "targets": [0],
+                                "visible": false,
+                                "searchable": false
+                            },
+                            {
+                                "targets": [1],
+                                "visible": false,
+                                "searchable": false
+                            },                            
+                            {
+                                "targets": [7],
+                                "visible": false,
+                                "searchable": false
+                            },
+                            {
+                                "targets": [8],
+                                "visible": false,
+                                "searchable": false
+                            },
+                            {
+                                "targets": [9],
+                                "visible": false,
+                                "searchable": false
+                            },
+                            {
+                                "targets": [10],
+                                "visible": false,
+                                "searchable": false
+                            },
+                            {
+                                "targets": [11],
+                                "visible": false,
+                                "searchable": false
+                            },
+                            {
+                                "targets": [12],
+                                "visible": true,
+                                "searchable": true
+                            },
+                            {
+                                "targets": [13],
+                                "visible": false,
+                                "searchable": false
+                            },
+                            {
+                                "targets": [14],
+                                "visible": false,
+                                "searchable": false
+                            },
+                            {
+                                "targets": [15],
+                                "visible": false,
+                                "searchable": false
+                            },
+                            {
+                                "targets": [16],
+                                "visible": false,
+                                "searchable": false
+                            },
+                            {
+                                "targets": [17],
+                                "visible": false,
+                                "searchable": false
+                            },
+                            {
+                                "targets": [18],
+                                "visible": false,
+                                "searchable": false
+                            },
+                            {
+                                "targets": [19],
+                                "visible": false,
+                                "searchable": false
+                            }
+                        ]
+                        // implemented export option
+                        , dom: 'Bfrtip',
+                        buttons: [
+                            'copy', 'csv', 'excel', 'pdf', 'print'
+                        ]
+                        // implemented export option End                            
+                    });
+                    var table = $('#example').DataTable();
+
+                    $('#example tbody').on('click', 'tr', function () {
+                        if ($(this).hasClass('selected')) {
+                            $(this).removeClass('selected');
+                        }
+                        else {
+                            table.$('tr.selected').removeClass('selected');
+                            $(this).addClass('selected');
+                        }
+                        //Populating textbox after row grid select
+                        var gridData = table.row( this ).data();
+                        $('#txtPatient').val(gridData.PATIENT_NAME);
+                        $('#txtAge').val(gridData.AGE);
+                        $('#txtGender').val(gridData.GENDER);
+                        $('#txtMobile').val(gridData.MOBILE);
+                        $('#txtWard').val(gridData.WARD);
+                        $('#txtBed').val(gridData.BED);
+                        $('#txtKinName').val(gridData.KIN_NAME);
+                        $('#txtKMobile').val(gridData.KIN_MOBILE);
+                        $('#txtDoctor').val(gridData.ADMISSION_DR);
+                        $('#txtPayer').val(gridData.PAYER);
+                        $('#txtAID').val(gridData.AID);
+                        $('#txtPID').val(gridData.PID);
+                        
+                        //$('#TxtV2').val(gridData.CODE);
+                        //console.log(table.row( this ).data());
+                    });
+                }
+            }
+        });
+    }
+
+    //Save event
+    $("#btnsave").on("click", function () {    
+        var inpObj1 = document.getElementById("txtAID");
+        var inpObj2 = document.getElementById("txtBed");
+        if (!inpObj1.checkValidity() || !inpObj2.checkValidity()) {
+            alert("Please fill in the required fields:");
+        }
+        else {  
+           $('#lblError').html('');            
+            var data = {
+                "IN_USER_ID": "0",
+                "IN_BRANCH_ID": "0",
+                "IN_AID": $("#txtAID").val(), 
+                "IN_PID": $("#txtPID").val(), 
+                "IN_APPROVAL_ID": "0",
+                "IN_DR_ID":  $("#cmbDr").val(),
+                "IN_TRANSFER_DT":  new Date(),          
+                "IN_DESCRIPTION": $("#txtDescription").val(),
+                "IN_STATUS": "1", //$("#cmbStatus").val(),
+            }
+            console.log("data",  data)
+            $.ajax({
+                url: 'saveipdDrTransfer',
+                type: "POST",
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.message == 0)
+                    {
+                        alert("Save Error!!");   
+                        return false;                     
+                    }
+                    else
+                    {
+                        alert("Save Successfully.");
+                        window.location.reload(true);
+                    } 
+                },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    alert(msg);
+                    return false;
+                }
+            });       
+        }    
+    });
+      
+</script>

@@ -1,0 +1,349 @@
+<!-- Start content -->
+<div class="content">
+    <div class="container-fluid">
+        <label for="inputCity" class="col-form-label"></label>
+        <!-- Form row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-box">
+                    {{!-- <form>      --}}
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                                <div class="form-row">
+                                    <div class="form-group col-md-10">
+                                        <label for="Name" class="col-form-label">Patient</label>
+                                        <select id="cmbPatient" name="cmbPatient_n" class="form-control select2"></select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="Name" class="col-form-label">Age (Yr.)</label>
+                                        <input type="text" id="txtAge" name="txtAge_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-1" hidden>
+                                        <label for="Name" class="col-form-label">PID</label>
+                                        <input type="text" id="txtPID" name="txtPID_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div> 
+
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">PID</label>
+                                        <input type="text" id="txtPCode" name="txtPCode_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+
+                                    <div class="form-group col-md-8">
+                                        <label for="Name" class="col-form-label">Patient Name</label>
+                                        <input type="text" id="txtName" name="txtName_n" class="form-control" autocomplete="off" placeholder="Name" disabled>
+                                    </div>  
+                                    
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">Gender</label>
+                                        <input type="text" id="txtGender" name="txtGender_n" class="form-control" autocomplete="off" placeholder="" disabled>                                       
+                                    </div>     
+
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">Mobile</label>
+                                        <input type="text" id="txtMobile" name="txtMobile_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>    
+
+                                    <div class="form-group col-md-1" hidden>
+                                        <label for="Name" class="col-form-label">AID</label>
+                                        <input type="text" id="txtAID" name="txtAID_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div> 
+
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">AID</label>
+                                        <input type="text" id="txtACode" name="txtACode_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>            
+                                </div> 
+
+                                <div class="form-row">   
+                                    <div class="form-group col-md-6">
+                                        <label for="Name" class="col-form-label">Select Identity Type &nbsp;</label>
+                                        <input type="text" id="txtIdentity" name="txtIdentity_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Name" class="col-form-label">UID Number</label>
+                                        <input type="text" id="txtUID" name="txtUID_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="form-group col-md-7">
+                                <div class="form-row">     
+                                    <div class="form-group col-md-5">                                        
+
+                                        <div class="form-row">     
+                                            <div class="form-group col-md-12">
+                                                <label for="Status" class="col-form-label">Service Amount</label>
+                                                <input type="text" id="txtServiceAmount" name="txtServiceAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">     
+                                            <div class="form-group col-md-12">
+                                                <label for="Status" class="col-form-label">Total Advance Amount</label>
+                                                <input type="text" id="txtTAmount" name="txtTAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                            </div>
+                                        </div>
+                                                                        
+                                        <div class="form-row"> 
+                                            <div class="form-group col-md-12">
+                                                <label for="Name" class="col-form-label">Received By</label>
+                                                <select id="cmbEmployee" name="cmbEmployee_n" class="form-control select2"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">     
+                                            <div class="form-group col-md-12">
+                                                <label for="Status" class="col-form-label">Amount</label>
+                                                <input type="text" id="txtAmount" name="txtAmount_n" class="form-control" autocomplete="off" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                       
+                                    <div class="form-group col-md-7">
+                                        <div class="form-row">    
+                                            <div class="form-group col-md-12">
+                                                <label for="Description" class="col-form-label">Description</label>
+                                                <textarea class="form-control" style="height: 185px;" id="txtDescription" name="txtDescription_n" rows="5"
+                                                    placeholder=""></textarea>                         
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <button id="btnsave" type="button" style="width: 100%; font-size: 14px;"
+                                                class="btn btn-primary btn-rounded w-md waves-effect waves-light">Save Bill</button>
+                                            </div>                                    
+                                        </div> 
+                                    </div>                                    
+                                </div> 
+                                 
+                            </div>
+                        </div>    
+                    {{!-- </form> --}}
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card-box table-responsive">
+                    <h4 class="m-t-0 header-title"><b></b></h4>
+                    {{!-- <p class="text-muted font-13 m-b-30">
+
+                    </p> --}}
+                    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>SERVICE CHARGE ID </th>
+                                <th>SERVICE ID </th>
+                                <th style="width:55%">SERVICE </th>
+                                <th>DOCTOR ID </th>
+                                <th>DOCTOR</th>   
+                                <th style="width:15%">SERVICE CHARGE</th> 
+                                <th>TAX</th>
+                                <th>DISC</th>                                
+                                <th style="width:15%">SERVICE AMOUNT</th>
+                                <th style="width:15%">QUANTITY</th>
+                                <th style="width:15%">SERVICE TOTAL</th>                                 
+                                <th>DESCRIPTION</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div> <!-- container -->
+</div> <!-- content -->
+<footer class="footer text-right">
+</footer>
+
+<script>
+    var defaultdata = {{{ data1 }}};
+    $('#lblFormName').html("Advance");
+   
+    //populate dropdown start
+    var option = '';
+    for (var i = 0; i < defaultdata.result.length; i++) {
+        option += '<option value="' + defaultdata.result[i].ID + '">' + defaultdata.result[i].NAME + '</option>';
+    }
+    //$('#cmbStatus').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.response_Patient.length; i++) {
+        option += '<option value="' + defaultdata.response_Patient[i].ID + '">' + defaultdata.response_Patient[i].NAME + '</option>';
+    }
+    $('#cmbPatient').append(option);
+
+    
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.EmployeeByEmpCategory.length; i++) {
+        option += '<option value="' + defaultdata.EmployeeByEmpCategory[i].ID + '">' + defaultdata.EmployeeByEmpCategory[i].NAME + '</option>';
+    }
+    $('#cmbEmployee').append(option);
+
+    //populate dropdown end   
+
+    // Data bound after Patient selection
+    $(function () {        
+        $("#cmbPatient").change(function () {
+            $('#lblError').html('');
+            bindPatientData()
+        });
+    });
+
+    //
+    function bindPatientData() {
+        $('#lblError').html('');
+        var data = {
+            IN_USER_ID: "1",
+            IN_BRANCH_ID: "1",
+            IN_ID: $("#cmbPatient").val(),
+            IN_CODE: "0",
+            IN_STATUS: "0"
+        };
+        $.ajax({
+            url: 'getPatientRegistrationByID',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    if ($("#cmbPatient").val() === '0') {                               
+                            $('#txtPID').val("");
+                            $('#txtPCode').val(""); 
+                            $('#txtAge').val("");     
+                            $('#txtName').val(""); 
+                            $('#txtGender').val(""); 
+                            $('#txtMobile').val("");  
+                            $('#txtAID').val("");
+                            $('#txtACode').val("");
+                            $('#txtIdentity').val("");
+                            $('#txtUID').val("");
+                            //
+                            $('#txtServiceAmount').val("");
+                            $('#txtTAmount').val("");                                                  
+                            $('#cmbEmployee').val(0).change();
+                            //
+                            $('#txtAmount').val("");                           
+                            //                     
+                            $('#txtDescription').val("");           
+                    }
+                    else {
+                            //console.log(data[0]);   
+                            $('#txtPID').val(data[0].ID);
+                            $('#txtPCode').val(data[0].CODE); 
+                            $('#txtAge').val(data[0].AGE);
+                            $('#txtName').val(data[0].PATIENT_NAME);                            
+                            $('#txtGender').val(data[0].GENDER);                            
+                            $('#txtMobile').val(data[0].MOBILE); 
+                            $('#txtAID').val(data[0].ADMIISSION_ID);
+                            $('#txtACode').val(data[0].ADMISSION_CODE);
+                            $('#txtIdentity').val(data[0].IDENTITY_TYPE);
+                            $('#txtUID').val(data[0].UID).change();                                                      
+                            
+                    }
+                }
+            },
+            error: function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+                return false;
+            }
+        });
+    }
+   
+    //Save event
+    $("#btnsave").on("click", function () {    
+        var inpObj1 = document.getElementById("txtAmount");
+        var inpObj2 = document.getElementById("txtAmount");
+
+        if (!inpObj1.checkValidity() || !inpObj2.checkValidity()) {
+            alert("Please fill in the required fields:");
+        }
+        else {  
+            $('#lblError').html('');
+            var data = {
+                "IN_USER_ID": "0",
+                "IN_BRANCH_ID": "0",
+                "IN_PID":  $("#txtPID").val(),         
+                "IN_ADVANCE_AMOUNT": $("#txtAmount").val(),
+                "IN_RECEIVED_BY": $("#cmbEmployee").val(), 
+                "IN_RECEIVED_NOTE":  "",   
+                "IN_DESCRIPTION": $("#txtDescription").val(),
+                "IN_STATUS": "1", //$("#cmbStatus").val(),
+            }
+            console.log("data",  data)
+            $.ajax({
+                url: 'saveipdAdvance',
+                type: "POST",
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.message == 0)
+                    {
+                        alert("Save Error!!");   
+                        return false;                     
+                    }
+                    else
+                    {
+                        alert("Save Successfully.");
+                        window.location.reload(true);
+                    }
+                },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    alert(msg);
+                    return false;
+                }
+            });       
+        }    
+    });
+
+</script>

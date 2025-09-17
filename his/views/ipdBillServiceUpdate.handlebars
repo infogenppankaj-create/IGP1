@@ -1,0 +1,748 @@
+<!-- Start content -->
+<div class="content">
+    <div class="container-fluid">
+        <label for="inputCity" class="col-form-label"></label>
+        <!-- Form row -->
+        <div class="row">
+                <div class="col-5">
+                    <div class="form-row">                                               
+                        <div class="form-group col-md-10">
+                            <label for="Name" class="col-form-label">Patient</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label for="Name" id ="lblBillStatus" class="col-form-label"></label>
+                            <select id="cmbPatient" name="cmbPatient_n" class="form-control select2"></select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="Name" class="col-form-label">Age (Yr.)</label>
+                            <input type="text" id="txtAge" name="txtAge_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="Name" class="col-form-label">Gender</label>
+                            <input type="text" id="txtGender" name="txtGender_n" class="form-control" autocomplete="off" placeholder="" disabled>                                       
+                        </div>     
+
+                        <div class="form-group col-md-3">
+                            <label for="Name" class="col-form-label">Mobile</label>
+                            <input type="text" id="txtKMobile" name="txtKMobile_n" class="form-control" autocomplete="off" placeholder="Kin Mob." disabled>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="UID" class="col-form-label">Kin Name</label>
+                            <input type="text" id="txtKinName" name="txtKinName_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                        </div>
+                    </div> 
+
+                    <div class="form-row">                                                  
+                        <div class="form-group col-md-3">
+                            <label for="Name" class="col-form-label">Ward</label>
+                            <input type="text" id="txtWard" name="txtWard_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                        </div> 
+                        
+                        <div class="form-group col-md-3">
+                            <label for="Name" class="col-form-label">Bed</label>
+                            <input type="text" id="txtBed" name="txtBed_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                        </div> 
+
+                        <div class="form-group col-md-6">
+                            <label for="Name" class="col-form-label">Payer</label>
+                            <input type="text" id="txtPayer" name="txtPayer_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                        </div>
+                    </div>  
+
+                    <div class="form-row">   
+                        <div class="form-group col-md-12">
+                            <label for="Name" class="col-form-label">Update Approver </label>
+                            <select id="cmbApprover" name="cmbApprover_n" class="form-control select2"></select>
+                        </div>
+                    </div>  
+
+                    <div class="form-group col-md-4" hidden>
+                        <input type="text" id="txtBillID" name="txtBillID_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                    </div> 
+                </div>
+                
+                <div class="col-7">
+                    <div class="form-row"> 
+
+                        <div class="form-group col-md-2" hidden>
+                            <input type="text" id="txtBillDtlID" name="txtBillDtlID_n" class="form-control" autocomplete="off" placeholder="">
+                        </div> 
+
+                        <div class="form-group col-md-2" hidden>
+                            <input type="text" id="txtBillDtlServiceID" name="txtBillDtlServiceID_n" class="form-control" autocomplete="off" placeholder="">
+                        </div>     
+                        
+                        <div class="form-group col-md-6">
+                            <label for="Name" class="col-form-label">Service</label>
+                            <input type="text" id="txtService" name="txtService_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                        </div>    
+
+                        <div class="form-group col-md-2">
+                            <label for="Name" class="col-form-label">Amount </label>
+                            <input type="text" id="txtTAmount" name="txtTAmount_n" class="form-control" autocomplete="off" placeholder="">
+                        </div>
+                        
+                        <div class="form-group col-md-2">
+                            <label for="Name" class="col-form-label">H. Amount </label>
+                            <input type="text" id="txtHAmount" name="txtHAmount_n" class="form-control" autocomplete="off" placeholder="" required>
+                        </div>
+                        
+                        <div class="form-group col-md-2">
+                            <label for="Name" class="col-form-label">Dr. Amount </label>
+                            <input type="text" id="txtDrAmount" name="txtDrAmount_n" class="form-control" autocomplete="off" placeholder="">
+                        </div>
+                    </div>  
+
+                    <div class="form-row"> 
+                        <div class="form-group col-md-6">
+                            <label for="Status" class="col-form-label">Doctor</label>
+                            <select id="cmbDr" name="cmbDr_n" class="form-control select2"></select>
+                        </div>                         
+
+                        <div class="form-group col-md-2">
+                            <label for="Status" class="col-form-label">Qty</label>
+                            <input type="text" id="txtQty" name="txtQty_n" class="form-control" autocomplete="off" placeholder="">
+                        </div>  
+
+                        <div class="form-group col-md-2">
+                            <label for="Status" class="col-form-label">TAX (%)</label>
+                            <input type="text" id="txtTAX" name="txtTAX_n" class="form-control" autocomplete="off" placeholder="">
+                        </div>  
+
+                        <div class="form-group col-md-2">
+                            <label for="Status" class="col-form-label">Discount (%)</label>
+                            <input type="text" id="txtDiscount" name="txtDiscount_n" class="form-control" autocomplete="off" placeholder="">
+                        </div>                          
+                    </div>  
+
+                    <div class="form-row"> 
+                        <div class="form-group col-md-6">
+                                <label for="Description" class="col-form-label">Update Description<span class="text-danger">*</span></label>
+                                <textarea class="form-control" style="height: 100px;" id="txtDescription" name="txtDescription_n" rows="5"
+                                    placeholder="" required></textarea>
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <div class="form-group col-md-12">
+                                <label for="Name" class="col-form-label">Patient Amount </label>
+                                <input type="text" id="txtPatientAmount" name="txtPatientAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                            </div>
+                            
+                            <div class="form-group col-md-12">
+                                <label for="Status" class="col-form-label">Status</label>
+                                <select id="cmbStatus" name="cmbStatus_n" class="form-control select2"></select>
+                            </div>
+                        </div>  
+
+                        <div class="form-group col-md-3">
+                            <div class="form-group col-md-12">
+                                <label for="Name" class="col-form-label">Payer Amount </label>
+                                <input type="text" id="txtPayerAmount" name="txtPayerAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                            </div>  
+                            
+                            <div class="form-group col-md-12">
+                                <label for="Status" class="col-form-label"> </label>
+                                <button id="btnsave" type="button" style="width: 100%;font-size: 18px;"
+                                    class="btn btn-primary btn-rounded w-md waves-effect waves-light">Update Service</button>
+                            </div>
+                        </div>  
+
+                    </div>                
+                </div>     
+
+                <div class="col-5">                    
+                    <div class="form-row">
+                        <div class="card-box table-responsive">
+                            <h4 class="m-t-0 header-title"><b>IPD Bills</b></h4>
+                            <p class="text-muted font-13 m-b-30">
+                            </p>
+                            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th style="width:5%">ID</th>
+                                        <th>BILL NO</th>
+                                        <th>PID</th>
+                                        <th>AID</th>
+                                        <th>BILL DT</th>
+                                        <th>BILL AMOUNT</th> 
+                                        <th>CATEGORY </th>
+                                        <th>PAYER </th>                                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>                        
+                    </div>      
+
+                    <div class="form-row" style="display: none;">                      
+                        <div class="form-group col-md-3">     
+                            <label for="Name" class="col-form-label">&nbsp;</label>                             
+                            <input type="text" id="txtID" name="txtID_n" class="form-control" autocomplete="off" placeholder="" required>
+                            {{!-- <input type="text" id="txtID" name="txtID_n" class="form-control" autocomplete="off" placeholder=""> --}}
+                        </div>
+
+                        <div class="form-group col-md-3">     
+                            <label for="Name" class="col-form-label">&nbsp;</label>                             
+                            <input type="text" id="txtServiceID" name="txtServiceID_n" class="form-control" autocomplete="off" placeholder="" required>
+                        </div>
+
+                        <div class="form-group col-md-3">     
+                            <label for="Name" class="col-form-label">&nbsp;</label>                             
+                            <input type="text" id="txtTariffID" name="txtTariffID_n" class="form-control" autocomplete="off" placeholder="" required>
+                        </div>
+
+                        <div class="form-group col-md-3">     
+                            <label for="Name" class="col-form-label">&nbsp;</label>                             
+                            <input type="text" id="txtServiceCategoryID" name="txtServiceCategoryID_n" class="form-control" autocomplete="off" placeholder="" required>
+                        </div>
+                    </div>    
+                </div>
+
+                <div class="col-7">                    
+                    <div class="form-row">
+                        <div class="card-box table-responsive">
+                            <h4 class="m-t-0 header-title"><b>IPD Bill Details</b></h4>
+                            <p class="text-muted font-13 m-b-30">
+                            </p>
+                            <table id="example1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr> 
+                                        <th style="width:5%">ID</th>
+                                        <th>BILL NO</th>
+                                        <th>SERVICE ID</th>
+                                        <th>SERVICE</th>
+                                        <th>DR ID</th>
+                                        <th>DR.</th>
+                                        <th>SERVICE AMOUNT</th>
+                                        <th>QUANTITY</th>                                        
+                                        <th>PATIENT AMOUNT</th>
+                                        <th>PAYER AMOUNT</th>                                                                            
+                                        <th>DR AMOUNT</th>
+                                        <th>H AMOUNT</th>
+                                        <th>OTH AMOUNT</th>
+                                        <th>TAX</th>
+                                        <th>TAX_P</th>
+                                        <th>DISC</th>
+                                        <th>DISC_P</th>
+                                        <th>R_BILL_AMOUNT</th>
+                                        <th>TOTAL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>                        
+                    </div>                           
+                </div>
+                
+        </div>
+
+    </div> <!-- container -->
+</div> <!-- content -->
+<footer class="footer text-right">
+</footer>
+
+<script>
+    var defaultdata = {{{ data1 }}};
+    $('#lblFormName').html("IP Bill Service Update");
+    $('#txtAge').attr('disabled', true);
+    $('#txtGender').attr('disabled', true);
+    $('#txtKMobile').attr('disabled', true);
+    $('#txtKinName').attr('disabled', true);
+    $('#txtWard').attr('disabled', true);
+    $('#txtBed').attr('disabled', true);
+    $('#txtPayer').attr('disabled', true);
+    $('#txtService').attr('disabled', true);
+    $('#txtTAmount').attr('disabled', true);  
+    $('#txtHAmount').attr('disabled', true);  
+    $('#txtDrAmount').attr('disabled', true);    
+    
+    
+    //populate dropdown start
+    var option = '';
+    for (var i = 0; i < defaultdata.result.length; i++) {
+        option += '<option value="' + defaultdata.result[i].ID + '">' + defaultdata.result[i].NAME + '</option>';
+    }
+    $('#cmbStatus').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Admitter_Patient_List.length; i++) {
+        option += '<option value="' + defaultdata.Admitter_Patient_List[i].ID + '">' + defaultdata.Admitter_Patient_List[i].NAME + '</option>';
+    }
+    $('#cmbPatient').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.EmployeeByEmpCategory_Dr.length; i++) {
+        option += '<option value="' + defaultdata.EmployeeByEmpCategory_Dr[i].ID + '">' + defaultdata.EmployeeByEmpCategory_Dr[i].NAME + '</option>';
+    }
+    $('#cmbDr').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.EmployeeByEmpCategory_Approver.length; i++) {
+        option += '<option value="' + defaultdata.EmployeeByEmpCategory_Approver[i].ID + '">' + defaultdata.EmployeeByEmpCategory_Approver[i].NAME + '</option>';
+    }
+    $('#cmbApprover').append(option);
+
+    //populate dropdown end   
+    
+    // Form Load
+    $(document).ready(function () {
+        bindGridHeader();            
+        $("#example").dataTable().fnDestroy();
+        
+        $('#txtBillID').val("0"); 
+        //reset data
+        $('#txtBillDtlID').val("");
+        $('#txtBillDtlServiceID').val("");
+        $('#txtService').val("");
+        $('#txtTAmount').val("");
+        $('#txtHAmount').val("");
+        $('#txtDrAmount').val("");
+        $('#cmbDr').val("0").change();
+        $('#txtQty').val("");
+        $('#txtTAX').val("");
+        $('#txtDiscount').val("");
+        $('#txtPatientAmount').val("");
+        $('#txtPayerAmount').val("");
+        
+        bindGridDetails();
+        $("#example1").dataTable().fnDestroy();
+    });
+
+    // Data bound after Patient selection
+    $(function () {        
+        $("#cmbPatient").change(function () {
+            $('#lblError').html('');
+            bindPatientData()
+            //
+            bindGridHeader();            
+            $("#example").dataTable().fnDestroy();
+            
+            $('#txtBillID').val("0"); // initial reset
+            //reset data
+            $('#txtBillDtlID').val("");
+            $('#txtBillDtlServiceID').val("");
+            $('#txtService').val("");
+            $('#txtTAmount').val("");
+            $('#txtHAmount').val("");
+            $('#txtDrAmount').val("");
+            $('#cmbDr').val("0").change();
+            $('#txtQty').val("");
+            $('#txtTAX').val("");
+            $('#txtDiscount').val("");
+            $('#txtPatientAmount').val("");
+            $('#txtPayerAmount').val("");
+
+            bindGridDetails();
+            $("#example1").dataTable().fnDestroy();
+        });
+    });
+
+    //
+    $(function () {        
+        $('#example tbody').on( 'click', 'tr',  (event) =>  {
+            var table = $('#example').DataTable();
+            if ($(event.currentTarget).hasClass('selected')) {
+                $(event.currentTarget).removeClass('selected');
+            }
+            else {
+                table.rows('.selected').nodes().each((row) => row.classList.remove('selected'));
+                $(event.currentTarget).addClass('selected');
+            }
+            //console.log( table.row( event.currentTarget ).data() );
+            var gridData = table.row( event.currentTarget ).data();
+            //reset data
+            $('#txtBillDtlID').val("");
+            $('#txtBillDtlServiceID').val("");
+            $('#txtService').val("");
+            $('#txtTAmount').val("");
+            $('#txtHAmount').val("");
+            $('#txtDrAmount').val("");
+            $('#cmbDr').val("0").change();
+            $('#txtQty').val("");
+            $('#txtTAX').val("");
+            $('#txtDiscount').val("");
+            $('#txtPatientAmount').val("");
+            $('#txtPayerAmount').val("");
+            //
+            $('#txtBillID').val(gridData.ID);
+            bindGridDetails();
+            $("#example1").dataTable().fnDestroy();
+        } );        
+    });    
+
+    //
+    $(function () {
+        $('#example1 tbody').on( 'click', 'tr',  (event) =>  {
+            var table1 = $('#example1').DataTable();
+            if ($(event.currentTarget).hasClass('selected')) {
+                $(event.currentTarget).removeClass('selected');
+            }
+            else {
+                table1.rows('.selected').nodes().each((row) => row.classList.remove('selected'));
+                $(event.currentTarget).addClass('selected');
+            }
+            var gridData1 = table1.row( event.currentTarget ).data();
+            $('#txtBillDtlID').val(gridData1.ID);
+            $('#txtBillDtlServiceID').val(gridData1.SERVICE_ID);
+            $('#txtService').val(gridData1.S_NAME);
+            $('#txtTAmount').val(gridData1.SERVICE_TOTAL);
+            $('#txtHAmount').val(gridData1.H_AMOUNT);
+            $('#txtDrAmount').val(gridData1.DR_AMOUNT);
+            $('#cmbDr').val(gridData1.DR_ID).change();
+            $('#txtQty').val(gridData1.QUANTITY);
+            $('#txtTAX').val(gridData1.SERVICE_TAX_P);
+            $('#txtDiscount').val(gridData1.SERVICE_DISC_P); 
+            $('#txtPatientAmount').val(gridData1.PATIENT_AMOUNT); 
+            $('#txtPayerAmount').val(gridData1.PAYER_AMOUNT); 
+
+        } );
+    });
+    
+    //
+    function bindPatientData() {
+        $('#lblError').html('');
+        var data = {
+            IN_USER_ID: "1",
+            IN_BRANCH_ID: "1",
+            IN_ID: $("#cmbPatient").val(),
+            IN_CODE: "0",
+            IN_ADMISSION_STATUS_ID: "1",
+            IN_STATUS: "0"
+        };
+        $.ajax({
+            url: 'getAdmittedPatientDetails',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    if ($("#cmbPatient").val() === '0') {   
+                            $('#txtAge').val("");    
+                            $('#txtGender').val("");                        
+                            $('#txtKMobile').val("");                            
+                            $('#txtKinName').val("");     
+                            $('#txtWard').val(""); 
+                            $('#txtBed').val(""); 
+                            $('#txtPayer').val("");    
+                    }
+                    else {
+                            //console.log(data[0]);    
+                            $('#txtAge').val(data[0].AGE);   
+                            $('#txtGender').val(data[0].GENDER);        
+                            $('#txtKMobile').val(data[0].KIN_MOBILE);                           
+                            $('#txtKinName').val(data[0].KIN_NAME);  
+                            $('#txtWard').val(data[0].WARD);    
+                            $('#txtBed').val(data[0].ID); //val(data[0].BED);  
+                            $('#txtPayer').val(data[0].PAYER);  
+                            $('#lblBillStatus').html(data[0].BILL_STATUS); 
+                            //FInal Billing Completed
+                            if ((data[0].BILL_STATUS_ID) ==1 ){
+                                 $('#btnsave').attr('disabled', false);   
+                            }
+                            else if((data[0].BILL_STATUS_ID) == 2 ){
+                                 $('#btnsave').attr('disabled', true);   
+                            }
+                            else {
+                                $('#btnsave').attr('disabled', true);    
+                            }
+                    }
+                }
+            },
+            error: function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+                return false;
+            }
+        });
+    }
+
+    //
+    function bindGridHeader() {
+        var data = {
+            IN_USER_ID: "0",
+            IN_CLIENT_ID: "0",
+            IN_PID: "0",
+            IN_AID: $("#cmbPatient").val(),
+            IN_BILL_ID: "0",
+            IN_TYPE: "0"                           
+        };
+        $.ajax({
+            url: 'getipdBill',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    dataSet = data;
+                    $('#example').DataTable({
+                        //*****Start
+                        //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        "order": [0, "desc"], // Order data
+                        //"scrollX": true,
+                        //"scrollY": "500px", //Paging enable disable
+                        //"scrollCollapse": true,//Scroll enable disable
+                        "paging": false, //Paging enable disable
+                        "searching": false,
+                        "retrieve": true,
+                        //"pagingType": "full_numbers", showing all page numbers
+                        //stateSave: true,
+                        //*****End         
+
+                        data: dataSet,
+                        columns: [                        
+                            { data: "ID" },
+                            { data: "BILL_NO"}, 
+                            { data: "PID"}, 
+                            { data: "AID"}, 
+                            { data: "BILL_DT"}, 
+                            { data: "BILL_AMOUNT"},
+                            { data: "SERVICE_CATEGORY"},
+                            { data: "PAYER"},                              
+                        ],
+                        "columnDefs": [
+                            {
+                                "targets": [0],
+                                "visible": false,
+                                //"searchable": false
+                            },
+                            {
+                                "targets": [2],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [6],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [7],
+                                "visible": false,
+                            }
+                        ]                           
+                    });                    
+                }
+            }
+        });
+    }
+   
+    //
+    function bindGridDetails() {
+        var data = {
+            IN_USER_ID: "0",
+            IN_CLIENT_ID: "0",
+            IN_PID: "0",
+            IN_AID: "0",
+            IN_BILL_ID: $("#txtBillID").val(),
+            IN_TYPE: "1"                           
+        };
+        $.ajax({
+            url: 'getipdBillDetails',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    dataSet = data;
+                    $('#example1').DataTable({
+                        //*****Start
+                        //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        "order": [0, "desc"], // Order data
+                        //"scrollX": true,
+                        //"scrollY": "500px", //Paging enable disable
+                        //"scrollCollapse": true,//Scroll enable disable
+                        "paging": false, //Paging enable disable
+                        "searching": false,
+                        "retrieve": true,
+                        //"pagingType": "full_numbers", showing all page numbers
+                        //stateSave: true,
+                        //*****End   
+                        data: dataSet,
+                        columns: [                        
+                            { data: "ID" },
+                            { data: "BILL_NO"},  
+                            { data: "SERVICE_ID"},  
+                            { data: "S_NAME"},  
+                            { data: "DR_ID"},
+                            { data: "DR_NAME"},
+                            { data: "SERVICE_AMOUNT"}, 
+                            { data: "QUANTITY"},                                
+                            { data: "PATIENT_AMOUNT"},
+                            { data: "PAYER_AMOUNT"},                                                        
+                            { data: "DR_AMOUNT"},  
+                            { data: "H_AMOUNT"},  
+                            { data: "OTH_AMOUNT"},
+                            { data: "SERVICE_TAX"},
+                            { data: "SERVICE_TAX_P"},  
+                            { data: "SERVICE_DISC"},  
+                            { data: "SERVICE_DISC_P"},  
+                            { data: "R_SERVICE_AMOUNT"},
+                            { data: "SERVICE_TOTAL"},
+                        ],
+                        "columnDefs": [
+                            {
+                                "targets": [0],
+                                "visible": false,
+                                //"searchable": false
+                            },
+                            {
+                                "targets": [1],
+                                "visible": false,
+                                //"searchable": false
+                            },
+                            {
+                                "targets": [2],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [4],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [5],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [8],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [9],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [10],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [11],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [12],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [13],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [15],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [17],
+                                "visible": false,
+                            }
+                        ],                                          
+                    });
+                    
+                }
+            }
+        });
+    }
+   
+   //
+    //Save event
+    $("#btnsave").on("click", function () {    
+        var inpObj1 = document.getElementById("txtDescription");
+        var inpObj2 = document.getElementById("txtQty");
+        if (!inpObj1.checkValidity() || !inpObj2.checkValidity()) {
+            alert("Please fill in the required fields:");
+        }
+        else {  
+            $('#lblError').html('');
+            var data = {
+                "IN_USER_ID": "0",
+                "IN_BRANCH_ID": "0",
+                "IN_AID": $("#cmbPatient").val(),
+                "IN_BILL_ID": $("#txtBillID").val(),
+                "IN_BILL_DTL_ID": $("#txtBillDtlID").val(),
+                "IN_SERVICE_ID": $("#txtBillDtlServiceID").val(),
+                "IN_DR_ID": $("#cmbDr").val(),
+                "IN_QUANTITY": $("#txtQty").val(),
+                "IN_TAX": $("#txtTAX").val(),
+                "IN_DISC": $("#txtDiscount").val(),
+                "IN_APPROVER": $("#cmbApprover").val(),
+                "IN_DESCRIPTION": $("#txtDescription").val(),
+                "IN_STATUS": $("#cmbStatus").val(),
+            }
+            //console.log("data",  data)
+            $.ajax({
+                url: 'updateIPDBillService',
+                type: "POST",
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.message == 0)
+                    {
+                        alert("Save Error!!");   
+                        return false;                     
+                    }
+                    else
+                    {
+                        alert("Update Successfully.");
+                        window.location.reload(true);
+                    } 
+                },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    alert(msg);
+                    return false;
+                }
+            });       
+        }    
+    });
+   
+
+</script>

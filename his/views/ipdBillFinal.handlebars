@@ -1,0 +1,711 @@
+<!-- Start content -->
+<div class="content">
+    <div class="container-fluid">
+        <label for="inputCity" class="col-form-label"></label>
+        <!-- Form row -->
+        {{!-- <div class="row">
+            <div class="col-md-12">
+                <div class="card-box">
+                    <form> --}}
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-row">                                               
+                                    <div class="form-group col-md-9">
+                                        <label for="Name" class="col-form-label">Patient</label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label for="Name" id ="lblBillStatus" class="col-form-label"></label>
+                                        <select id="cmbPatient" name="cmbPatient_n" class="form-control select2"></select>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">AID</label>
+                                        <input type="text" id="txtAID" name="txtAID_n" class="form-control" autocomplete="off" placeholder="" disabled>                                       
+                                    </div> 
+                                    
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">PID</label>
+                                        <input type="text" id="txtPID" name="txtPID_n" class="form-control" autocomplete="off" placeholder="" disabled>                                       
+                                    </div>     
+
+                                    <div class="form-group col-md-6">
+                                        <label for="UID" class="col-form-label">Patient Name</label>
+                                        <input type="text" id="txtPatientName" name="txtPatientName_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Age (Yr.)</label>
+                                        <input type="text" id="txtAge" name="txtAge_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>                        
+                                </div> 
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Gender</label>
+                                        <input type="text" id="txtGender" name="txtGender_n" class="form-control" autocomplete="off" placeholder="" disabled>                                       
+                                    </div>     
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Mobile</label>
+                                        <input type="text" id="txtKMobile" name="txtKMobile_n" class="form-control" autocomplete="off" placeholder="Kin Mob." disabled>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="UID" class="col-form-label">Kin Name</label>
+                                        <input type="text" id="txtKinName" name="txtKinName_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+                                </div> 
+
+                                <div class="form-row">                                                  
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Ward</label>
+                                        <input type="text" id="txtWard" name="txtWard_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div> 
+                                    
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Bed</label>
+                                        <input type="text" id="txtBed" name="txtBed_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div> 
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Name" class="col-form-label">Payer</label>
+                                        <input type="text" id="txtPayer" name="txtPayer_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+                                </div>  
+
+                                <div class="col-12">                    
+                                    <div class="form-row">
+                                        <div class="card-box table-responsive">
+                                            <h4 class="m-t-0 header-title"><b>IPD Bills</b></h4>
+                                            <p class="text-muted font-13 m-b-30">
+                                            </p>
+                                            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:5%">ID</th>
+                                                        <th>BILL NO</th>
+                                                        <th>PID</th>
+                                                        <th>AID</th>
+                                                        <th>BILL DT</th>
+                                                        <th>BILL AMOUNT</th> 
+                                                        <th>CATEGORY </th>
+                                                        <th>PAYER </th>                                       
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>                        
+                                    </div>    
+                                </div>
+                            </div>
+                            
+                            <div class="col-6">
+                                <div class="form-row">                         
+                                    <div class="form-group col-md-3" hidden>
+                                        <input type="text" id="txtBillID" name="txtBillID_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Bill No.</label>
+                                        <input type="text" id="txtTxtBillNo" name="txtTxtBillNo_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>    
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Bill Amount </label>
+                                        <input type="text" id="txtBillAmount" name="txtBillAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Service Amount </label>
+                                        <input type="text" id="txtServiceAmount" name="txtServiceAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Bill Payer Amount </label>
+                                        <input type="text" id="txtBillPayerAmount" name="txtBillPayerAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-3">
+                                        <label for="Status" class="col-form-label">Service TAX</label>
+                                        <input type="text" id="txtSTAX" name="txtSTAX_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>  
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Status" class="col-form-label">Service Discount</label>
+                                        <input type="text" id="txtSDiscount" name="txtSDiscount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>           
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Status" class="col-form-label">Bill TAX</label>
+                                        <input type="text" id="txtBillTAX" name="txtBillTAX_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>  
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Status" class="col-form-label">Bill Discount</label>
+                                        <input type="text" id="txtBillDiscount" name="txtBillDiscount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>                        
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Bill Patient Amount </label>
+                                        <input type="text" id="txtBillPatientAmount" name="txtBillPatientAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-3" hidden>
+                                        <label for="Status" class="col-form-label">Status</label>
+                                        <select id="cmbStatus" name="cmbStatus_n" class="form-control select2"></select>
+                                    </div>
+
+                                </div>  
+
+                                <div class="form-row">                      
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Total Bill Amount </label>
+                                        <input type="text" id="txtTotalBillAmount" name="txtTotalBillAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Total Service Amount </label>
+                                        <input type="text" id="txtTotalSAmount" name="txtTotalSAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Status" class="col-form-label">Total TAX</label>
+                                        <input type="text" id="txtTotalTAX" name="txtTotalTAX_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>  
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Status" class="col-form-label">Total Discount</label>
+                                        <input type="text" id="txtTotalDiscount" name="txtTotalDiscount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>   
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Total Payer Amount </label>
+                                        <input type="text" id="txtTotalPayerAmount" name="txtTotalPayerAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>   
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Total Patient Amount </label>
+                                        <input type="text" id="txtTotalPatientAmount" name="txtTotalPatientAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>  
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Total Advance Amount </label>
+                                        <input type="text" id="txtTotalAdvanceAmount" name="txtTotalAdvanceAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>  
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Name" class="col-form-label">Total Due Amount </label>
+                                        <input type="text" id="txtTotalDueAmount" name="txtTotalDueAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>  
+                                </div>  
+
+                                <div class="form-row"> 
+                                    <div class="form-group col-md-4" hidden>
+                                        <label for="Status" class="col-form-label">Final TAX</label>
+                                        <input type="text" id="txtFinalTAX" name="txtFinalTAX_n" class="form-control" autocomplete="off" placeholder="">
+                                    </div>  
+
+                                    <div class="form-group col-md-4" hidden>
+                                        <label for="Status" class="col-form-label">Final Bill Adj./Disc. </label>
+                                        <input type="text" id="txtFinalDiscount" name="txtFinalDiscount_n" class="form-control" autocomplete="off" placeholder="">
+                                    </div>   
+
+                                    <div class="form-group col-md-4" hidden>
+                                        <label for="Name" class="col-form-label">Received Amount </label>
+                                        <input type="text" id="txtFinalReceicedAmount" name="txtFinalReceicedAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>   
+
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">Patient Amount </label>
+                                        <input type="text" id="txtPatientAmount" name="txtPatientAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="Name" class="col-form-label">Payer Amount </label>
+                                        <input type="text" id="txtPayerAmount" name="txtPayerAmount_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                    </div>
+
+                                </div>  
+
+                                <div class="form-row"> 
+                                    
+                                </div>  
+
+                                <div class="form-row"> 
+                                    <div class="form-group col-md-8" hidden>
+                                        <label for="Name" class="col-form-label">Update Approver </label>
+                                        <select id="cmbApprover" name="cmbApprover_n" class="form-control select2"></select>
+                                    </div>
+                                
+
+                                    <div class="form-group col-md-12">
+                                            <label for="Description" class="col-form-label">Final Bill Description<span class="text-danger">*</span></label>
+                                            <textarea class="form-control" style="height: 100px;" id="txtDescription" name="txtDescription_n" rows="5"
+                                                placeholder="" required></textarea>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="Status" class="col-form-label"> </label>
+                                        <button id="btnPrint" type="button" style="width: 100%;font-size: 18px;"
+                                            class="btn btn-primary btn-rounded w-md waves-effect waves-light">Current Bill</button>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-8">
+                                        <label for="Status" class="col-form-label"> </label>
+                                        <button id="btnsave" type="button" style="width: 100%;font-size: 18px;"
+                                            class="btn btn-primary btn-rounded w-md waves-effect waves-light">Save Final Bill</button>
+                                    </div>
+
+                                </div>                
+                            </div>     
+                        </div>
+                    {{!-- </form>
+                </div>
+            </div>
+        </div> --}}
+
+    </div> <!-- container -->
+</div> <!-- content -->
+<footer class="footer text-right">
+</footer>
+
+<script>
+    var defaultdata = {{{ data1 }}};     
+    $('#lblFormName').html("IP Bill Final");
+    $('#txtAge').attr('disabled', true);
+    $('#txtGender').attr('disabled', true);
+    $('#txtKMobile').attr('disabled', true);
+    $('#txtKinName').attr('disabled', true);
+    $('#txtWard').attr('disabled', true);
+    $('#txtBed').attr('disabled', true);
+    $('#txtPayer').attr('disabled', true);
+
+    //populate dropdown start
+    var option = '';
+    for (var i = 0; i < defaultdata.result.length; i++) {
+        option += '<option value="' + defaultdata.result[i].ID + '">' + defaultdata.result[i].NAME + '</option>';
+    }
+    $('#cmbStatus').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Admitter_Patient_List.length; i++) {
+        option += '<option value="' + defaultdata.Admitter_Patient_List[i].ID + '">' + defaultdata.Admitter_Patient_List[i].NAME + '</option>';
+    }
+    $('#cmbPatient').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.EmployeeByEmpCategory_Approver.length; i++) {
+        option += '<option value="' + defaultdata.EmployeeByEmpCategory_Approver[i].ID + '">' + defaultdata.EmployeeByEmpCategory_Approver[i].NAME + '</option>';
+    }
+    $('#cmbApprover').append(option);
+
+    //populate dropdown end   
+    
+    // Form Load
+    $(document).ready(function () {
+        bindGridHeader();            
+        $("#example").dataTable().fnDestroy();
+        
+        $('#txtBillID').val("0"); 
+       
+    });
+
+    // Data bound after Patient selection
+    $(function () {        
+        $("#cmbPatient").change(function () {
+            clearData();
+            $('#lblError').html('');
+            bindPatientData()
+            //
+            bindGridHeader();            
+            $("#example").dataTable().fnDestroy();
+            
+            $('#txtBillID').val("0"); // initial reset
+
+            //bind FinalBill
+            bindFinalBillDataCalc();
+            
+        });
+    });
+
+    //
+    $(function () {        
+        $('#example tbody').on( 'click', 'tr',  (event) =>  {
+            var table = $('#example').DataTable();
+            if ($(event.currentTarget).hasClass('selected')) {
+                $(event.currentTarget).removeClass('selected');
+            }
+            else {
+                table.rows('.selected').nodes().each((row) => row.classList.remove('selected'));
+                $(event.currentTarget).addClass('selected');
+            }
+            //console.log( table.row( event.currentTarget ).data() );
+            var gridData = table.row( event.currentTarget ).data();
+            //
+            $('#txtBillID').val(gridData.ID);
+            $('#txtTxtBillNo').val(gridData.BILL_NO);
+            $('#txtBillAmount').val(gridData.BILL_AMOUNT);
+            $('#txtServiceAmount').val(gridData.SERVICE_AMOUNT);
+            $('#txtBillPayerAmount').val(gridData.PAYER_AMOUNT);
+            $('#txtSTAX').val(gridData.SERVICE_TAX);
+            $('#txtSDiscount').val(gridData.SERVICE_DISC);
+            $('#txtBillTAX').val(gridData.BILL_TAX);
+            $('#txtBillDiscount').val(gridData.BILL_DISC);            
+            $('#txtBillPatientAmount').val(gridData.PATIENT_AMOUNT);
+            
+        } );        
+    });    
+
+    //
+    function bindPatientData() {
+        $('#lblError').html('');
+        var data = {
+            IN_USER_ID: "1",
+            IN_BRANCH_ID: "1",
+            IN_ID: $("#cmbPatient").val(),
+            IN_CODE: "0",
+            IN_ADMISSION_STATUS_ID: "1",
+            IN_STATUS: "0"
+        };
+        $.ajax({
+            url: 'getAdmittedPatientDetails',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    if ($("#cmbPatient").val() === '0') { 
+                            $('#txtAID').val("");    
+                            $('#txtPID').val("");      
+                            $('#txtPatientName').val("");    
+                            $('#txtAge').val("");    
+                            $('#txtGender').val("");                        
+                            $('#txtKMobile').val("");                            
+                            $('#txtKinName').val("");     
+                            $('#txtWard').val(""); 
+                            $('#txtBed').val(""); 
+                            $('#txtBillPayer').val("");    
+                            $('#lblBillStatus').val(""); 
+                    }
+                    else {
+                            //console.log(data[0]);    
+                            $('#txtAge').val(data[0].AGE);   
+                            $('#txtGender').val(data[0].GENDER);        
+                            $('#txtKMobile').val(data[0].KIN_MOBILE);                           
+                            $('#txtKinName').val(data[0].KIN_NAME);  
+                            $('#txtWard').val(data[0].WARD);    
+                            $('#txtBed').val(data[0].ID); //val(data[0].BED);  
+                            $('#txtPayer').val(data[0].PAYER);  
+                            $('#txtAID').val(data[0].CODE);    
+                            $('#txtPID').val(data[0].PCODE);      
+                            $('#txtPatientName').val(data[0].PATIENT_NAME);  
+                            $('#lblBillStatus').html(data[0].BILL_STATUS);  
+
+                            //FInal Billing Eeable
+                            if ((data[0].BILL_STATUS_ID) ==2 ){
+                                 $('#btnsave').attr('disabled', false);                                
+                            }
+                            else {
+                                $('#btnsave').attr('disabled', true);                                                                   
+                            }
+
+                    }
+                }
+            },
+            error: function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+                return false;
+            }
+        });
+    }
+
+    //
+    function bindGridHeader() {
+        var data = {
+            IN_USER_ID: "0",
+            IN_CLIENT_ID: "0",
+            IN_PID: "0",
+            IN_AID: $("#cmbPatient").val(),
+            IN_BILL_ID: "0",
+            IN_TYPE: "0"                           
+        };
+        $.ajax({
+            url: 'getipdBill',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    dataSet = data;
+                    $('#example').DataTable({
+                        //*****Start
+                        //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        "order": [0, "desc"], // Order data
+                        //"scrollX": true,
+                        //"scrollY": "500px", //Paging enable disable
+                        //"scrollCollapse": true,//Scroll enable disable
+                        "paging": false, //Paging enable disable
+                        "searching": false,
+                        "retrieve": true,
+                        //"pagingType": "full_numbers", showing all page numbers
+                        //stateSave: true,
+                        //*****End         
+
+                        data: dataSet,
+                        columns: [                        
+                            { data: "ID" },
+                            { data: "BILL_NO"}, 
+                            { data: "PID"}, 
+                            { data: "AID"}, 
+                            { data: "BILL_DT"}, 
+                            { data: "BILL_AMOUNT"},
+                            { data: "SERVICE_CATEGORY"},
+                            { data: "PAYER"},                              
+                        ],
+                        "columnDefs": [
+                            {
+                                "targets": [0],
+                                "visible": false,
+                                //"searchable": false
+                            },
+                            {
+                                "targets": [2],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [6],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [7],
+                                "visible": false,
+                            }
+                        ]                           
+                    });                    
+                }
+            }
+        });
+    }
+   
+    //
+    function bindFinalBillDataCalc() {
+        $('#lblError').html('');
+        var data = {
+            IN_USER_ID: "1",
+            IN_BRANCH_ID: "1",
+            IN_AID: $("#cmbPatient").val(),
+            IN_TYPE: "0"
+        };
+        $.ajax({
+            url: 'getipdBillFinal',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    if ($("#cmbPatient").val() === '0') { 
+                            $('#txtTotalBillAmount').val("");    
+                            $('#txtTotalSAmount').val("");      
+                            $('#txtTotalTAX').val("");    
+                            $('#txtTotalDiscount').val("");    
+                            $('#txtTotalPayerAmount').val("");                        
+                            $('#txtTotalPatientAmount').val("");                            
+                            $('#txtTotalAdvanceAmount').val("");  
+                            $('#txtFinalTAX').val(""); 
+                            $('#txtFinalDiscount').val("");    
+                            $('#txtFinalReceicedAmount').val("");    
+                            $('#txtPatientAmount').val("");    
+                            $('#txtPayerAmount').val("");    
+                            $('#cmbApprover').val(0).change();
+                            $('#txtDescription').val("");     
+                    }
+                    else {
+                            //console.log(data[0]);    
+                            //$('#txtAge').val(data[0].AGE);   
+                            $('#txtTotalBillAmount').val(data[0].BILL_AMOUNT);     
+                            $('#txtTotalSAmount').val(data[0].SERVICE_AMOUNT);
+                            $('#txtTotalTAX').val(data[0].TOTAL_TAX);
+                            $('#txtTotalDiscount').val(data[0].TOTAL_DISC);   
+                            $('#txtTotalPayerAmount').val(data[0].BILL_PAYER_AMOUNT);                     
+                            $('#txtTotalPatientAmount').val(data[0].BILL_PATIENT_AMOUNT);                        
+                            $('#txtTotalAdvanceAmount').val(data[0].ADVANCE_AMOUNT);
+                            $('#txtTotalDueAmount').val(data[0].PAYBLE_AMOUNT);
+                            $('#txtFinalTAX').val(data[0].FINAL_TAX);
+                            $('#txtFinalDiscount').val(data[0].FINAL_DISC);   
+                            //$('#txtFinalReceicedAmount').val(data[0].RECEIVED_AMOUNT);    
+                            $('#txtPatientAmount').val(data[0].PATIENT_AMOUNT);
+                            $('#txtPayerAmount').val(data[0].PAYER_AMOUNT);
+                            $('#cmbApprover').val(data[0].ORDER_BY).change();
+                            $('#txtDescription').val(data[0].DESCRIPTION);    
+                    }
+                }
+            },
+            error: function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+                return false;
+            }
+        });
+    }
+
+     //
+    function clearData() {
+        $('#txtAID').val("");    
+        $('#txtPID').val("");      
+        $('#txtPatientName').val("");    
+        $('#txtAge').val("");    
+        $('#txtGender').val("");                        
+        $('#txtKMobile').val("");                            
+        $('#txtKinName').val("");     
+        $('#txtWard').val(""); 
+        $('#txtBed').val(""); 
+        $('#txtBillPayer').val("");    
+        //
+        $('#txtTotalBillAmount').val("");    
+        $('#txtTotalSAmount').val("");      
+        $('#txtTotalTAX').val("");    
+        $('#txtTotalDiscount').val("");    
+        $('#txtTotalPayerAmount').val("");                        
+        $('#txtTotalPatientAmount').val("");                            
+        $('#txtTotalAdvanceAmount').val("");  
+        $('#txtFinalTAX').val(""); 
+        $('#txtFinalDiscount').val("");    
+        $('#txtFinalReceicedAmount').val("");    
+        $('#txtPatientAmount').val("");    
+        $('#txtPayerAmount').val("");    
+        $('#cmbApprover').val(0).change();
+        $('#txtDescription').val("");    
+        //
+        $('#txtBillID').val("");
+        $('#txtTxtBillNo').val("");
+        $('#txtBillAmount').val("");
+        $('#txtServiceAmount').val("");
+        $('#txtBillPayerAmount').val("");
+        $('#txtSTAX').val("");
+        $('#txtSDiscount').val("");
+        $('#txtBillTAX').val("");
+        $('#txtBillDiscount').val("");          
+        $('#txtBillPatientAmount').val("");
+    }
+
+   
+
+    //Save event
+     $("#btnsave").on("click", function () {    
+        var inpObj1 = document.getElementById("txtDescription");
+        var inpObj2 = document.getElementById("txtDescription");
+
+        //console.log(grdData);
+
+        if (!inpObj1.checkValidity() || !inpObj2.checkValidity()) {
+            alert("Please fill in the required fields:");
+        }
+        else {  
+            $('#lblError').html('');
+            var data = {
+                "IN_USER_ID": "0",
+                "IN_BRANCH_ID": "0",
+                "IN_YEAR_ID":  "0",
+                "IN_CODE":  "0",
+                "IN_PID":  "0",                
+                "IN_AID": $("#cmbPatient").val(),
+                "IN_TAX":  "0", 
+                "IN_DISC":  "0", 
+                "IN_PATIENT_AMOUNT": "0", 
+                "IN_PAYER_AMOUNT": "0", 
+                "IN_APPROVER": $("#cmbApprover").val(),
+                "IN_DESCRIPTION": $("#txtDescription").val(),
+                "IN_STATUS": "1" //$("#cmbStatus").val()                
+            }
+            console.log("data",  data)
+            $.ajax({
+                url: 'saveipdBillFinal',
+                type: "POST",
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.message == 0)
+                    {
+                        alert("Save Error!!");   
+                        return false;                     
+                    }
+                    else
+                    {
+                        alert("Save Successfully.");
+                        //window.location.reload(true);
+                    }
+                },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    alert(msg);
+                    return false;
+                }
+            });       
+        }    
+    });
+   
+   
+</script>

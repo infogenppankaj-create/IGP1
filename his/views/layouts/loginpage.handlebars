@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+    <script src="/Scripts/js/ClusterAdmin.js"></script>
+    <script src="/Scripts/js/jquery-3.2.1.min.js"></script>
+    <link href=/Content/Css/ClusterAdmin.css rel="stylesheet" />
+    <title><-- Cluster-KIOSK-Admin --></title>
+
+</head>
+<body>
+    <div class="app-container app-theme-white body-tabs-shadow">
+        <div class="app-container">
+            <div class="h-100">
+                <div class="h-100 no-gutters row">
+                    <div class="d-none d-lg-block col-lg-8">
+                        <div class="slick-slider">
+                            <div>
+                                <div class="position-relative h-100 " tabindex="-1">
+                                    <div class="slide-img-bg wide" style="background-image:url(/Content/images/Banner.png)"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-100 d-flex bg-dark text-white justify-content-center align-items-center col-md-12 col-lg-4">
+                        <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
+                            <div>
+                                <img src="/Content/images/logo.jpg" width="90" height="80" />
+                            </div>
+                            <br/>
+                            <h4 class="mb-0">
+                                <span class="d-block">Welcome,</span>
+                                <span>Please sign in to your account.</span>
+                            </h4>
+                            <h7 class="mb-0">
+                                <span class="label-danger" id="lblError"></span>
+                            </h7>
+                            <div class="divider row"></div>
+                            <div>
+                                <form class="">
+                                    <div class="form-row">
+                                        <div class="col-md-6">
+                                            <div class="position-relative form-group">
+                                                <label for="txtuser" class="">UserName</label>
+                                                <input name="username" id="txtuser" placeholder="UserName here..." class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="position-relative form-group">
+                                                <label for="txtPassword" class="">Password</label>
+                                                <input name="password" id="txtPassword" placeholder="Password here..." type="password"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="position-relative form-check">
+                                        <input name="check" id="chk" type="checkbox" class="form-check-input">
+                                        <label for="chk" class="form-check-label">Keep me logged in</label>
+                                    </div>
+                                    <div class="divider row"></div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="ml-auto">
+                                            <input type="submit" id="recoverpwd" class="btn-lg btn btn-link" value="Recover Password">
+                                            <input type="button" id="btnlogin" class="btn btn-gradient-info btn-lg" value="Login" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+ <script>
+    $("#btnlogin").on("click", function () {
+        $('#lblError').html('');
+        var model = {
+            UserName: $("#txtuser").val(),
+            Password: $("#txtPassword").val()
+        };
+             $.ajax({
+                 url: 'http://localhost:8080/api/token/generatetoken/',
+                 type: "POST",
+                 data: JSON.stringify(model),
+                 contentType: "application/json; charset=utf - 8",
+                 success: function (data) {
+                     if (data.length == 0) {
+                         $('#lblError').html("Invalid user.");
+                         return false;
+                     }
+                     else {
+                         //console.log("login successfully")
+                         //window.location.href = '/Dashboard/Admin';
+                         return false;
+                     }
+                     return true;
+                 },
+                 error: function (jqXHR, exception) {
+                     var msg = '';
+                     if (jqXHR.status === 0) {
+                         msg = 'Not connect.\n Verify Network.';
+                     } else if (jqXHR.status == 404) {
+                         msg = 'Requested page not found. [404]';
+                     } else if (jqXHR.status == 500) {
+                         msg = 'Internal Server Error [500].';
+                     } else if (exception === 'parsererror') {
+                         msg = 'Requested JSON parse failed.';
+                     } else if (exception === 'timeout') {
+                         msg = 'Time out error.';
+                     } else if (exception === 'abort') {
+                         msg = 'Ajax request aborted.';
+                     } else {
+                         msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                     }
+                     alert(msg);
+                     return false;
+                 }
+             });
+        });
+
+</script>

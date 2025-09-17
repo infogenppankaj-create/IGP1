@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>HMS Solutions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    
+    <!-- App css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+    
+    <script src="/assets/js/modernizr.min.js"></script>
+    <!--
+    
+     -->
+
+</head>
+
+<body class="bg-accpunt-pages">
+
+    <!-- HOME -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div class="wrapper-page">
+
+                        <div class="account-pages">
+                            <div class="account-box">
+                                <div class="account-logo-box">
+                                    <h2 class="text-uppercase text-center">
+                                        <a href="login" class="text-success">
+                                            <span><img src="/assets/images/logo_dark.png" alt="" height="160"></span>
+                                        </a>
+                                        <br>
+                                        <label for="LogInTitle"><h6> </h6></label>
+                                    </h2>
+                                   
+                                    <!--h5 class="text-uppercase font-bold m-b-5 m-t-50">Sign In</h5-->
+                                    <!-- <p class="m-b-0">Login to your Admin account</p> -->
+                                </div>
+                                <div class="account-content">
+                                    <div class="form-row">  
+                                        <div class="col-6">                                    
+                                            <div class="form-group row text-center m-t-10">
+                                                <div class="col-12">
+                                                    <button 
+                                                        class="btn btn-md btn-block btn-primary waves-effect waves-light"
+                                                        style="height:40px"
+                                                        type="submit" id="btnAdmin"> Master Management</button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group row text-center m-t-10">
+                                                <div class="col-12">
+                                                    <button 
+                                                        class="btn btn-md btn-block btn-primary waves-effect waves-light"
+                                                        style="height:40px"
+                                                        type="submit" id="btnOPD"> OPD Management</button>
+                                                </div>
+                                            </div>                                        
+
+                                            <div class="form-group row text-center m-t-10">
+                                                <div class="col-12">
+                                                    <button 
+                                                        class="btn btn-md btn-block btn-primary waves-effect waves-light"
+                                                        style="height:40px"
+                                                        type="submit" id="btnNurseStation"> Nurse Station</button>
+                                                </div>
+                                            </div>
+
+                                            
+                                        </div>
+
+                                        <div class="col-6">                                        
+                                            <div class="form-group row text-center m-t-10">
+                                                <div class="col-12">
+                                                    <button 
+                                                        class="btn btn-md btn-block btn-primary waves-effect waves-light"
+                                                        style="height:40px"
+                                                        type="submit" id="btnSyatemManagement"> System Management</button>
+                                                </div>
+                                            </div>     
+
+                                        <div class="form-group row text-center m-t-10">
+                                            <div class="col-12">
+                                                <button 
+                                                    class="btn btn-md btn-block btn-primary waves-effect waves-light"
+                                                    style="height:40px"
+                                                    type="submit" id="btnIPD"> IPD Management</button>
+                                            </div>
+                                        </div>    
+
+                                        <div class="form-group row text-center m-t-10">
+                                            <div class="col-12">
+                                                <button 
+                                                    class="btn btn-md btn-block btn-primary waves-effect waves-light"
+                                                    style="height:40px"
+                                                    type="submit" id="btnLAB"> LAB Management</button>
+                                            </div>
+                                        </div>                                   
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row text-center m-t-10">                                        
+                                        <div class="col-12">
+                                            <a href="/Logout">
+                                            <button 
+                                                class="btn btn-md btn-block btn-primary waves-effect waves-light"
+                                                style="height:40px"
+                                                type="submit" id="btnLogOut"> LogOut</button>
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end card-box-->
+                    </div>
+                    <!-- end wrapper -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END HOME -->
+
+    <script>
+        //Admin
+        $("#btnAdmin").on("click", function () {            
+            $('#lblError').html('');
+            var data = {
+                IN_MENU_ID: "1"
+            };           
+            $.ajax({
+                url: 'secPermissionCheck',
+                type: "POST",
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    //console.log("*********", data.message);
+                    
+                    if (data.message == 0)
+                        alert("Permission denied.");
+                    else
+                        window.location.href = 'dashboard';
+                },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    alert(msg);
+                    return false;
+                }
+            });
+        });
+
+        //Support
+        $("#btnSyatemManagement").on("click", function () {            
+            $('#lblError').html('');
+            var data = {
+                IN_MENU_ID: "2"
+            };           
+            $.ajax({
+                url: 'secPermissionCheck',
+                type: "POST",
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    //console.log("*********", data.message);
+                    
+                    if (data.message == 0)
+                        alert("Permission denied.");
+                    else
+                        window.location.href = 'dashboard';                        
+                },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    alert(msg);
+                    return false;
+                }
+            });
+        });
+
+
+    </script>
+
+    <script>
+        var resizefunc = [];
+    </script>
+
+    <!-- jQuery  -->
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/metisMenu.min.js"></script>
+    <script src="/assets/js/waves.js"></script>
+    <script src="/assets/js/jquery.slimscroll.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/jquery.core.js"></script>
+    <script src="/assets/js/jquery.app.js"></script>
+
+</body>
+
+</html>

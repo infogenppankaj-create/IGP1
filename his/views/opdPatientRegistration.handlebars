@@ -1,0 +1,1076 @@
+<!-- Start content -->
+<div class="content">
+    <div class="container-fluid">
+        <label for="inputCity" class="col-form-label"></label>
+        <!-- Form row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-box">
+                    {{!-- <form> --}}
+                        &nbsp;
+                        <div class="tabs-vertical-env">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <div class="form-row">   
+                                                <div class="form-group col-md-2">
+                                                    <label for="Name" class="col-form-label">Add/Updatep</label>
+                                                    <select class="form-control select2" id="cmbAU" name="cmbAU_n">
+                                                        <option>Add New Patient</option>
+                                                        <option>Update Patient Details</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label for="Name" class="col-form-label">Select Patient For Update</label>
+                                                    <select id="cmbSelect" name="cmbSelect_n" class="form-control select2"></select>
+                                                </div>
+
+                                                {{!-- <div class="form-group col-md-2">
+                                                    <label for="Name" class="col-form-label">PID</label>
+                                                    <input type="text" id="txtPCode" name="txtPCode_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+
+                                                <div class="form-group col-md-2">
+                                                    <div class="form-row">
+                                                        <label for="Description" class="col-form-label">&nbsp;</label>
+                                                        <button id="btnSelect" style="width: 100%; font-size: 14px;"
+                                                            class="btn btn-primary btn-rounded w-md waves-effect waves-light">Select</button>
+                                                    </div>
+                                                </div> --}}
+
+                                                <div class="form-group col-md-2">
+                                                    <label for="Status" class="col-form-label">Status</label>
+                                                    <select id="cmbStatus" name="cmbStatus_n" class="form-control select2"></select>
+                                                </div>
+
+                                                <div class="form-group col-md-2">
+                                                    <label for="Name" class="col-form-label">PID</label>
+                                                    <input type="text" id="txtCode" name="txtCode_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-row">
+
+                                                <div class="form-group col-md-6">
+                                                    <label for="Name" class="col-form-label">Patient Name<span class="text-danger">*</span></label>
+                                                    <input type="text" id="txtName" name="txtName_n" class="form-control" autocomplete="off" placeholder="Name" required>
+                                                </div>   
+                                                
+                                                <div class="form-group col-md-3" hidden>
+                                                    <label for="Name" class="col-form-label">Payer</label>
+                                                    <select id="cmbPayer" name="cmbPayer_n" class="form-control select2"></select>
+                                                </div>
+
+                                                <div class="form-group col-md-2">
+                                                    <label for="Name" class="col-form-label">Gender</label>
+                                                    <select id="cmbGender" name="cmbGender_n" class="form-control select2"></select>
+                                                </div>     
+
+                                                <div class="form-group col-md-2" hidden>
+                                                    <label for="Name" class="col-form-label">DOB</label>
+                                                    <input type="date" id="dtDOB" name="dtDOB_n" class="form-control" placeholder="">
+                                                </div> 
+
+                                                <div class="form-group col-md-2">
+                                                    <label for="Name" class="col-form-label">Age (Yr.)</label>
+                                                    <input type="text" id="txtAge" name="txtAge_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+                                                
+                                                <div class="form-group col-md-2">
+                                                    <label for="Name" class="col-form-label">Blood Group</label>
+                                                    <select id="cmbBloodGroup" name="cmbBloodGroup_n" class="form-control select2"></select>
+                                                </div>
+ 
+ 
+                                                <div class="form-group col-md-2">
+                                                    <label for="Name" class="col-form-label">Mobile</label>
+                                                    <input type="text" id="txtMobile" name="txtMobile_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+                                                    <label for="Name" class="col-form-label">Email</label>
+                                                    <input type="text" id="txtEmail" name="txtEmail_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+
+                                                
+
+                                                <div class="form-group col-md-3">
+                                                    <label for="Name" class="col-form-label">Select Identity Type &nbsp;</label>
+                                                    <select id="cmbIdentity" name="cmbIdentity_n" class="form-control select2"></select>
+                                                </div>
+
+                                                <div class="form-group col-md-3">
+                                                    <label for="Name" class="col-form-label">UID Number</label>
+                                                    <input type="text" id="txtUID" name="txtUID_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+                                            </div>                                            
+                                        </div>
+
+                                        {{!-- <div class="form-group col-md-2">
+                                            <div class="col-sm-12">
+                                                <div class="about-team-member">
+                                                    <img src="assets/images/users/avatar-5.jpg" alt="team-member" class="img-responsive rounded-circle">
+                                                
+                                                    <label for="Name" class="col-form-label">Patient Name</label>
+                                                    <h5></h5>
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                        </div> --}}                                        
+                                    </div>
+
+                                    <div class="form-row" hidden>   
+
+                                        <div class="form-group col-md-6">
+                                            <div class="form-row">  
+
+                                                <div class="form-group col-md-3">
+                                                    <label for="Name" class="col-form-label">Height (in cm.)</label>
+                                                    <input type="text" id="txtHeight" name="txtHeight_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="Name" class="col-form-label">Weight</label>
+                                                    <input type="text" id="txtWeight" name="txtWeight_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>    
+                                                <div class="form-group col-md-3">
+                                                    <label for="Name" class="col-form-label">Obesity</label>
+                                                    <input type="text" id="txtObesity" name="txtObesity_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>         
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <div class="form-group">
+                                                <label for="Description" class="col-form-label">Address</label>
+                                                <textarea class="form-control" style="height: 98px;" id="txtAddress" name="txtAddress_n" rows="5"
+                                                    placeholder=""></textarea>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
+                                            <div class="form-row">  
+                                                <div class="form-group col-md-6">
+                                                    <label for="Name" class="col-form-label">City</label>
+                                                    <input type="text" id="txtCity" name="txtCity_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+                                                    <label for="Name" class="col-form-label">State</label>
+                                                    <select id="cmbState" name="cmbState_n" class="form-control select2"></select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">        
+                                                <div class="form-group col-md-6">
+                                                    <label for="Code" class="col-form-label">Country</label>
+                                                    <select id="cmbCountry" name="cmbCountry_n" class="form-control select2"></select>
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+                                                    <label for="Code" class="col-form-label">PIN</label>
+                                                    <input type="text" id="txtPIN" name="txtPIN_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+
+                                            </div>                               
+                                        </div>                            
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <div class="form-group">
+                                                <label for="Description" class="col-form-label">Description</label>
+                                                <textarea class="form-control" style="height: 100px;" id="txtDescription" name="txtDescription_n" rows="5"
+                                                    placeholder=""></textarea> 
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
+                                            <div class="form-row">  
+                                                <div class="form-group col-md-12">
+                                                    <label for="UID" class="col-form-label">Kin Name</label>
+                                                    <input type="text" id="txtKinName" name="txtKinName_n" class="form-control" autocomplete="off" placeholder="Name">                                        
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">        
+                                                <div class="form-group col-md-3" hidden>
+                                                    <label for="Name" class="col-form-label">Kin Relation</label>
+                                                    <select id="cmbKinRelation" name="cmbKinRelation_n" class="form-control select2"></select>
+                                                </div>  
+
+                                                <div class="form-group col-md-6">
+                                                    <label for="Name" class="col-form-label">Mobile</label>
+                                                    <input type="text" id="txtKMobile" name="txtKMobile_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+                                                    <label for="Status" class="col-form-label">E-mail</label>
+                                                    <input type="text" id="txtGEmail" name="txtGEmail1_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+
+                                            </div>                               
+                                        </div>                            
+                                    </div>
+     
+                                
+                                    <div class="form-row" hidden>   
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Marital Status</label>
+                                            <select id="cmbMaritalStatus" name="cmbMaritalStatus_n" class="form-control select2"></select>
+                                        </div>  
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Religion &nbsp;</label>
+                                            <select id="cmbReligion" name="cmbReligion_n" class="form-control select2"></select>
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Patient Category</label>
+                                            <select id="cmbPatientCategory" name="cmbPatientCategory_n" class="form-control select2"></select>
+                                        </div>
+                                    </div> 
+                                    
+                                    <div class="form-row" hidden>
+                                        <div class="form-group col-md-6">
+                                            <div class="form-group">
+                                                <label for="Description" class="col-form-label">Permanent Address</label>
+                                                <textarea class="form-control" style="height: 98px;" id="txtAddress2" name="txtAddress_n" rows="5"
+                                                    placeholder=""></textarea>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
+                                            <div class="form-row">  
+                                                <div class="form-group col-md-6">
+                                                    <label for="Name" class="col-form-label">City</label>
+                                                    <input type="text" id="txtCity2" name="txtCity2_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+                                                    <label for="Name" class="col-form-label">State</label>
+                                                    <select id="cmbState2" name="cmbState2_n" class="form-control select2"></select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">        
+                                                <div class="form-group col-md-4">
+                                                    <label for="Code" class="col-form-label">Country</label>
+                                                    <select id="cmbCountry2" name="cmbCountry2_n" class="form-control select2"></select>
+                                                </div>
+
+                                                <div class="form-group col-md-2">
+                                                    <label for="Code" class="col-form-label">PIN</label>
+                                                    <input type="text" id="txPIN2" name="txtPIN2_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+                                                    <label for="Name" class="col-form-label">Nationality</label>
+                                                    <select id="cmbNationality" name="cmbNationality_n" class="form-control select2"></select>                                                    
+                                                </div>
+                                            </div>                               
+                                        </div>                            
+                                    </div>
+
+                                    <div class="form-row" hidden>
+                                        <div class="form-group col-md-6">
+                                            <label for="Name" class="col-form-label">Father's Name</label>
+                                            <input type="text" id="txtFName" name="txtFName_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Status" class="col-form-label">Mobile</label>
+                                            <input type="text" id="txtFMobile" name="txtFMobile_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Status" class="col-form-label">E-mail</label>
+                                            <input type="text" id="txtFEmail" name="txtFEmail1_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+                                    </div>  
+
+                                    <div class="form-row" hidden>
+                                        <div class="form-group col-md-6">
+                                            <label for="Name" class="col-form-label">Mother's Name</label>
+                                            <input type="text" id="txtMName" name="txtMName_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Status" class="col-form-label">Mobile</label>
+                                            <input type="text" id="txtMMobile" name="txtMMobile_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Status" class="col-form-label">E-mail</label>
+                                            <input type="text" id="txtMEmail" name="txtMEmail1_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+                                    </div> 
+
+                                    <div class="form-row" hidden>
+                                        <div class="form-group col-md-6">
+                                            <label for="Name" class="col-form-label">Spouse</label>
+                                            <input type="text" id="txtSName" name="txtSName_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Status" class="col-form-label">Mobile</label>
+                                            <input type="text" id="txtSMobile" name="txtSMobile_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Status" class="col-form-label">E-mail</label>
+                                            <input type="text" id="txtSEmail" name="txtSEmail_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+                                    </div> 
+
+                                    <div class="form-row" hidden>
+                                        <div class="form-group col-md-6">
+                                            <label for="Name" class="col-form-label">Guardian's Name</label>
+                                            <input type="text" id="txtGName" name="txtGName_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Status" class="col-form-label">Mobile</label>
+                                            <input type="text" id="txtGMobile" name="txtGMobile_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        
+                                    </div>    
+
+                                    <div class="form-row" hidden>   
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Ref ID</label>
+                                            <input type="text" id="txtRefID" name="txtRefID_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>  
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Ref By</label>
+                                            <input type="text" id="txtRefBy" name="txtRefBy_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>  
+
+                                        <div class="form-group col-md-6">
+                                            <label for="Name" class="col-form-label">Ref Hospital</label>
+                                            <input type="text" id="txtRefHospital" name="txtRefHospital_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>                      
+                                    </div>
+
+                                    <div class="form-row" hidden>
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Org ID</label>
+                                            <input type="text" id="txtOrgID" name="txtOrgID_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>  
+
+                                        <div class="form-group col-md-4">
+                                            <label for="Name" class="col-form-label">Org Name</label>
+                                            <input type="text" id="txtOrgName" name="txtOrgName_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>  
+
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Emp ID</label>
+                                            <input type="text" id="txtEmpID" name="txtEmpID_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div> 
+
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Org Email</label>
+                                            <input type="text" id="txtOrgEmail" name="txtOrgEmail_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>  
+
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Org Contact</label>
+                                            <input type="text" id="txtOrgContact" name="txtOrgContact_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>                   
+                                    </div>
+
+                                    <div class="form-row" hidden>
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Insurance Type</label>
+                                            <input type="text" id="txtInsuranceType" name="txtInsuranceType_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>  
+
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Insurance ID</label>
+                                            <input type="text" id="txtInsuranceID" name="txtInsuranceID_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>  
+
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Maturity Date</label>
+                                            <input type="date" id="dtMaturityDate" name="dtMaturityDate_n" class="form-control" placeholder="">
+                                        </div>  
+
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Maturity Period</label>
+                                            <input type="text" id="txtMaturityPeriod" name="txtMaturityPeriod_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>  
+
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Maturity Amount</label>
+                                            <input type="text" id="txtMaturityAmount" name="txtMaturityAmount_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div> 
+
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Recover Amount</label>
+                                            <input type="text" id="txtRecoverAmount" name="txtRecoverAmount_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>                              
+                                    </div>
+
+                                    <div class="form-row" hidden>    
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Employee Category &nbsp;</label>
+                                            <input type="text" id="txtEmploymentCategory" name="txtEmploymentCategory_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Specialization</label>
+                                            <input type="text" id="txtSpecialization" name="txtSpecialization_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>  
+
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Employment Status</label>
+                                            <select id="cmbEmploymentStatus" name="cmbEmploymentStatus_n" class="form-control select2"></select>
+                                        </div>   
+
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Joining Date</label>
+                                            <input type="date" id="dtDOJ" name="dtDOJ_n" class="form-control" placeholder="">
+                                        </div>       
+
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Registration Date</label>
+                                            <input type="date" id="dtReg" name="dtReg_n" class="form-control" placeholder="" disabled>
+                                        </div>  
+
+                                    </div> 
+
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+
+                            </div>
+                            <div class="form-group col-md-7">
+                                <div class="form-row">                                    
+                                    <div class="form-group col-md-3">
+                                    </div>
+                                    <div class="form-group col-md-9">                                        
+                                        <button id="btnsave" type="button" style="width: 100%;font-size: 18px;"
+                                            class="btn btn-primary btn-rounded w-md waves-effect waves-light">Save</button>
+                                    </div>
+                                </div>                                                              
+                            </div>                            
+                        </div>
+
+                                    
+
+                                          
+
+                                    <div class="col-12">
+                                        <div class="card-box table-responsive">
+                                            <h4 class="m-t-0 header-title"><b>Patient Details</b></h4>
+                                            <p class="text-muted font-13 m-b-30">
+                                                
+                                            </p>
+                                            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:5%">ID</th>
+                                                        <th>CODE</th>                                                       										
+                                                        <th>NAME</th> 
+                                                        <th>REG DT</th> 
+                                                        <th>PAYER</th> 
+                                                        <th>GENDER</th> 
+                                                        <th>AGE</th> 
+                                                        <th>DOB</th> 
+                                                        <th>MOBILE</th> 
+                                                        <th>EMAIL</th> 
+                                                        <th>BLOOD GROUP</th> 
+                                                        <th>STATUS</th>    
+                                                        <th>CREATED_BY</th>
+                                                        <th>CREATED_DT</th>                                            
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div> 
+                            
+                        </div>
+                        
+                       
+
+
+                    {{!-- </form> --}}
+
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+        
+    </div> <!-- container -->
+</div> <!-- content -->
+<footer class="footer text-right">
+</footer>
+
+<script>
+    var defaultdata = {{{ data1 }}};
+    $('#lblFormName').html("Patient Registration");
+    document.getElementById('dtDOB').valueAsDate = new Date();
+    document.getElementById('dtMaturityDate').valueAsDate = new Date();
+    document.getElementById('dtReg').valueAsDate = new Date();
+    document.getElementById('dtDOJ').valueAsDate = new Date();
+    
+
+    //populate dropdown start
+    var option = '';
+    for (var i = 0; i < defaultdata.result.length; i++) {
+        option += '<option value="' + defaultdata.result[i].ID + '">' + defaultdata.result[i].NAME + '</option>';
+    }
+    $('#cmbStatus').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.PatientRegistration.length; i++) {
+        option += '<option value="' + defaultdata.PatientRegistration[i].ID + '">' + defaultdata.PatientRegistration[i].NAME + '</option>';
+    }
+    $('#cmbSelect').append(option);
+
+    //
+    var option = '';
+    //option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Company.length; i++) {
+        option += '<option value="' + defaultdata.Company[i].ID + '">' + defaultdata.Company[i].NAME + '</option>';
+    }
+    $('#cmbPayer').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Gender.length; i++) {
+        option += '<option value="' + defaultdata.Gender[i].ID + '">' + defaultdata.Gender[i].NAME + '</option>';
+    }
+    $('#cmbGender').append(option);
+
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.IdentityType.length; i++) {
+        option += '<option value="' + defaultdata.IdentityType[i].ID + '">' + defaultdata.IdentityType[i].NAME + '</option>';
+    }
+    $('#cmbIdentity').append(option);
+
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.BloodGroup.length; i++) {
+        option += '<option value="' + defaultdata.BloodGroup[i].ID + '">' + defaultdata.BloodGroup[i].NAME + '</option>';
+    }
+    $('#cmbBloodGroup').append(option);
+
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.State.length; i++) {
+        option += '<option value="' + defaultdata.State[i].ID + '">' + defaultdata.State[i].NAME + '</option>';
+    }
+    $('#cmbState').append(option);
+    $('#cmbState2').append(option);
+
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Country.length; i++) {
+        option += '<option value="' + defaultdata.Country[i].ID + '">' + defaultdata.Country[i].NAME + '</option>';
+    }
+    $('#cmbCountry').append(option);
+    $('#cmbCountry2').append(option);
+
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Nationality.length; i++) {
+        option += '<option value="' + defaultdata.Nationality[i].ID + '">' + defaultdata.Nationality[i].NAME + '</option>';
+    }
+    $('#cmbNationality').append(option);
+
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Relation.length; i++) {
+        option += '<option value="' + defaultdata.Relation[i].ID + '">' + defaultdata.Relation[i].NAME + '</option>';
+    }
+    $('#cmbKinRelation').append(option);
+
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.MaritalStatus.length; i++) {
+        option += '<option value="' + defaultdata.MaritalStatus[i].ID + '">' + defaultdata.MaritalStatus[i].NAME + '</option>';
+    }
+    $('#cmbMaritalStatus').append(option);
+
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Religion.length; i++) {
+        option += '<option value="' + defaultdata.Religion[i].ID + '">' + defaultdata.Religion[i].NAME + '</option>';
+    }
+    $('#cmbReligion').append(option);
+
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.PatientCategory.length; i++) {
+        option += '<option value="' + defaultdata.PatientCategory[i].ID + '">' + defaultdata.PatientCategory[i].NAME + '</option>';
+    }
+    $('#cmbPatientCategory').append(option);
+
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.EmploymentStatus.length; i++) {
+        option += '<option value="' + defaultdata.EmploymentStatus[i].ID + '">' + defaultdata.EmploymentStatus[i].NAME + '</option>';
+    }
+    $('#cmbEmploymentStatus').append(option);
+
+      
+    //populate dropdown end   
+
+    //
+    $('#cmbSelect').attr('disabled', true);
+    $('#cmbStatus').attr('disabled', true);
+    //$('#txtPCode').attr('disabled', true);
+   
+    //
+    $(function () {
+        $("#cmbAU").change(function () {
+            if ($("#cmbAU").val() === 'Add New Patient') { //
+                $('#cmbSelect').attr('disabled', true);
+                $('#cmbStatus').attr('disabled', true);
+                //$('#txtPCode').attr('disabled', true);
+                
+                //$('#txtPCode').val("");
+                $("#cmbSelect").val(0).change();
+                $("#cmbStatus").val(1).change();
+            } else {
+                $('#cmbSelect').attr('disabled', false);
+                $('#cmbStatus').attr('disabled', false);
+                //$('#txtPCode').attr('disabled', false);
+                //$('#txtPCode').val("");
+                $("#cmbSelect").val(0).change();
+                $("#cmbStatus").val(1).change();
+            }
+        });
+    });
+    
+    // Data bound after Combo selection option
+    $(function () {        
+        $("#cmbSelect").change(function () {
+            $('#lblError').html('');
+            bindData()
+        });
+    });
+
+    //Populate Grid data after form load
+    $(document).ready(function () {
+        bindGrid();
+        $("#example").dataTable().fnDestroy();
+    });
+
+    //$(function () {  
+        $("#btnSelect").on("click", function () { 
+            $('#cmbSelect').val(1).change();
+            $('#lblError').html('');
+                bindData()
+        });
+    //});
+
+    //Save event
+    $("#btnsave").on("click", function () {    
+        var inpObj1 = document.getElementById("txtCode");
+        var inpObj2 = document.getElementById("txtName");
+        if (!inpObj1.checkValidity() || !inpObj2.checkValidity()) {
+            alert("Please fill in the required fields:");
+        }
+        else {  
+            $('#lblError').html('');
+            var data = {
+                "IN_USER_ID": "0",
+                "IN_BRANCH_ID": "0",
+                "IN_ID": $("#cmbSelect").val(),
+                "IN_YEAR_ID": "0",
+                "IN_CODE": $("#txtCode").val(),
+                "IN_NAME": $("#txtName").val(),
+                "IN_REGISTRATION_DT": $("#dtReg").val(),
+                "IN_PAYER_ID": $("#cmbPayer").val(),
+                "IN_GENDER_ID": $("#cmbGender").val(),
+                "IN_AGE": $("#txtAge").val(),
+                "IN_DOB": $("#dtDOB").val(),
+                "IN_IDENTITY_ID": $("#cmbIdentity").val(),
+                "IN_UID": $("#txtUID").val(),
+                "IN_MOBILE": $("#txtMobile").val(),
+                "IN_EMAIL": $("#txtEmail").val(),
+                "IN_BLOOD_GROUP_ID": $("#cmbBloodGroup").val(),
+                "IN_HEIGHT": $("#txtHeight").val(),
+                "IN_WEIGHT": $("#txtWeight").val(),
+                "IN_OBESITY": $("#txtObesity").val(),
+                "IN_ADDRESS": $("#txtAddress").val(),
+                "IN_CITY": $("#txtCity").val(),
+                "IN_STATE_ID": $("#cmbState").val(),
+                "IN_COUNTRY_ID": $("#cmbCountry").val(),
+                "IN_PIN": $("#txtPIN").val(),
+                "IN_KIN_NAME": $("#txtKinName").val(),
+                "IN_KIN_RELATION_ID": $("#cmbKinRelation").val(),
+                "IN_KIN_MOBILE": $("#txtKMobile").val(),
+                "IN_MARITAL_STATUS_ID": $("#cmbMaritalStatus").val(),
+                "IN_RELIGION_ID": $("#cmbReligion").val(),
+                "IN_PATIENT_CATEGORY_ID": $("#cmbPatientCategory").val(),
+                "IN_P_ADDRESS": $("#txtAddress2").val(),
+                "IN_P_CITY": $("#txtCity2").val(),
+                "IN_P_STATE_ID": $("#cmbState2").val(),
+                "IN_P_COUNTRY_ID": $("#cmbCountry2").val(),
+                "IN_P_PIN": $("#txPIN2").val(),
+                "IN_NATIONALITY_ID": $("#cmbNationality").val(),
+                "IN_F_NAME": $("#txtFName").val(),
+                "IN_F_MOBILE": $("#txtFMobile").val(),
+                "IN_F_EMAIL": $("#txtFEmail").val(),
+                "IN_M_NAME": $("#txtMName").val(),
+                "IN_M_MOBILE": $("#txtMMobile").val(),
+                "IN_M_EMAIL": $("#txtMEmail").val(),
+                "IN_S_NAME": $("#txtSName").val(),
+                "IN_S_MOBILE": $("#txtSMobile").val(),
+                "IN_S_EMAIL": $("#txtSEmail").val(),
+                "IN_G_NAME": $("#txtGName").val(),
+                "IN_G_MOBILE": $("#txtGMobile").val(),
+                "IN_G_EMAIL": $("#txtGEmail").val(),
+                "IN_REF_ID": $("#txtRefID").val(),
+                "IN_REF_BY": $("#txtRefBy").val(),
+                "IN_REF_HOSPITAL": $("#txtRefHospital").val(),
+                "IN_ORG_ID": $("#txtOrgID").val(),
+                "IN_ORG_NAME": $("#txtOrgName").val(),
+                "IN_ORG_EMP_ID": $("#txtEmpID").val(),
+                "IN_ORG_MOBILE": $("#txtOrgContact").val(),
+                "IN_ORG_EMAIL": $("#txtOrgEmail").val(),
+                "IN_INS_TYPE": $("#txtInsuranceType").val(),
+                "IN_INS_ID": $("#txtInsuranceID").val(),
+                "IN_MATURITY_DT": $("#dtMaturityDate").val(),
+                "IN_MATURITY_PERIOD": $("#txtMaturityPeriod").val(),
+                "IN_MATURED_AMOUNT": $("#txtMaturityAmount").val(),
+                "IN_RECOV_AMOUNT": $("#txtRecoverAmount").val(),
+                "IN_EMPLOYMENT_CATEGORY_ID": $("#txtEmploymentCategory").val(),
+                "IN_SPECIALIZATION": $("#txtSpecialization").val(),
+                "IN_EMPLOYMENT_STATUS_ID": $("#cmbEmploymentStatus").val(),
+                "IN_EMPLOYMENT_DT": $("#dtDOJ").val(),
+                "IN_DESCRIPTION": $("#txtDescription").val(),
+                "IN_STATUS": $("#cmbStatus").val(),
+            }
+            //console.log("data",  data)
+            $.ajax({
+                url: 'savePatientRegistration',
+                type: "POST",
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.message == 0)
+                    {
+                        alert("Save Error!!");   
+                        return false;                     
+                    }
+                    else
+                    {
+                        alert("Save Successfully.");
+                        window.location.reload(true);
+                    } 
+                },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    alert(msg);
+                    return false;
+                }
+            });       
+        }
+    
+    });
+   
+    // Populate Grid Data 
+    function bindGrid() {
+        var data = {
+            IN_USER_ID: "0",
+            IN_BRANCH_ID: "0",
+            IN_ID: "0",
+            IN_CODE: "0",
+            IN_STATUS: "0"
+        };
+        $.ajax({
+            url: 'getPatientRegistrationGrd',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    dataSet = data;
+                    $('#example').DataTable({
+                        //*****Start
+                        //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        "order": [0, "desc"], // Order data
+                        //"scrollX": true,
+                        //"scrollY": "500px", //Paging enable disable
+                        //"scrollCollapse": true,//Scroll enable disable
+                        //"paging": false, //Paging enable disable
+                        //"pagingType": "full_numbers", showing all page numbers
+                        //stateSave: true,
+                        //*****End                        
+                        data: dataSet,
+                        columns: [     
+                            { data: "ID" },
+                            { data: "CODE"},
+                            { data: "PATIENT_NAME"},
+                            { data: "REGISTRATION_DT"},
+                            { data: "PAYER"},
+                            { data: "GENDER"},
+                            { data: "AGE"},
+                            { data: "DOB"},
+                            { data: "MOBILE"},
+                            { data: "EMAIL"},
+                            { data: "BLOOD_GROUP"},
+                            { data: "STATUS"},
+                            { data: "CREATED_BY"},
+                            { data: "CREATED_DT"},
+                        ],
+                        "columnDefs": [
+                            {
+                                "targets": [0],
+                                "visible": false,
+                                //"searchable": false
+                            },
+                            {
+                                "targets": [7],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [12],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [13],
+                                "visible": false,
+                            }
+                        ]
+                        // implemented export option
+                        , dom: 'Bfrtip',
+                        buttons: [
+                            'copy', 'csv', 'excel', 'pdf', 'print'
+                        ]
+                        // implemented export option End                            
+                    });
+                    var table = $('#example').DataTable();
+
+                    $('#example tbody').on('click', 'tr', function () {
+                        if ($(this).hasClass('selected')) {
+                            $(this).removeClass('selected');
+                        }
+                        else {
+                            table.$('tr.selected').removeClass('selected');
+                            $(this).addClass('selected');
+                        }
+                        //Populating textbox after row grid select
+                        //var gridData = table.row( this ).data();
+                        //$('#TxtV1').val(gridData.CREATE_D);
+                        //$('#TxtV2').val(gridData.CODE);
+                        //console.log(table.row( this ).data());
+                    });
+                }
+            }
+        });
+    }
+
+    //
+    function bindData() {
+        $('#lblError').html('');
+        var data = {
+            IN_USER_ID: "1",
+            IN_BRANCH_ID: "1",
+            IN_ID: $("#cmbSelect").val(),
+            IN_CODE: "0",
+            IN_STATUS: "0"
+        };
+        $.ajax({
+            url: 'getPatientRegistrationByID',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    if ($("#cmbSelect").val() === '0') {   
+                            //$('#txtPCode').val("");
+                            $('#txtCode').val("");
+                            $('#txtName').val("");
+                            $('#cmbPayer').val(1).change();
+                            $('#cmbGender').val(0).change();
+                            $('#txtAge').val("");
+                            //$('#dtDOB').val("");
+                            $('#cmbIdentity').val(0).change();
+                            $('#txtUID').val("");
+                            $('#txtMobile').val("");
+                            $('#txtEmail').val("");
+                            $('#cmbBloodGroup').val(0).change();
+                            $('#txtHeight').val("");
+                            $('#txtWeight').val("");
+                            $('#txtObesity').val("");
+                            $('#txtAddress').val("");
+                            $('#txtCity').val("");
+                            $('#cmbState').val(0).change();
+                            $('#cmbCountry').val(0).change();
+                            $('#txtPIN').val("");
+                            $('#txtKinName').val("");
+                            $('#cmbKinRelation').val(0).change();
+                            $('#txtKMobile').val("");
+                            $('#cmbMaritalStatus').val(0).change();
+                            $('#cmbReligion').val(0).change();
+                            $('#cmbPatientCategory').val(0).change();
+                            $('#txtAddress2').val("");
+                            $('#txtCity2').val("");
+                            $('#cmbState2').val(0).change();
+                            $('#cmbCountry2').val(0).change();
+                            $('#txPIN2').val("");
+                            $('#cmbNationality').val(0).change();
+                            $('#txtFName').val("");
+                            $('#txtFMobile').val("");
+                            $('#txtFEmail').val("");
+                            $('#txtMName').val("");
+                            $('#txtMMobile').val("");
+                            $('#txtMEmail').val("");
+                            $('#txtSName').val("");
+                            $('#txtSMobile').val("");
+                            $('#txtSEmail').val("");
+                            $('#txtGName').val("");
+                            $('#txtGMobile').val("");
+                            $('#txtGEmail').val("");
+                            $('#txtRefID').val("");
+                            $('#txtRefBy').val("");
+                            $('#txtRefHospital').val("");
+                            $('#txtOrgID').val("");
+                            $('#txtOrgName').val("");
+                            $('#txtEmpID').val("");
+                            $('#txtOrgEmail').val("");
+                            $('#txtOrgContact').val("");
+                            $('#txtInsuranceType').val("");
+                            $('#txtInsuranceID').val("");
+                            //$('#dtMaturityDate').val("");
+                            $('#txtMaturityPeriod').val("");
+                            $('#txtMaturityAmount').val("");
+                            $('#txtRecoverAmount').val("");
+                            $('#txtEmploymentCategory').val("");
+                            $('#txtSpecialization').val("");
+                            $('#cmbEmploymentStatus').val(0).change();
+                            //$('#dtDOJ').val("");
+                            //$('#dtReg').val("");
+                            $('#txtDescription').val("");
+                            $('#cmbStatus').val(1).change();  
+                    }
+                    else {
+                        //console.log(data[0]);    
+                            //$('#txtPCode').val(data[0].CODE);
+                            $('#txtCode').val(data[0].CODE);
+                            $('#txtName').val(data[0].PATIENT_NAME);
+                            $('#cmbPayer').val(data[0].PAYER_ID).change();
+                            $('#cmbGender').val(data[0].GENDER_ID).change();
+                            $('#txtAge').val(data[0].AGE);
+                            $('#dtDOB').val(data[0].DOB).change();
+                            $('#cmbIdentity').val(data[0].IDENTITY_TYPE_ID).change();
+                            $('#txtUID').val(data[0].UID);
+                            $('#txtMobile').val(data[0].MOBILE);
+                            $('#txtEmail').val(data[0].EMAIL);
+                            $('#cmbBloodGroup').val(data[0].BLOOD_GROUP_ID).change();
+                            $('#txtHeight').val(data[0].HEIGHT);
+                            $('#txtWeight').val(data[0].WEIGHT);
+                            $('#txtObesity').val(data[0].OBESITY);
+                            $('#txtAddress').val(data[0].ADDRESS);
+                            $('#txtCity').val(data[0].CITY);
+                            $('#cmbState').val(data[0].STATE_ID).change();
+                            $('#cmbCountry').val(data[0].COUNTRY_ID).change();
+                            $('#txtPIN').val(data[0].PIN);
+                            $('#txtKinName').val(data[0].KIN_NAME);
+                            $('#cmbKinRelation').val(data[0].KIN_RELATION_ID).change();
+                            $('#txtKMobile').val(data[0].KIN_MOBILE);
+                            $('#cmbMaritalStatus').val(data[0].MARITAL_STATUS_ID).change();
+                            $('#cmbReligion').val(data[0].RELIGION_ID).change();
+                            $('#cmbPatientCategory').val(data[0].PATIENT_CATEGORY_ID).change();
+                            $('#txtAddress2').val(data[0].P_ADDRESS);
+                            $('#txtCity2').val(data[0].P_CITY);
+                            $('#cmbState2').val(data[0].P_STATE_ID).change();
+                            $('#cmbCountry2').val(data[0].P_COUNTRY_ID).change();
+                            $('#txPIN2').val(data[0].P_PIN);
+                            $('#cmbNationality').val(data[0].NATIONALITY_ID).change();
+                            $('#txtFName').val(data[0].F_NAME);
+                            $('#txtFMobile').val(data[0].F_MOBILE);
+                            $('#txtFEmail').val(data[0].F_EMAIL);
+                            $('#txtMName').val(data[0].M_NAME);
+                            $('#txtMMobile').val(data[0].M_MOBILE);
+                            $('#txtMEmail').val(data[0].M_EMAIL);
+                            $('#txtSName').val(data[0].S_NAME);
+                            $('#txtSMobile').val(data[0].S_MOBILE);
+                            $('#txtSEmail').val(data[0].S_EMAIL);
+                            $('#txtGName').val(data[0].G_NAME);
+                            $('#txtGMobile').val(data[0].G_MOBILE);
+                            $('#txtGEmail').val(data[0].G_EMAIL);
+                            $('#txtRefID').val(data[0].REF_ID);
+                            $('#txtRefBy').val(data[0].REF_BY);
+                            $('#txtRefHospital').val(data[0].REF_HOSPITAL);
+                            $('#txtOrgID').val(data[0].ORG_ID);
+                            $('#txtOrgName').val(data[0].ORG_NAME);
+                            $('#txtEmpID').val(data[0].ORG_EMP_ID);
+                            $('#txtOrgEmail').val(data[0].ORG_EMAIL);
+                            $('#txtOrgContact').val(data[0].ORG_MOBILE);
+                            $('#txtInsuranceType').val(data[0].INS_TYPE);
+                            $('#txtInsuranceID').val(data[0].INS_ID);
+                            $('#dtMaturityDate').val(data[0].MATURITY_DT).change();
+                            $('#txtMaturityPeriod').val(data[0].MATURITY_PERIOD);
+                            $('#txtMaturityAmount').val(data[0].MATURED_AMOUNT);
+                            $('#txtRecoverAmount').val(data[0].RECOV_AMOUNT);
+                            $('#txtEmploymentCategory').val(data[0].EMPLOYMENT_CATEGORY_ID);
+                            $('#txtSpecialization').val(data[0].SPECIALIZATION);
+                            $('#cmbEmploymentStatus').val(data[0].EMPLOYMENT_STATUS_ID).change();
+                            $('#dtDOJ').val(data[0].EMPLOYMENT_DT).change();
+                            $('#dtReg').val(data[0].REGISTRATION_DT).change();                                                    
+                            $('#txtDescription').val(data[0].DESCRIPTION);
+                            $('#cmbStatus').val(data[0].STATUS_ID).change();
+                    }
+                }
+            },
+            error: function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+                return false;
+            }
+        });
+    }
+   
+
+</script>

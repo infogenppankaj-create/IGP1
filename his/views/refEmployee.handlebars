@@ -1,0 +1,960 @@
+<!-- Start content -->
+<div class="content">
+    <div class="container-fluid">
+        <label for="inputCity" class="col-form-label"></label>
+        <!-- Form row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-box">
+                    {{!-- <form> --}}
+                        {{!-- <h4 class="header-title m-t-0 m-b-30">Tabs Vertical Left</h4> --}}
+                        &nbsp;
+                                    <div class="form-row">   
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Add/Updatep Employee</label>
+                                            <select class="form-control select2" id="cmbAU" name="cmbAU_n">
+                                                <option>Add New Employee</option>
+                                                <option>Update Employee Details</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label for="Name" class="col-form-label">Select Employee For Update</label>
+                                            <select id="cmbSelect" name="cmbSelect_n" class="form-control select2"></select>
+                                        </div>
+
+
+                                        <div class="form-group col-md-2">
+                                            <label for="Status" class="col-form-label">Status</label>
+                                            <select id="cmbStatus" name="cmbStatus_n" class="form-control select2"></select>
+                                        </div>
+
+                                        
+                                        <div class="form-group col-md-4">   
+                                            <label for="Status" class="col-form-label">&nbsp;</label>                                     
+                                            <button id="btnsave" type="button" style="width: 100%;font-size: 18px;"
+                                                class="btn btn-primary btn-rounded w-md waves-effect waves-light">Save</button>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Employee Code <span class="text-danger">*</span></label>
+                                            <input type="text" id="txtCode" name="txtCode_n" class="form-control" autocomplete="off" placeholder="" required>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="Name" class="col-form-label">Employee Name<span class="text-danger">*</span></label>
+                                            <input type="text" id="txtName" name="txtName_n" class="form-control" autocomplete="off" placeholder="Name" required>
+                                        </div>   
+                                        
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Gender</label>
+                                            <select id="cmbGender" name="cmbGender_n" class="form-control select2"></select>
+                                        </div>     
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">DOB</label>
+                                            <input type="date" id="dtDOB" name="dtDOB_n" class="form-control"
+                                                    placeholder="" required>
+                                        </div>  
+
+                                        
+                                        <div class="form-group col-md-2">
+                                            <label for="Name" class="col-form-label">Joining Date</label>
+                                            <input type="date" id="dtDOJ" name="dtDOJ_n" class="form-control"
+                                                    placeholder="">
+                                        </div> 
+                                    </div>
+                                    
+                                    <div class="form-row">   
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Select Identity Type &nbsp;</label>
+                                            <select id="cmbIdentity" name="cmbIdentity_n" class="form-control select2"></select>
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">UID Number<span class="text-danger">*</span></label>
+                                            <input type="text" id="txtUID" name="txtUID_n" class="form-control" autocomplete="off" placeholder="" required>
+                                        </div>  
+
+                                         
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Mobile <span class="text-danger">*</span></label>
+                                            <input type="text" id="txtMobile" name="txtMobile_n" class="form-control" autocomplete="off" placeholder="" required>
+                                        </div>
+                                        <div class="form-group col-md-3" hidden>
+                                            <label for="Name" class="col-form-label">Mobile Pr</label>
+                                            <input type="text" id="txtMobile2" name="txtMobile2_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Email<span class="text-danger">*</span></label>
+                                            <input type="text" id="txtEmail" name="txtEmail_n" class="form-control" autocomplete="off" placeholder="" required>
+                                        </div>
+                                        <div class="form-group col-md-3" hidden>
+                                            <label for="Name" class="col-form-label">Email Pr</label>
+                                            <input type="text" id="txtEmail2" name="txtEmail2_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                    </div>
+                                    
+                                    <div class="form-row">   
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Designation &nbsp;</label>
+                                            <select id="cmbDesignation" name="cmbDesignation_n" class="form-control select2"></select>
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Employee Category &nbsp;</label>
+                                            <select id="cmbEmploymentCategory" name="cmbEmploymentCategory_n" class="form-control select2"></select>
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Department</label>
+                                            <select id="cmbDepartment" name="cmbDepartment_n" class="form-control select2"></select>
+                                        </div>  
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Specialization</label>
+                                            <select id="cmbSpecialization" name="cmbSpecialization_n" class="form-control select2"></select>
+                                        </div>  
+
+                                    </div>
+                                    
+                                    <div class="form-row" hidden>   
+                                        <div class="form-group col-md-6">
+                                            <label for="Name" class="col-form-label"> Job Title</label>
+                                            <select id="cmbJobTitle" name="cmbJobTitle_n" class="form-control select2"></select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="Name" class="col-form-label">Manager</label>
+                                            <select id="cmbManager" name="cmbManager_n" class="form-control select2"></select>
+                                        </div>                                        
+                                    </div>
+                                    
+                                    <div class="form-row" hidden>                                          
+
+                                        
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Employment Status</label>
+                                            <select id="cmbEmploymentStatus" name="cmbEmploymentStatus_n" class="form-control select2"></select>
+                                        </div>   
+
+                                                                            
+                                    </div>
+                                
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <div class="form-group">
+                                                <label for="Description" class="col-form-label">Address</label>
+                                                <textarea class="form-control" style="height: 98px;" id="txtAddress" name="txtAddress_n" rows="5"
+                                                    placeholder=""></textarea>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
+                                            <div class="form-row">  
+                                                <div class="form-group col-md-6">
+                                                    <label for="Name" class="col-form-label">City</label>
+                                                    <input type="text" id="txtCity" name="txtCity_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+                                                    <label for="Name" class="col-form-label">State</label>
+                                                    <select id="cmbState" name="cmbState_n" class="form-control select2"></select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">        
+                                                <div class="form-group col-md-6">
+                                                    <label for="Code" class="col-form-label">Country</label>
+                                                    <select id="cmbCountry" name="cmbCountry_n" class="form-control select2"></select>
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+                                                    <label for="Code" class="col-form-label">PIN</label>
+                                                    <input type="text" id="txtPIN" name="txtPIN_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+
+                                            </div>                               
+                                        </div>                            
+                                    </div>
+
+                                    <div class="form-row" hidden>
+                                        <div class="form-group col-md-6">
+                                            <div class="form-group">
+                                                <label for="Description" class="col-form-label">Permanent Address</label>
+                                                <textarea class="form-control" style="height: 98px;" id="txtAddress2" name="txtAddress_n" rows="5"
+                                                    placeholder=""></textarea>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
+                                            <div class="form-row">  
+                                                <div class="form-group col-md-6">
+                                                    <label for="Name" class="col-form-label">City</label>
+                                                    <input type="text" id="txtCity2" name="txtCity2_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+                                                    <label for="Name" class="col-form-label">State</label>
+                                                    <select id="cmbState2" name="cmbState2_n" class="form-control select2"></select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">        
+                                                <div class="form-group col-md-3">
+                                                    <label for="Code" class="col-form-label">Country</label>
+                                                    <select id="cmbCountry2" name="cmbCountry2_n" class="form-control select2"></select>
+                                                </div>
+
+                                                <div class="form-group col-md-3">
+                                                    <label for="Code" class="col-form-label">PIN</label>
+                                                    <input type="text" id="txPIN2" name="txtPIN2_n" class="form-control" autocomplete="off" placeholder="">
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+                                                    <label for="Name" class="col-form-label">Nationality</label>
+                                                    <select id="cmbNationality" name="cmbNationality_n" class="form-control select2"></select>                                                    
+                                                </div>
+                                            </div>                               
+                                        </div>                            
+                                    </div>
+
+                                    <div class="form-row" hidden>
+                                        <div class="form-group col-md-6">
+                                            <label for="Name" class="col-form-label">Father's Name</label>
+                                            <input type="text" id="txtFName" name="txtFName_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Status" class="col-form-label">Mobile</label>
+                                            <input type="text" id="txtFMobile" name="txtFMobile_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Status" class="col-form-label">E-mail</label>
+                                            <input type="text" id="txtFEmail" name="txtFEmail1_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+                                    </div>  
+
+                                    <div class="form-row" hidden>
+                                        <div class="form-group col-md-6">
+                                            <label for="Name" class="col-form-label">Mother's Name</label>
+                                            <input type="text" id="txtMName" name="txtMName_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Status" class="col-form-label">Mobile</label>
+                                            <input type="text" id="txtMMobile" name="txtMMobile_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Status" class="col-form-label">E-mail</label>
+                                            <input type="text" id="txtMEmail" name="txtMEmail1_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+                                    </div> 
+
+                                    <div class="form-row" hidden>
+                                        <div class="form-group col-md-6">
+                                            <label for="Name" class="col-form-label">Spouse</label>
+                                            <input type="text" id="txtSName" name="txtSName_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Status" class="col-form-label">Mobile</label>
+                                            <input type="text" id="txtSMobile" name="txtSMobile_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Status" class="col-form-label">E-mail</label>
+                                            <input type="text" id="txtSEmail" name="txtSEmail_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+                                    </div> 
+
+                                    <div class="form-row" hidden>
+                                        <div class="form-group col-md-6">
+                                            <label for="Name" class="col-form-label">Guardian's Name</label>
+                                            <input type="text" id="txtGName" name="txtGName_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Status" class="col-form-label">Mobile</label>
+                                            <input type="text" id="txtGMobile" name="txtGMobile_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="Status" class="col-form-label">E-mail</label>
+                                            <input type="text" id="txtGEmail" name="txtGEmail1_n" class="form-control" autocomplete="off" placeholder="">
+                                        </div>
+                                    </div>    
+
+                                    <div class="form-row" hidden>   
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Religion &nbsp;</label>
+                                            <select id="cmbReligion" name="cmbReligion_n" class="form-control select2"></select>
+                                        </div>
+                                                                         
+                                    </div>
+                                    
+                                    <div class="form-row">   
+                                        <div class="form-group col-md-12">
+                                            <label for="Description" class="col-form-label">Other Details</label>
+                                            <textarea class="form-control" style="height: 100px;" id="txtDescription" name="txtDescription_n" rows="5"
+                                                placeholder=""></textarea>    
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="col-12">
+                                        <div class="card-box table-responsive">
+                                            <h4 class="m-t-0 header-title"><b>Employee Details</b></h4>
+                                            <p class="text-muted font-13 m-b-30">
+                                                
+                                            </p>
+                                            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:5%">ID</th>
+                                                        <th>CODE</th>
+                                                        <th>NAME </th>
+                                                        <th>GENDER</th>
+                                                        <th>DOB</th>
+                                                        <th>DESIGNATION</th>
+                                                        <th>DEPARTMENT</th>
+                                                        <th>JOB_TITLE</th>
+                                                        <th>MANAGER</th>
+                                                        <th>EMPLOYMENT_CATEGORY</th>
+                                                        <th>SPECIALIZATION</th>
+                                                        <th>EMPLOYMENT_STATUS</th>
+                                                        <th>MOBILE</th>
+                                                        <th>EMAIL</th>
+                                                        <th>C_ADDRESS</th>
+                                                        <th>C_CITY</th>
+                                                        <th>C_STATE</th>
+                                                        <th>P_ADDRESS</th>
+                                                        <th>P_CITY</th>
+                                                        <th>P_STATE</th>
+                                                        <th>STATUS</th>    
+                                                        <th>CREATED_DT</th>
+                                                        <th>UPDATED_DT</th>                                            
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>                            
+                            
+                        
+                        &nbsp;
+
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+
+                            </div>
+                            <div class="form-group col-md-7">
+                                <div class="form-row">                                    
+                                    <div class="form-group col-md-3">
+
+                                    </div>
+                                </div>                                                              
+                            </div>                            
+                        </div>
+                    {{!-- </form> --}}
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+        {{!-- <div class="row">
+            
+        </div> --}}
+    </div> <!-- container -->
+</div> <!-- content -->
+<footer class="footer text-right">
+</footer>
+
+<script>
+    var defaultdata = {{{ data1 }}};
+    $('#lblFormName').html("Employee");
+    document.getElementById('dtDOB').valueAsDate = new Date();
+    document.getElementById('dtDOJ').valueAsDate = new Date();
+    
+    //populate dropdown start
+    var option = '';
+    for (var i = 0; i < defaultdata.result.length; i++) {
+        option += '<option value="' + defaultdata.result[i].ID + '">' + defaultdata.result[i].NAME + '</option>';
+    }
+    $('#cmbStatus').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Employee.length; i++) {
+        option += '<option value="' + defaultdata.Employee[i].ID + '">' + defaultdata.Employee[i].NAME + '</option>';
+    }
+    $('#cmbSelect').append(option);
+    $('#cmbManager').append(option);
+    //
+    
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Department.length; i++) {
+        option += '<option value="' + defaultdata.Department[i].ID + '">' + defaultdata.Department[i].NAME + '</option>';
+    }
+    $('#cmbDepartment').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.IdentityType.length; i++) {
+        option += '<option value="' + defaultdata.IdentityType[i].ID + '">' + defaultdata.IdentityType[i].NAME + '</option>';
+    }
+    $('#cmbIdentity').append(option);
+    
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Gender.length; i++) {
+        option += '<option value="' + defaultdata.Gender[i].ID + '">' + defaultdata.Gender[i].NAME + '</option>';
+    }
+    $('#cmbGender').append(option);
+        
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Designation.length; i++) {
+        option += '<option value="' + defaultdata.Designation[i].ID + '">' + defaultdata.Designation[i].NAME + '</option>';
+    }
+    $('#cmbDesignation').append(option);
+        
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.JobTitle.length; i++) {
+        option += '<option value="' + defaultdata.JobTitle[i].ID + '">' + defaultdata.JobTitle[i].NAME + '</option>';
+    }
+    $('#cmbJobTitle').append(option);
+        
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.EmploymentCategory.length; i++) {
+        option += '<option value="' + defaultdata.EmploymentCategory[i].ID + '">' + defaultdata.EmploymentCategory[i].NAME + '</option>';
+    }
+    $('#cmbEmploymentCategory').append(option);
+        
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.CategorySpecialization.length; i++) {
+        option += '<option value="' + defaultdata.CategorySpecialization[i].ID + '">' + defaultdata.CategorySpecialization[i].NAME + '</option>';
+    }
+    $('#cmbSpecialization').append(option);
+        
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.EmploymentStatus.length; i++) {
+        option += '<option value="' + defaultdata.EmploymentStatus[i].ID + '">' + defaultdata.EmploymentStatus[i].NAME + '</option>';
+    }
+    $('#cmbEmploymentStatus').append(option);
+        
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.State.length; i++) {
+        option += '<option value="' + defaultdata.State[i].ID + '">' + defaultdata.State[i].NAME + '</option>';
+    }
+    $('#cmbState').append(option);
+    $('#cmbState2').append(option);
+        
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Country.length; i++) {
+        option += '<option value="' + defaultdata.Country[i].ID + '">' + defaultdata.Country[i].NAME + '</option>';
+    }
+    $('#cmbCountry').append(option);
+    $('#cmbCountry2').append(option);
+        
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Nationality.length; i++) {
+        option += '<option value="' + defaultdata.Nationality[i].ID + '">' + defaultdata.Nationality[i].NAME + '</option>';
+    }
+    $('#cmbNationality').append(option);
+        
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Religion.length; i++) {
+        option += '<option value="' + defaultdata.Religion[i].ID + '">' + defaultdata.Religion[i].NAME + '</option>';
+    }
+    $('#cmbReligion').append(option);
+    
+
+    //populate dropdown end   
+
+    //
+    $('#cmbSelect').attr('disabled', true);
+    $('#cmbStatus').attr('disabled', true);
+   
+    //
+    $(function () {
+        $("#cmbAU").change(function () {
+            if ($("#cmbAU").val() === 'Add New Employee') { //Update Employee
+                $('#cmbSelect').attr('disabled', true);
+                $('#cmbStatus').attr('disabled', true);
+                $("#cmbSelect").val(0).change();
+                $("#cmbStatus").val(1).change();
+                $("#cmbManager").val(0).change();
+                $("#cmbDepartment").val(0).change();
+                $("#cmbIdentity").val(0).change();
+                $("#cmbGender").val(0).change();
+                $("#cmbDesignation").val(0).change();
+                $("#cmbJobTitle").val(0).change();
+                $("#cmbEmploymentCategory").val(0).change();
+                $("#cmbSpecialization").val(0).change();
+                $("#cmbEmploymentStatus").val(0).change();
+                $("#cmbState").val(0).change();
+                $("#cmbState2").val(0).change();
+                $("#cmbCountry").val(0).change();
+                $("#cmbCountry2").val(0).change();
+                $("#cmbNationality").val(0).change();
+                $("#cmbReligion").val(0).change();
+            } else {
+                $('#cmbSelect').attr('disabled', false);
+                $('#cmbStatus').attr('disabled', false);
+                $("#cmbSelect").val(0).change();
+                $("#cmbStatus").val(1).change();
+                /*
+                $("#cmbManager").val(0).change();
+                $("#cmbDepartment").val(0).change();
+                $("#cmbIdentity").val(0).change();
+                $("#cmbGender").val(0).change();
+                $("#cmbDesignation").val(0).change();
+                $("#cmbJobTitle").val(0).change();
+                $("#cmbEmploymentCategory").val(0).change();
+                $("#cmbSpecialization").val(0).change();
+                $("#cmbEmploymentStatus").val(0).change();
+                $("#cmbState").val(0).change();
+                $("#cmbState2").val(0).change();
+                $("#cmbCountry").val(0).change();
+                $("#cmbCountry2").val(0).change();
+                $("#cmbNationality").val(0).change();
+                $("#cmbReligion").val(0).change();
+                */
+            }
+        });
+    });
+    
+    // Data bound after Combo selection option
+    $(function () {        
+        $("#cmbSelect").change(function () {
+            
+            //$('#txtDescription').val($("#cmbSelect").val());
+            $('#lblError').html('');
+            bindData()
+        });
+    });
+
+    //Populate Grid data after form load
+    $(document).ready(function () {
+        bindGrid();
+        $("#example").dataTable().fnDestroy();
+    });
+
+    //Save event
+    $("#btnsave").on("click", function () {    
+        var inpObj1 = document.getElementById("txtCode");
+        var inpObj2 = document.getElementById("txtName");
+        var inpObj3 = document.getElementById("txtUID");
+        var inpObj4 = document.getElementById("txtMobile");
+        var inpObj5 = document.getElementById("txtEmail");
+        if (!inpObj1.checkValidity() || !inpObj2.checkValidity()|| !inpObj3.checkValidity()|| !inpObj4.checkValidity()|| !inpObj5.checkValidity()) {
+            alert("Please fill in the required fields:");
+        }
+        else {  
+            $('#lblError').html('');
+            var data = {                
+				"IN_USER_ID": "0",
+                "IN_BRANCH_ID": "0",
+                "IN_ID": $("#cmbSelect").val(),
+                "IN_CODE": $("#txtCode").val(),
+                "IN_NAME": $("#txtName").val(),
+                "IN_IDENTITY_TYPE_ID": $("#cmbIdentity").val(),
+                "IN_UID": $("#txtUID").val(),
+                "IN_GENDER_ID": $("#cmbGender").val(),
+                "IN_DOB": $("#dtDOB").val(),
+                "IN_DESIGNATION_ID": $("#cmbDesignation").val(),
+                "IN_DEPARTMENT_ID": $("#cmbDepartment").val(),
+                "IN_JOB_TITLE_ID": $("#cmbJobTitle").val(),
+                "IN_MANAGER_ID": $("#cmbManager").val(),
+                "IN_EMPLOYMENT_CATEGORY_ID": $("#cmbEmploymentCategory").val(),
+                "IN_SPECIALIZATION_ID": $("#cmbSpecialization").val(),
+                "IN_EMPLOYMENT_STATUS_ID": $("#cmbEmploymentStatus").val(),
+                "IN_DOJ": $("#dtDOJ").val(),
+                "IN_MOBILE": $("#txtMobile").val(),
+                "IN_MOBILE2": $("#txtMobile2").val(),
+                "IN_EMAIL": $("#txtEmail").val(),
+                "IN_EMAIL2": $("#txtEmail2").val(),
+                "IN_C_ADDRESS": $("#txtAddress").val(),
+                "IN_C_CITY": $("#txtCity").val(),
+                "IN_C_STATE_ID": $("#cmbState").val(),
+                "IN_C_COUNTRY_ID": $("#cmbCountry").val(),
+                "IN_C_PIN": $("#txtPIN").val(),
+                "IN_P_ADDRESS": $("#txtAddress2").val(),
+                "IN_P_CITY": $("#txtCity2").val(),
+                "IN_P_STATE_ID": $("#cmbState2").val(),
+                "IN_P_COUNTRY_ID": $("#cmbCountry2").val(),
+                "IN_P_PIN": $("#txPIN2").val(),
+                "IN_NATIONALITY_ID": $("#cmbNationality").val(),
+                "IN_RELIGION_ID": $("#cmbReligion").val(),
+                "IN_F_NAME": $("#txtFName").val(),
+                "IN_F_MOBILE": $("#txtFMobile").val(),
+                "IN_F_EMAIL": $("#txtFEmail").val(),
+                "IN_M_NAME": $("#txtMName").val(),
+                "IN_M_MOBILE": $("#txtMMobile").val(),
+                "IN_M_EMAIL": $("#txtMEmail").val(),
+                "IN_S_NAME": $("#txtSName").val(),
+                "IN_S_MOBILE": $("#txtSMobile").val(),
+                "IN_S_EMAIL": $("#txtSEmail").val(),
+                "IN_G_NAME": $("#txtGName").val(),
+                "IN_G_MOBILE": $("#txtGMobile").val(),
+                "IN_G_EMAIL": $("#txtGEmail").val(),
+                "IN_DESCRIPTION": $("#txtDescription").val(),
+                "IN_STATUS": $("#cmbStatus").val(),
+            }
+            //console.log("data",  data)
+            $.ajax({
+                url: 'saveEmployee',
+                type: "POST",
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.message == 0)
+                    {
+                        alert("Save Error!!");   
+                        return false;                     
+                    }
+                    else
+                    {
+                        alert("Save Successfully.");
+                        window.location.reload(true);
+                    } 
+                },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    alert(msg);
+                    return false;
+                }
+            });       
+        }
+    
+    });
+   
+    // Populate Grid Data 
+    function bindGrid() {
+        var data = {
+            IN_USER_ID: "0",
+            IN_BRANCH_ID: "0",
+            IN_ID: "0",
+            IN_CATEGORY_ID: "0",
+            IN_STATUS: "0"
+        };
+        $.ajax({
+            url: 'getEmployee',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    dataSet = data;
+                    $('#example').DataTable({
+                        //*****Start
+                        //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        "order": [0, "desc"], // Order data
+                        //"scrollX": true,
+                        //"scrollY": "500px", //Paging enable disable
+                        //"scrollCollapse": true,//Scroll enable disable
+                        //"paging": false, //Paging enable disable
+                        //"pagingType": "full_numbers", showing all page numbers
+                        //stateSave: true,
+                        //*****End                        
+                        data: dataSet,
+                        columns: [                        
+                            { data: "ID" },
+                            { data: "CODE" },
+                            { data: "EMPLOYEE_NAME" },
+                            { data: "GENDER" },
+                            { data: "DOB" },
+                            { data: "DESIGNATION" },
+                            { data: "DEPARTMENT" },
+                            { data: "JOB_TITLE" },
+                            { data: "MANAGER" },
+                            { data: "EMPLOYMENT_CATEGORY" },
+                            { data: "SPECIALIZATION" },
+                            { data: "EMPLOYMENT_STATUS" },
+                            { data: "MOBILE" },
+                            { data: "EMAIL" },
+                            { data: "C_ADDRESS" },
+                            { data: "C_CITY" },
+                            { data: "C_STATE" },
+                            { data: "P_ADDRESS" },
+                            { data: "P_CITY" },
+                            { data: "P_STATE" },
+                            { data: "STATUS" },    
+                            { data: "CREATED_DT" },
+                            { data: "UPDATED_DT" },  
+                        ],
+                        "columnDefs": [
+                            {
+                                "targets": [0],
+                                "visible": false,
+                                //"searchable": false
+                            },
+                            {
+                                "targets": [5],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [7],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [8],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [9],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [10],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [11],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [14],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [15],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [16],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [17],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [18],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [19],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [21],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [22],
+                                "visible": false,
+                            }
+                        ]
+                        // implemented export option
+                        , dom: 'Bfrtip',
+                        buttons: [
+                            'copy', 'csv', 'excel', 'pdf', 'print'
+                        ]
+                        // implemented export option End                            
+                    });
+                    var table = $('#example').DataTable();
+
+                    $('#example tbody').on('click', 'tr', function () {
+                        if ($(this).hasClass('selected')) {
+                            $(this).removeClass('selected');
+                        }
+                        else {
+                            table.$('tr.selected').removeClass('selected');
+                            $(this).addClass('selected');
+                        }
+                        //Populating textbox after row grid select
+                        //var gridData = table.row( this ).data();
+                        //$('#TxtV1').val(gridData.CREATE_D);
+                        //$('#TxtV2').val(gridData.CODE);
+                        //console.log(table.row( this ).data());
+                    });
+                }
+            }
+        });
+    }
+
+    //
+    function bindData() {
+        $('#lblError').html('');
+        document.getElementById('dtDOB').valueAsDate = new Date();
+        document.getElementById('dtDOJ').valueAsDate = new Date();
+        var data = {
+            IN_USER_ID: "1",
+            IN_BRANCH_ID: "1",
+            IN_ID: $("#cmbSelect").val(),
+            IN_CATEGORY_ID: "0", //$("#cmbEmploymentCategory").val(),
+            IN_STATUS: "0"
+        };
+        $.ajax({
+            url: 'getEmployee',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    if ($("#cmbSelect").val() === '0') {                                      
+                            $('#txtCode').val("");
+                            $('#txtName').val("");
+                            $('#cmbIdentity').val(0).change();   
+                            $('#txtUID').val("");
+                            $('#cmbGender').val(0).change();   
+                            //$('#dtDOB').val("");
+                            $('#cmbDesignation').val(0).change();   
+                            $('#cmbDepartment').val(0).change();   
+                            $('#cmbJobTitle').val(0).change();   
+                            $('#cmbManager').val(0).change();   
+                            $('#cmbEmploymentCategory').val(0).change();   
+                            $('#cmbSpecialization').val(0).change();   
+                            $('#cmbEmploymentStatus').val(0).change();   
+                            //$('#dtDOJ').val("");
+                            $('#txtMobile').val("");
+                            $('#txtMobile2').val("");
+                            $('#txtEmail').val("");
+                            $('#txtEmail2').val("");
+                            $('#txtAddress').val("");
+                            $('#txtCity').val("");
+                            $('#cmbState').val(0).change();   
+                            $('#cmbCountry').val(0).change();   
+                            $('#txtPIN').val("");
+                            $('#txtAddress2').val("");
+                            $('#txtCity2').val("");
+                            $('#cmbState2').val(0).change();   
+                            $('#cmbCountry2').val(0).change();   
+                            $('#txPIN2').val("");
+                            $('#cmbNationality').val(0).change();   
+                            $('#cmbReligion').val(0).change();   
+                            $('#txtFName').val("");
+                            $('#txtFMobile').val("");
+                            $('#txtFEmail').val("");
+                            $('#txtMName').val("");
+                            $('#txtMMobile').val("");
+                            $('#txtMEmail').val("");
+                            $('#txtSName').val("");
+                            $('#txtSMobile').val("");
+                            $('#txtSEmail').val("");
+                            $('#txtGName').val("");
+                            $('#txtGMobile').val("");
+                            $('#txtGEmail').val("");
+                            $('#txtDescription').val("");
+                            $('#cmbStatus').val(1).change();       
+                    }
+                    else {
+                            //console.log(data[0]);    
+                            $('#txtCode').val(data[0].CODE);
+                            $('#txtName').val(data[0].EMPLOYEE_NAME);
+                            $('#cmbIdentity').val(data[0].IDENTITY_TYPE_ID).change();
+                            $('#txtUID').val(data[0].UID);
+                            $('#cmbGender').val(data[0].GENDER_ID).change();                           
+                            $('#dtDOB').val(data[0].DOB).change();
+                            $('#cmbDesignation').val(data[0].DESIGNATION_ID).change();
+                            $('#cmbDepartment').val(data[0].DEPARTMENT_ID).change();
+                            $('#cmbJobTitle').val(data[0].JOB_TITLE_ID).change();
+                            $('#cmbManager').val(data[0].MANAGER_ID).change();
+                            $('#cmbEmploymentCategory').val(data[0].EMPLOYMENT_CATEGORY_ID).change();
+                            $('#cmbSpecialization').val(data[0].SPECIALIZATION_ID).change();
+                            $('#cmbEmploymentStatus').val(data[0].EMPLOYMENT_STATUS_ID).change();
+                            $('#dtDOJ').val(data[0].DOJ).change();
+                            $('#txtMobile').val(data[0].MOBILE);
+                            $('#txtMobile2').val(data[0].MOBILE2);
+                            $('#txtEmail').val(data[0].EMAIL);
+                            $('#txtEmail2').val(data[0].EMAIL2);
+                            $('#txtAddress').val(data[0].C_ADDRESS);
+                            $('#txtCity').val(data[0].C_CITY);
+                            $('#cmbState').val(data[0].C_STATE_ID).change();
+                            $('#cmbCountry').val(data[0].C_COUNTRY_ID).change();
+                            $('#txtPIN').val(data[0].C_PIN);
+                            $('#txtAddress2').val(data[0].P_ADDRESS);
+                            $('#txtCity2').val(data[0].P_CITY);
+                            $('#cmbState2').val(data[0].P_STATE_ID).change();
+                            $('#cmbCountry2').val(data[0].P_COUNTRY_ID).change();
+                            $('#txPIN2').val(data[0].P_PIN);
+                            $('#cmbNationality').val(data[0].NATIONALITY_ID).change();
+                            $('#cmbReligion').val(data[0].RELIGION_ID).change();
+                            $('#txtFName').val(data[0].F_NAME);
+                            $('#txtFMobile').val(data[0].F_MOBILE);
+                            $('#txtFEmail').val(data[0].F_EMAIL);
+                            $('#txtMName').val(data[0].M_NAME);
+                            $('#txtMMobile').val(data[0].M_MOBILE);
+                            $('#txtMEmail').val(data[0].M_EMAIL);
+                            $('#txtSName').val(data[0].S_NAME);
+                            $('#txtSMobile').val(data[0].S_MOBILE);
+                            $('#txtSEmail').val(data[0].S_EMAIL);
+                            $('#txtGName').val(data[0].G_NAME);
+                            $('#txtGMobile').val(data[0].G_MOBILE);
+                            $('#txtGEmail').val(data[0].G_EMAIL);
+                            $('#txtDescription').val(data[0].DESCRIPTION);
+                            $('#cmbStatus').val(data[0].STATUS_ID).change();
+                    }
+                }
+            },
+            error: function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+                return false;
+            }
+        });
+    }
+
+</script>

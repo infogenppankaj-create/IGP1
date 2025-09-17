@@ -1,0 +1,444 @@
+<!-- Start content -->
+<div class="content">
+    <div class="container-fluid">
+        <label for="inputCity" class="col-form-label"></label>
+        <!-- Form row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-box">
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="Policy" class="col-form-label">Select Source Database</label>
+                            <select id="cmbDatabase" name="cmbDatabase_n" class="form-control select2"></select>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="member" class="col-form-label">Select Schema</label>
+                            <select id="cmbSchema" name="cmbSchema_n" class="form-control select2"></select>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="member" class="col-form-label">Select Table</label>
+                            <select id="cmbTables" name="cmbTables_n" class="form-control select2"></select>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="btn" class="col-form-label"> .</label><br>
+                            <button id="btnget" style="width: 100%;font-size: 14px;"
+                                class="btn btn-primary btn-rounded w-md waves-effect waves-light">Get Table Mapping
+                                Details</button>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="Policy" class="col-form-label">Select Target Database</label>
+                            <select id="cmbTDatabase" name="cmbTDatabase_n" class="form-control select2"></select>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="value" class="col-form-label">Mapped Column Name</label>
+                            <input type="text" id="txtColumn" name="txtColumn_n" class="form-control" 
+                                placeholder="Column Name">
+                        </div>
+
+                        {{!-- <div class="form-group col-md-4">
+                            <label for="valueRef" class="col-form-label">Mapped Column Datatype</label>
+                            <input type="text" id="txtMonth" name="txtMonth_n" class="form-control" 
+                                placeholder="Datatype">
+                        </div> --}}
+
+                        <div class="form-group col-md-2">
+                            <label for="btn" class="col-form-label"> .</label><br>
+                            <button id="btnUpdateMAp" style="width: 100%;font-size: 18px;"
+                                class="btn btn-primary btn-rounded w-md waves-effect waves-light">Update Column Map</button>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="btn" class="col-form-label"> .</label><br>
+                            <button id="btnsave" style="width: 100%;font-size: 18px;"
+                                class="btn btn-primary btn-rounded w-md waves-effect waves-light">Save Table Mapping</button>
+                        </div>
+
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+
+    </div> <!-- container -->
+</div> <!-- content -->
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box table-responsive">
+            <h4 class="m-t-0 header-title"><b>QRail Table Mapping</b></h4>
+            <p class="text-muted font-13 m-b-30">
+            </p>
+            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th style="display:none;">CODE</th>
+                        <th style="display:none;">S_SERVER</th>
+                        <th style="display:none;">S_DATABASE</th>
+                        <th style="display:none;">S_SCHEMA</th>
+                        <th>S_TABLE</th>
+                        <th>S_COLUMN</th>
+                        <th>S_DATATYPE</th>
+                        <th>S_SEQUENCE</th>
+                        <th style="display:none;">D_SERVER</th>
+                        <th style="display:none;">D_DATABASE</th>
+                        <th style="display:none;">D_SCHEMA</th>
+                        <th style="display:none;">D_TABLE</th>
+                        <th>D_COLUMN</th>
+                        <th>D_DATATYPE</th>
+                        <th>MAP_STATUS</th>
+
+                        {{!-- <th style="display:none;">MEMBER_CODE</th>
+                        <th>MEMBER</th>
+
+                        <th style="display:none;">CRR_REF</th>
+                        <th>REF. NAME</th>
+                        <th style="display:none;">POLICY_CODE</th>
+                        <th>POLICY</th>
+                        <th>VALUE</th>
+                        <th style="display:none;">HEAD</th>
+                        <th style="display:none;">STAGE</th>
+
+                        <th style="display:none;">EARNING</th>
+                        <th style="display:none;">DEDUCTION</th>
+                        <th style="display:none;">TOTAL</th>
+                        <th style="display:none;">DESCRIPTION</th>
+
+                        <th>CALC STATUS</th>
+                        <th>POLICY STATUS</th>
+                        <th>STATUS</th>
+                        <th>COMPUTED DT</th>
+                        <th style="display:none;">REF MEMBER CODE</th> --}}
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<footer class="footer text-right">
+
+</footer>
+
+<script>
+    //$('#txtValue').attr('disabled', true);
+    //$('#cmbStatusDtl').attr('disabled', true);
+    //$('#cmbApprover').attr('disabled', true);
+    //$('#txtDescription').attr('disabled', true);
+    //$('#btnsave').attr('disabled', true);
+
+    var defaultdata = {{{ data1 }}};
+    $('#lblFormName').html("QRail Table Mapping Details");
+    //populate dropdown start
+    var option = '';
+    for (var i = 0; i < defaultdata.result.length; i++) {
+        option += '<option value="' + defaultdata.result[i].CODE + '">' + defaultdata.result[i].DBNAME + '</option>';
+    }
+    $('#cmbDatabase').append(option);
+    $('#cmbTDatabase').append(option);
+    
+    //
+    var option = '';
+    for (var i = 0; i < defaultdata.schema.length; i++) {
+        option += '<option value="' + defaultdata.schema[i].CODE + '">' + defaultdata.schema[i].SCHEMANAME + '</option>';
+    }
+    $('#cmbSchema').append(option);
+    //
+    
+    var option = '';
+    for (var i = 0; i < defaultdata.tables.length; i++) {
+        option += '<option value="' + defaultdata.tables[i].CODE + '">' + defaultdata.tables[i].TABLE_NAME + '</option>';
+    }
+    //$('#cmbTables').append(option);
+    
+    //populate dropdown end
+
+    //
+    //
+    $(function () {
+        //Combo selection option
+        $("#cmbDatabase").change(function () {
+            //
+            $('#lblError').html('');
+            bindData() 
+
+            /*
+            if ($("#cmbStatusMember").val() === 'All Active Members') {
+                $('#cmbMemberCode').attr('disabled', true);
+            } else {
+                $('#cmbMemberCode').attr('disabled', false);
+            }
+            */
+        });
+    });
+
+    //***************************
+    // btnget // populating textbox data from btn click
+    $("#btnget").on("click", function () {
+        //window.location.reload();
+        bindGrid();
+        $("#example").dataTable().fnDestroy();
+    });
+
+    function bindGrid() {
+        var data = {
+            IN_USER_ID: "0",
+            IN_S_DB_NAME: $("#cmbDatabase").val(),
+            IN_D_DB_NAME: $("#cmbTDatabase").val(),
+            IN_SCHEMA_NAME: $("#cmbSchema").val(),
+            IN_TABLE_NAME: $("#cmbTables").val(),
+            IN_S_SERVER: "",
+            IN_D_SERVER: "",
+        };
+        $.ajax({
+            url: 'getTableMapDetails',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    dataSet = data;
+                    $('#example').DataTable({
+                        data: dataSet,
+                        columns: [
+                            { data: "CODE" },
+                            { data: "S_SERVER" },
+                            { data: "S_DATABASE" },
+                            { data: "S_SCHEMA" },
+                            { data: "S_TABLE" },
+                            { data: "S_COLUMN" },
+                            { data: "S_DATATYPE" },
+                            { data: "S_SEQUENCE" },
+                            { data: "D_SERVER" },
+                            { data: "D_DATABASE" },
+                            { data: "D_SCHEMA" },
+                            { data: "D_TABLE" },
+                            { data: "D_COLUMN" },
+                            { data: "D_DATATYPE" },
+                            { data: "MAP_STATUS" }
+                        ],
+                        "columnDefs": [
+                            {
+                                "targets": [0],
+                                "visible": false,
+                                //"searchable": false
+                            },
+                            {
+                                "targets": [1],
+                                "visible": false
+                            },
+                            {
+                                "targets": [2],
+                                "visible": false
+                            },
+                            {
+                                "targets": [3],
+                                "visible": false
+                            },
+                            {
+                                "targets": [8],
+                                "visible": false
+                            },
+                            {
+                                "targets": [9],
+                                "visible": false
+                            },
+                            {
+                                "targets": [10],
+                                "visible": false
+                            },
+                            {
+                                "targets": [11],
+                                "visible": false
+                            }
+                        ]
+                        // implemented export option
+                        , dom: 'Bfrtip',
+                        buttons: [
+                            'copy', 'csv', 'excel', 'pdf', 'print'
+                        ]
+                        // implemented export option ENd 
+                    });
+                    var table = $('#example').DataTable();
+                    $('#example tbody').on('click', 'tr', function () {
+                        if ($(this).hasClass('selected')) {
+                            $(this).removeClass('selected');
+                        }
+                        else {
+                            table.$('tr.selected').removeClass('selected');
+                            $(this).addClass('selected');
+                        }
+                        //Populating textbox after row grid select
+                        var gridData = table.row(this).data();
+                        $('#txtColumn').val(gridData.D_COLUMN);
+                        //$('#txtMonth').val(gridData.TABLE_NAME);
+                        /*
+                        $('#txtMember').val(gridData.MEMBER_NAME);
+                        $('#txtPolicy').val(gridData.POLICY);
+                        $('#txtValue').val(gridData.CALC_VALUE);
+                        $('#txtCalcStatus').val(gridData.CALC_STATUS);
+                        $('#txtMemberCode').val(gridData.MEMBER_CODE);
+                        $('#txtRefMemberCode').val(gridData.REF_MEMBER_CODE);
+                        $('#txtPolicyCode').val(gridData.POLICY_CODE);
+                        $('#cmbStatusDtl').val(gridData.STATUS).change();
+                        //console.log(table.row(this).data());
+                        if ($("#txtCalcStatus").val() === 'ACTIVE') {
+                            //$('#txtValue').attr('disabled', false);
+                            $('#cmbStatusDtl').attr('disabled', false);
+                            $('#txtValue').attr('disabled', false);
+                            $('#cmbApprover').attr('disabled', false);
+                            $('#txtDescription').attr('disabled', false);
+                            $('#btnsave').attr('disabled', false);
+                        } else {
+                            $('#txtValue').attr('disabled', true);
+                            $('#cmbStatusDtl').attr('disabled', true);
+                            $('#cmbApprover').attr('disabled', true);
+                            $('#txtDescription').attr('disabled', true);
+                            $('#btnsave').attr('disabled', true);
+                        }
+                        */
+                    });
+                }
+            }
+        });
+    }
+
+    //***************************
+    //
+    function bindData() {
+        $('#lblError').html('');
+        var data = {
+            IN_USER_ID: "1",
+            IN_DB_NAME: $("#cmbDatabase").val(),
+            IN_SCHEMA_NAME: $("#cmbSchema").val(),
+        };
+        $.ajax({
+            url: 'getTableList',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    //console.log(data[0]);                    
+
+                    var option = '';
+                    $("#cmbTables").empty();
+                    for (var i = 0; i < data.length; i++) {
+                        option += '<option value="' + data[i].CODE + '">' + data[i].TABLE_NAME + '</option>';
+                    }
+                    $('#cmbTables').append(option);
+                    
+                }
+
+            },
+            error: function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+                return false;
+            }
+        });
+       
+    }
+
+    //***************************
+    //btn Save event
+
+    $("#btnsave").on("click", function () {
+        var inpObj = document.getElementById("txtValue");
+        if (!inpObj.checkValidity()) {
+				alert("Input mandatory fields!");
+            }
+            else {    
+                //ALL CODE
+                $('#lblError').html('');
+
+                var data = {
+                    "IN_USER_ID": "0",
+                    "IN_CALC_CODE": $("#txtCode").val(),
+                    "IN_CALC_MONTH": $("#txtMonth").val(),
+                    "IN_MEMBER_CODE": $("#txtMemberCode").val(),
+                    "IN_POLICY_CODE": $('#txtPolicyCode').val(),
+                    "IN_POLICY_VALUE": parseFloat($("#txtValue").val().replace(/,/g, '')), //$('#txtValue').val(),
+                    "IN_REF_MEMBER_CODE": $('#txtRefMemberCode').val(),
+                    "IN_APPROVED_BY": $("#cmbApprover").val(),
+                    "IN_DESCRIPTION": $("#txtDescription").val(),
+                    "IN_STATUS": $("#cmbStatusDtl").val(),
+                }
+                $.ajax({
+                    url: 'UpdatecalcmemberpolicyDtl',
+                    type: "POST",
+                    data: JSON.stringify(data),
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    success: function (data) {
+                        //console.log("*********", data.message);
+                        if (data.message == 0)
+                            alert("Invalid User.");
+                        else
+                            {
+                                bindGrid();
+                                $("#example").dataTable().fnDestroy();
+                                alert("Save Successfully.");
+                            }
+                            
+                    },
+                    error: function (jqXHR, exception) {
+                        var msg = '';
+                        if (jqXHR.status === 0) {
+                            msg = 'Not connect.\n Verify Network.';
+                        } else if (jqXHR.status == 404) {
+                            msg = 'Requested page not found. [404]';
+                        } else if (jqXHR.status == 500) {
+                            msg = 'Internal Server Error [500].';
+                        } else if (exception === 'parsererror') {
+                            msg = 'Requested JSON parse failed.';
+                        } else if (exception === 'timeout') {
+                            msg = 'Time out error.';
+                        } else if (exception === 'abort') {
+                            msg = 'Ajax request aborted.';
+                        } else {
+                            msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                        }
+                        alert(msg);
+                        return false;
+                    }
+                });
+                    
+            }
+
+        
+    });
+    //
+
+</script>

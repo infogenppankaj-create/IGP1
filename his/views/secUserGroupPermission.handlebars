@@ -1,0 +1,470 @@
+<!-- Start content -->
+<div class="content">
+    <div class="container-fluid">
+        <label for="inputCity" class="col-form-label"></label>
+        <!-- Form row -->
+        <div class="row">
+                <div class="col-8">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="Name" class="col-form-label">User Group </label>
+                            <select id="cmbUserGroup" name="cmbUserGroup_n" class="form-control select2"></select>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="Name" class="col-form-label">Module </label>
+                            <select id="cmbModule" name="cmbModule_n" class="form-control select2"></select>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="Name" class="col-form-label">Menu </label>
+                            <select id="cmbMenu" name="cmbMenu_n" class="form-control select2"></select>
+                        </div>
+   
+                    </div>   
+
+                    <div class="form-row">
+                        <div class="card-box table-responsive">
+                            <h4 class="m-t-0 header-title"><b>All Service Charges</b></h4>
+                            <p class="text-muted font-13 m-b-30">
+                            </p>
+                            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th style="width:5%">ID</th>
+                                        <th>USER_GROUP_ID</th>
+                                        <th>USER GROUP</th>
+                                        <th>MODULE_ID</th>
+                                        <th>MODULE</th>
+                                        <th>MENU_ID</th>
+                                        <th>MENU </th>
+                                        <th>OPEN</th>
+                                        <th>NEW</th> 
+                                        <th>EDIT</th>
+                                        <th>REMOVE</th>
+                                        <th>PRINT</th>
+                                        <th>DESCRIPTION</th> 
+                                        <th>STATUS</th> 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>                        
+                    </div>      
+
+                    <div class="form-row" style="display: none;">                      
+                        <div class="form-group col-md-3">     
+                            <label for="Name" class="col-form-label">&nbsp;</label>                             
+                            <input type="text" id="txtID" name="txtID_n" class="form-control" autocomplete="off" placeholder="" required>
+                        </div>
+
+                        <div class="form-group col-md-3">     
+                            <label for="Name" class="col-form-label">&nbsp;</label>                             
+                            <input type="text" id="txtUserGroupID" name="txtUserGroupID_n" class="form-control" autocomplete="off" placeholder="" required>
+                        </div>
+
+                        <div class="form-group col-md-3">     
+                            <label for="Name" class="col-form-label">&nbsp;</label>                             
+                            <input type="text" id="txtModuleID" name="txtModuleID_n" class="form-control" autocomplete="off" placeholder="" required>
+                        </div>
+
+                        <div class="form-group col-md-3">     
+                            <label for="Name" class="col-form-label">&nbsp;</label>                             
+                            <input type="text" id="txtMenuID" name="txtMenuID_n" class="form-control" autocomplete="off" placeholder="" required>
+                        </div>
+
+                    </div>                  
+                
+                
+                </div>
+
+                <div class="col-4">
+                    <div class="form-row">             
+                        <div class="form-group col-md-12">
+                            <label for="Name" class="col-form-label">User Group </label>
+                            <input type="text" id="txtUserGroup" name="txtUserGroup_n" class="form-control" autocomplete="off" placeholder="">
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label for="Name" class="col-form-label">Module Name </label>
+                            <input type="text" id="txtModule" name="txtModule_n" class="form-control" autocomplete="off" placeholder="">
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label for="Name" class="col-form-label">Menu Name </label>
+                            <input type="text" id="txtMenu" name="txtMenu_n" class="form-control" autocomplete="off" placeholder="">
+                        </div> 
+                    </div>  
+
+                    
+                    <div class="form-row">   
+                        <div class="form-group col-md-12">
+                            <label for="Status" class="col-form-label">Status</label>
+                            <select id="cmbStatus" name="cmbStatus_n" class="form-control select2"></select>
+                        </div>
+
+                        <div class="form-group col-md-12">                            
+                            <label for="Description" class="col-form-label">Description</label>
+                            <textarea class="form-control" style="height: 50px;" id="txtDescription" name="txtDescription_n" rows="5"
+                                placeholder=""></textarea>                        
+                        </div>
+                    </div>
+
+                    <div class="form-row"> 
+                        <div class="form-group col-md-6">
+                            {{!-- <label for="Name" class="col-form-label">&nbsp;</label>   --}}
+                            <div class="checkbox checkbox-custom">
+                                <input id="chkOpen" type="checkbox">
+                                <label for="chkOpen">
+                                    &nbsp;Open Permission 
+                                </label>
+                            </div>                             
+                        </div>                        
+
+                        <div class="form-group col-md-6">
+                            {{!-- <label for="Name" class="col-form-label">&nbsp;</label>   --}}
+                            <div class="checkbox checkbox-custom">
+                                <input id="chkNew" type="checkbox">
+                                <label for="chkNew">
+                                    &nbsp;Add Permission
+                                </label>
+                            </div>                             
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            {{!-- <label for="Name" class="col-form-label">&nbsp;</label>   --}}
+                            <div class="checkbox checkbox-custom">
+                                <input id="chkEdit" type="checkbox">
+                                <label for="chkEdit">
+                                    &nbsp;Edit Permission 
+                                </label>
+                            </div>                             
+                        </div>                        
+
+                        <div class="form-group col-md-6">
+                            {{!-- <label for="Name" class="col-form-label">&nbsp;</label>   --}}
+                            <div class="checkbox checkbox-custom">
+                                <input id="chkRemove" type="checkbox">
+                                <label for="chkRemove">
+                                    &nbsp;Remove Permission
+                                </label>
+                            </div>                             
+                        </div>
+                    </div>
+                
+                    <div class="form-row">      
+                        <div class="form-group col-md-12">
+                            <button id="btnsave" type="button" style="width: 100%;font-size: 18px;"
+                                class="btn btn-primary btn-rounded w-md waves-effect waves-light">Update Permission</button>
+                        </div>
+                    </div>
+
+                </div>
+
+        </div>
+
+    </div> <!-- container -->
+</div> <!-- content -->
+<footer class="footer text-right">
+</footer>
+
+<script>
+    var defaultdata = {{{ data1 }}};    
+    $('#lblFormName').html("User Group Permission");
+
+    $('#txtUserGroup').attr('disabled', true);
+    $('#txtModule').attr('disabled', true);
+    $('#txtMenu').attr('disabled', true);
+    $('#txtID').attr('disabled', true);  
+    $('#txtUserGroupID').attr('disabled', true);  
+    $('#txtModuleID').attr('disabled', true);
+    $('#txtMenuID').attr('disabled', true);
+
+    //populate dropdown start
+    var option = '';
+    for (var i = 0; i < defaultdata.result.length; i++) {
+        option += '<option value="' + defaultdata.result[i].ID + '">' + defaultdata.result[i].NAME + '</option>';
+    }
+    $('#cmbStatus').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.UserGroup.length; i++) {
+        option += '<option value="' + defaultdata.UserGroup[i].ID + '">' + defaultdata.UserGroup[i].NAME + '</option>';
+    }
+    $('#cmbUserGroup').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Module.length; i++) {
+        option += '<option value="' + defaultdata.Module[i].ID + '">' + defaultdata.Module[i].NAME + '</option>';
+    }
+    $('#cmbModule').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.Menu.length; i++) {
+        option += '<option value="' + defaultdata.Menu[i].ID + '">' + defaultdata.Menu[i].NAME + '</option>';
+    }
+    $('#cmbMenu').append(option);
+
+          //
+    $(function () {
+        //Combo selection option
+        $("#cmbUserGroup").change(function () {
+            bindGrid();
+            $("#example").dataTable().fnDestroy();
+            //
+            //$('#lblError').html('');
+            //bindData() 
+        });
+
+        //Combo selection option
+        $("#cmbModule").change(function () {
+            bindGrid();
+            $("#example").dataTable().fnDestroy();
+        });
+        
+        //Combo selection option
+        $("#cmbMenu").change(function () {
+            bindGrid();
+            $("#example").dataTable().fnDestroy();
+        });
+    });
+
+    //Save event
+   
+
+    $("#btnsave").on("click", function () {    
+        var inpObj1 = document.getElementById("txtID"); 
+        var inpObj2 = document.getElementById("txtUserGroupID");
+        if (!inpObj1.checkValidity() || !inpObj2.checkValidity()) {
+            alert("Please fill in the required fields:");
+        }
+        else {  
+
+            $('#lblError').html('');         
+            var data = {
+                "IN_USER_ID": "0",
+                "IN_BRANCH_ID": "0",
+                "IN_ID": $("#txtID").val(),
+                "IN_USER_GROUP_ID": $("#txtUserGroupID").val(),
+                "IN_MODULE_ID": $("#txtModuleID").val(),
+                "IN_MENU_ID": $("#txtMenuID").val(),
+                "IN_OPEN_YN": $("#chkOpen").is(":checked"), 
+                "IN_NEW_YN": $("#chkNew").is(":checked"), 
+                "IN_EDIT_YN": $("#chkEdit").is(":checked"), 
+                "IN_REMOVE_YN": $("#chkRemove").is(":checked"), 
+                "IN_PRINT_YN":  "0",
+                "IN_STATUS": $("#cmbStatus").val(),
+            }
+            //console.log("data",  data)
+            $.ajax({
+                url: 'saveUserGroupPermission',
+                type: "POST",
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.message == 0)
+                    {
+                        alert("Save Error!!");   
+                        return false;                     
+                    }
+                    else
+                    {
+                        alert("Save Successfully.");
+                        //window.location.reload(true);
+                        //
+                        bindGrid();
+                        $("#example").dataTable().fnDestroy();  
+                    }                     
+
+                },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    alert(msg);
+                    return false;
+                }
+            });       
+        }    
+    });
+
+    //
+    $(document).ready(function () {
+        bindGrid();
+        $("#example").dataTable().fnDestroy();
+    });
+
+    //
+
+    //
+    $(function () {        
+        $('#example tbody').on( 'click', 'tr',  (event) =>  {
+            var table = $('#example').DataTable();
+            if ($(event.currentTarget).hasClass('selected')) {
+                $(event.currentTarget).removeClass('selected');
+            }
+            else {
+                table.rows('.selected').nodes().each((row) => row.classList.remove('selected'));
+                $(event.currentTarget).addClass('selected');
+            }
+            //console.log( table.row( event.currentTarget ).data() );
+                var gridData = table.row( event.currentTarget ).data();
+                
+                $('#txtID').val(gridData.ID);
+                $('#txtUserGroup').val(gridData.USER_GROUP_CODE);
+                $('#txtModule').val(gridData.MODULE_CODE);
+                $('#txtMenu').val(gridData.MENU_CODE);
+                $('#cmbStatus').val(gridData.STATUS).change();
+                $('#txtUserGroupID').val(gridData.USER_GROUP_ID);
+                $('#txtModuleID').val(gridData.MODULE_ID);
+                $('#txtMenuID').val(gridData.MENU_ID);         
+                //
+                $("#chkOpen").prop( "checked", gridData.OPEN_YN);
+                $("#chkNew").prop( "checked", gridData.NEW_YN);
+                $("#chkEdit").prop( "checked", gridData.EDIT_YN);
+                $("#chkRemove").prop( "checked", gridData.REMOVE_YN);
+                $("#example1").dataTable().fnDestroy();                
+        } );        
+    }); 
+
+    function bindGrid() {        
+        $('#txtID').val("0");
+        $('#txtUserGroupID').val("0");
+        $('#txtModuleID').val("0");
+        $('#txtMenuID').val("0");
+        $('#cmbStatus').val("1").change();
+        $('#txtUserGroup').val("");
+        $('#txtModule').val("");
+        $('#txtMenu').val("");        
+
+        var data = {
+            IN_USER_ID: "0",
+            IN_BRANCH_ID: "0",
+            IN_ID: "0",
+            IN_CHECK_USER_ID: "0",
+            IN_USER_GROUP_ID: $("#cmbUserGroup").val(),
+            IN_MODULE_ID: $("#cmbModule").val(),
+            IN_MENU_ID: $("#cmbMenu").val(),
+            IN_PERMISSION_CODE: "",
+            IN_STATUS: "0"                           
+        };
+        $.ajax({
+            url: 'getUserGroupPermissionGrd',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    dataSet = data;
+                    $('#example').DataTable({
+                        //*****Start
+                        //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        "order": [0, "desc"], // Order data
+                        "scrollX": true,
+                        //"scrollY": "500px", //Paging enable disable
+                        //"scrollCollapse": true,//Scroll enable disable
+                        //"paging": false, //Paging enable disable
+                        //"pagingType": "full_numbers", showing all page numbers
+                        //stateSave: true,
+                        //*****End                                               
+                        data: dataSet,
+                        columns: [                        
+                            { data: "ID" },
+                            { data: "USER_GROUP_ID"}, 
+                            { data: "USER_GROUP_CODE"}, 
+                            { data: "MODULE_ID"}, 
+                            { data: "MODULE_CODE"}, 
+                            { data: "MENU_ID"},
+                            { data: "MENU_CODE"},
+                            { data: "OPEN_YN"},
+                            { data: "NEW_YN"},
+                            { data: "EDIT_YN"},  
+                            { data: "REMOVE_YN"},
+                            { data: "PRINT_YN"},                            
+                            { data: "DESCRIPTION"},                           
+                            { data: "STATUS"},                           
+                        ],
+                        "columnDefs": [
+                            {
+                                "targets": [0],
+                                "visible": false,
+                                //"searchable": false
+                            },
+                            {
+                                "targets": [1],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [3],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [5],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [11],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [12],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [13],
+                                "visible": false,
+                            }                            
+                        ]                        
+                        // implemented export option
+                        //, dom: 'Bfrtip',
+                        //buttons: [
+                        //    'excel', 'pdf'
+                        //],
+                                                 
+                    });
+                    /*
+                    var table = $('#example').DataTable();
+
+                    $('#example tbody').on('click', 'tr', function () {
+                        if ($(this).hasClass('selected')) {
+                            $(this).removeClass('selected');
+                        }
+                        else {
+                            table.$('tr.selected').removeClass('selected');
+                            $(this).addClass('selected');
+                        }
+                        //Populating textbox after row grid select
+                        var gridData = table.row( this ).data();
+                        
+                    });
+                    */
+                }
+            }
+        });
+    }
+   
+</script>

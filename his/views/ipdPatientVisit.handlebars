@@ -1,0 +1,628 @@
+<!-- Start content -->
+<div class="content">
+    <div class="container-fluid">
+        <label for="inputCity" class="col-form-label"></label>
+        <!-- Form row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-box">
+                    {{!-- <form>      --}}
+                    <ul class="nav nav-tabs tabs-bordered nav-justified">
+                        <li class="nav-item">
+                            <a href="#tabMain" class="nav-link active" data-toggle="tab" aria-expanded="true">OPD Patient</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="#tabDetails" class="nav-link" data-toggle="tab" aria-expanded="false">Patient History</a>
+                        </li>
+                                                                                              
+                    </ul>
+                    <div class="tab-content" style = "width: 100%;">
+                        <div class="tab-pane active minHeight" id="tabMain">                    
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <label for="Name" class="col-form-label">Patient</label>
+                                            <select id="cmbPatient" name="cmbPatient_n" class="form-control select2"></select>
+                                        </div>
+
+                                        <div class="form-group col-md-12">
+                                            <label for="Name" class="col-form-label">Service</label>
+                                            <select id="cmbService" name="cmbService_n" class="form-control select2"></select>
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-1" hidden>
+                                            <label for="Name" class="col-form-label">PID</label>
+                                            <input type="text" id="txtPID" name="txtPID_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                        </div> 
+
+                                        <div class="form-group col-md-4">
+                                            <label for="Name" class="col-form-label">PID</label>
+                                            <input type="text" id="txtPCode" name="txtPCode_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                        </div>
+
+                                        <div class="form-group col-md-8">
+                                            <label for="Name" class="col-form-label">Patient Name</label>
+                                            <input type="text" id="txtName" name="txtName_n" class="form-control" autocomplete="off" placeholder="Name" disabled>
+                                        </div>  
+                                        
+                                        <div class="form-group col-md-4">
+                                            <label for="Name" class="col-form-label">Gender</label>
+                                            <input type="text" id="txtGender" name="txtGender_n" class="form-control" autocomplete="off" placeholder="" disabled>                                       
+                                        </div>     
+                                        
+                                        <div class="form-group col-md-3">
+                                            <label for="Name" class="col-form-label">Age (Yr.)</label>
+                                            <input type="text" id="txtAge" name="txtAge_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                        </div>
+
+                                        <div class="form-group col-md-5">
+                                            <label for="Name" class="col-form-label">Mobile</label>
+                                            <input type="text" id="txtMobile" name="txtMobile_n" class="form-control" autocomplete="off" placeholder="" disabled>
+                                        </div>    
+    
+                                    </div> 
+
+                                    <div class="form-row">    
+                                        <div class="form-group col-md-12">
+                                            <label for="Description" class="col-form-label">Progress Notes</label>
+                                            <textarea class="form-control" style="height: 167px;" id="txtProgressNotes" name="txtProgressNotes_n" rows="5"
+                                                placeholder=""></textarea>                         
+                                        </div>
+                                    </div>
+
+                                    
+
+                                    
+                                </div>
+
+                                <div class="form-group col-md-7">
+
+                                    
+
+                                    <div class="form-row">    
+                                        <div class="form-group col-md-12">
+                                            <label for="Description" class="col-form-label">Treatment Advice</label>
+                                            <textarea class="form-control" style="height: 167px;" id="txtTreatmentAdvice" name="txtTreatmentAdvice_n" rows="5"
+                                                placeholder=""></textarea>                         
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">    
+                                        <div class="form-group col-md-12">
+                                            <label for="Description" class="col-form-label">Other Comments</label>
+                                            <textarea class="form-control" style="height: 167px;" id="txtDescription" name="txtDescription_n" rows="5"
+                                                placeholder=""></textarea>                         
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">     
+                                        <div class="form-group col-md-3">
+                                        </div>                                       
+                                        <div class="form-group col-md-6">                                        
+
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <button id="btnsave" type="button" style="width: 100%; font-size: 14px;"
+                                                    class="btn btn-primary btn-rounded w-md waves-effect waves-light">Save Visit</button>
+                                                </div>                                    
+                                            </div> 
+                                        </div>                                    
+                                    </div> 
+                                    
+                                </div>
+                            </div>  
+                        </div>
+
+                        <div class="tab-pane" id="tabDetails">
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <div class="form-group col-md-12">
+                                        <label for="Name" class="col-form-label">Patient</label>
+                                        <select id="cmbPatientH" name="cmbPatientH_n" class="form-control select2"></select>
+                                    </div>
+
+                                    <div class="col-12">                    
+                                        <div class="form-row">
+                                            <div class="card-box table-responsive">
+                                                <h4 class="m-t-0 header-title"><b>Patient Visit</b></h4>
+                                                <p class="text-muted font-13 m-b-30">
+                                                </p>
+                                                <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width:5%">ID</th>
+                                                            <th>BILL NO</th>
+                                                            <th>VISIT DT</th>
+                                                            <th>SERVICE</th>
+                                                            <th>PROGRESS NOTES</th> 
+                                                            <th>TREATMENT ADVICE </th>
+                                                            <th>DESCRIPTION </th>                                                             
+                                                                  
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    </tbody>
+                                                </table>
+                                            </div>                        
+                                        </div>    
+                                    </div>
+                                
+                                </div>
+                                <div class="form-group col-md-7">
+                                    <div class="form-row">    
+                                        <div class="form-group col-md-12">
+                                            <label for="Description" class="col-form-label">Progress Notes</label>
+                                            <textarea class="form-control" style="height: 140px;" id="txtProgressNotesH" name="txtProgressNotesH_n" rows="5"
+                                                placeholder="" readonly></textarea>                         
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">    
+                                        <div class="form-group col-md-12">
+                                            <label for="Description" class="col-form-label">Treatment Advice</label>
+                                            <textarea class="form-control" style="height: 140px;" id="txtTreatmentAdviceH" name="txtTreatmentAdviceH_n" rows="5"
+                                                placeholder="" readonly></textarea>                         
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">    
+                                        <div class="form-group col-md-12">
+                                            <label for="Description" class="col-form-label">Other Comments</label>
+                                            <textarea class="form-control" style="height: 140px;" id="txtDescriptionH" name="txtDescriptionH_n" rows="5"
+                                                placeholder="" readonly></textarea>                         
+                                        </div>
+                                    </div>
+
+                                
+                                </div>
+                            </div>
+
+                            <label for="Name" class="col-form-label">Dtl</label>
+
+                        </div>
+
+
+                    </div>  
+                    {{!-- </form> --}}
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+        
+    </div> <!-- container -->
+</div> <!-- content -->
+<footer class="footer text-right">
+</footer>
+
+<script>
+    var defaultdata = {{{ data1 }}};
+    $('#lblFormName').html("IPD Visit");
+   
+    //populate dropdown start
+    var option = '';
+    for (var i = 0; i < defaultdata.result.length; i++) {
+        option += '<option value="' + defaultdata.result[i].ID + '">' + defaultdata.result[i].NAME + '</option>';
+    }
+    //$('#cmbStatus').append(option);
+
+    //
+    var option = '';
+    option += '<option value="0">SELECT</option>';
+    for (var i = 0; i < defaultdata.response_Patient.length; i++) {
+        option += '<option value="' + defaultdata.response_Patient[i].BILL_ID + '">' + defaultdata.response_Patient[i].NAME + '</option>';
+    }
+    $('#cmbPatient').append(option);
+    
+
+    //
+    var option = '';
+    option += '<option value="-1">SELECT</option>';
+    for (var i = 0; i < defaultdata.Patientall.length; i++) {
+        option += '<option value="' + defaultdata.Patientall[i].ID + '">' + defaultdata.Patientall[i].NAME + '</option>';
+    }
+    $('#cmbPatientH').append(option);
+
+    
+    //populate dropdown end  
+
+    // Data bound after Combo selection option
+    $(function () {        
+        $("#cmbPatient").change(function () {
+            $('#lblError').html('');
+            bindDataCmb()
+            
+        });
+    });
+
+    //Bind Data in Sub Department combo after Department selection
+    function bindDataCmb() {
+        $('#lblError').html('');
+        var data = {
+            IN_USER_ID: "0",
+            IN_BRANCH_ID: "0",
+            IN_BILL_TYPE: "2",
+            IN_BILL_ID: $("#cmbPatient").val(),
+            IN_ID:"0",
+            IN_PID:"0",
+            IN_STATUS: "0",            
+        };
+        $.ajax({
+            url: 'getpatientVisitIPD',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    //console.log(data[0]);                    
+
+                    var option = '';
+                    $("#cmbService").empty();
+                    option += '<option value="0">SELECT</option>';
+                    for (var i = 0; i < data.length; i++) {
+                        option += '<option value="' + data[i].ID + '">' + data[i].SERVICE + '</option>';
+                    }
+                    $('#cmbService').append(option);                    
+                }
+            },
+            error: function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+                return false;
+            }
+        });       
+    }
+
+    //
+    $(function () {    
+        // Form Load event     
+        //bindGrid()          
+        //$("#example").dataTable().fnDestroy(); 
+        $("#cmbPatient").val(0).change();          
+    }); 
+
+    // Data bound after Patient selection
+    $(function () {        
+        $("#cmbPatient").change(function () {
+            $('#lblError').html('');  
+            bindPatientData()
+        });
+    });
+
+    $(function () {        
+        $("#cmbService").change(function () {
+            $('#lblError').html('');  
+            bindPatientVisitData()
+        });
+    });
+     
+    //
+    function bindPatientData() {
+        $('#lblError').html('');
+        var data = {
+            IN_USER_ID: "1",
+            IN_BRANCH_ID: "1",
+            IN_ID: $("#cmbPatient").val(),
+            IN_TYPE: "1",
+            IN_STATUS: "0"
+        };
+        $.ajax({
+            url: 'PatientRegistrationByOthID',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    if ($("#cmbPatient").val() === '0') {                               
+                            $('#txtPID').val("");
+                            $('#txtPCode').val(""); 
+                            $('#txtAge').val("");     
+                            $('#txtName').val(""); 
+                            $('#txtGender').val(""); 
+                            $('#txtMobile').val("");
+                            //
+                            $('#cmbPatientH').val(0).change();  
+                           
+                    }
+                    else {
+                            //console.log(data[0]);   
+                            $('#txtPID').val(data[0].ID);
+                            $('#txtPCode').val(data[0].CODE); 
+                            $('#txtAge').val(data[0].AGE);
+                            $('#txtName').val(data[0].PATIENT_NAME);                            
+                            $('#txtGender').val(data[0].GENDER);                            
+                            $('#txtMobile').val(data[0].MOBILE); 
+                            //
+                            $('#cmbPatientH').val(data[0].ID).change();
+                                                           
+                            
+                    }
+                }
+            },
+            error: function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+                return false;
+            }
+        });
+    }
+   
+    //
+    function bindPatientVisitData() {
+        $('#lblError').html('');
+        var data = {
+            IN_USER_ID: "0",
+            IN_BRANCH_ID: "0",
+            IN_BILL_TYPE: "2",
+            IN_BILL_ID: "0",
+            IN_ID: $("#cmbService").val(),
+            IN_PID:"0",
+            IN_STATUS: "0",            
+        };
+        $.ajax({
+            url: 'getpatientVisitIPD',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    if ($("#cmbPatient").val() === '0') {                               
+                            $('#txtProgressNotes').val("");
+                            $('#txtTreatmentAdvice').val(""); 
+                            $('#txtDescription').val("");     
+                            //
+                            $('#cmbPatientH').val(0).change();                             
+                    }
+                    else {
+                            //console.log(data[0]);    		
+                            $('#txtProgressNotes').val(data[0].PROGRESS_NOTES);
+                            $('#txtTreatmentAdvice').val(data[0].TREATEMENT_ADVICE); 
+                            $('#txtDescription').val(data[0].DESCRIPTION);
+                            //
+                            $('#cmbPatientH').val(data[0].PID).change();
+                                                           
+                            
+                    }
+                }
+            },
+            error: function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+                return false;
+            }
+        });
+    }
+   
+
+    //Save event
+    $("#btnsave").on("click", function () {    
+        var inpObj1 = document.getElementById("txtProgressNotes");
+        var inpObj2 = document.getElementById("txtTreatmentAdvice");
+
+        if (!inpObj1.checkValidity() || !inpObj2.checkValidity()) {
+            alert("Please fill in the required fields:");
+        }
+        else {  
+            $('#lblError').html('');
+            var data = {
+                "IN_USER_ID": "0",
+                "IN_BRANCH_ID": "0",
+                "IN_ID":  $("#cmbService").val(),        
+                "IN_CODE": "",//$("#txtAmount").val(),
+                "IN_BILL_ID": $("#cmbPatient").val(), 
+                "IN_PROGRESS_NOTES": $("#txtProgressNotes").val(),   
+                "IN_TREATEMENT_ADVICE":  $("#txtTreatmentAdvice").val(), 
+                "IN_DESCRIPTION": $("#txtDescription").val(),
+                "IN_STATUS": "1", //$("#cmbStatus").val(),
+            }
+            console.log("data",  data)
+            $.ajax({
+                url: 'saveopdPatientVisitIPD',
+                type: "POST",
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.message == 0)
+                    {
+                        alert("Save Error!!");   
+                        return false;                     
+                    }
+                    else
+                    {
+                        alert("Save Successfully.");
+                        window.location.reload(true);
+                    }
+                },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    alert(msg);
+                    return false;
+                }
+            });       
+        }    
+    });
+
+    $(function () {        
+        $("#cmbPatientH").change(function () { 
+            bindGrid()          
+            $("#example").dataTable().fnDestroy();
+            
+        });
+    });
+
+    $(function () {        
+        $('#example tbody').on( 'click', 'tr',  (event) =>  {
+            var table = $('#example').DataTable();
+            if ($(event.currentTarget).hasClass('selected')) {
+                $(event.currentTarget).removeClass('selected');
+            }
+            else {
+                table.rows('.selected').nodes().each((row) => row.classList.remove('selected'));
+                $(event.currentTarget).addClass('selected');
+            }
+                var gridData = table.row( event.currentTarget ).data();
+                $('#txtProgressNotesH').val(gridData.PROGRESS_NOTES);
+                $('#txtTreatmentAdviceH').val(gridData.TREATEMENT_ADVICE);
+                $('#txtDescriptionH').val(gridData.DESCRIPTION);
+                //
+                $("#example1").dataTable().fnDestroy();
+        } );        
+    }); 
+
+    function bindGrid() {
+        $('#txtProgressNotesH').val("");
+        $('#txtTreatmentAdviceH').val("");
+        $('#txtProgressNotesH').val("");
+
+        var data = {
+            IN_USER_ID: "0",
+            IN_BRANCH_ID: "0",
+            IN_BILL_TYPE: "0",
+            IN_BILL_ID: "0",
+            IN_ID: "0",
+            IN_PID:$("#cmbPatientH").val(),
+            IN_STATUS: "0",                           
+        };
+        $.ajax({
+            url: 'getpatientVisitOPIP',
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.message == 0)
+                    alert("Invalid User.");
+                else {
+                    dataSet = data;
+                    $('#example').DataTable({
+                        //*****Start
+                        //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        "order": [0, "desc"], // Order data
+                        //"scrollX": true,
+                        //"scrollY": "500px", //Paging enable disable
+                        //"scrollCollapse": true,//Scroll enable disable
+                        //"paging": false, //Paging enable disable
+                        //"pagingType": "full_numbers", showing all page numbers
+                        //stateSave: true,
+                        //*****End                                               
+                        data: dataSet,
+                        columns: [                        
+                            { data: "ID" },
+                            { data: "CODE" },                            
+                            { data: "VISIT_DT" },
+                            { data: "SERVICE" },
+                            { data: "PROGRESS_NOTES" },
+                            { data: "TREATEMENT_ADVICE" },
+                            { data: "DESCRIPTION" },                          
+                        ],
+                        "columnDefs": [
+                            {
+                                "targets": [0],
+                                "visible": false,
+                                //"searchable": false
+                            },
+                            {
+                                "targets": [4],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [5],
+                                "visible": false,
+                            },
+                            {
+                                "targets": [6],
+                                "visible": false,
+                            }                            
+                        ]                        
+                        // implemented export option
+                        //, dom: 'Bfrtip',
+                        //buttons: [
+                        //    'excel', 'pdf'
+                        //],
+                                                 
+                    });
+                   
+                }
+            }
+        });
+    }
+   
+
+
+</script>
